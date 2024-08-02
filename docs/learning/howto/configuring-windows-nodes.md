@@ -27,7 +27,7 @@ which python - "exaple/path/to/python"
 
 The [pywinrm plugin](https://github.com/rundeck-plugins/py-winrm-plugin) uses the python [WinRM Library](https://github.com/diyan/pywinrm/) to provide the WinRM implementation.
 
-* Python 3.3-3.5 or PyPy2 installed on Rundeck server. _(Python 3 strongly recommended)_
+* CPython 3.8+ or PyPy3 installed on Rundeck server.
 * Pywinrm library (It can be installed with the following command: `pip install pywinrm`)
 * OpenSSL version 1.1.1 or higher. (openssl version can be checked with the following command: `openssl version - "OpenSSL 1.1.1k"`)
     * `requests-kerberos` and `requests-credssp` are optional.
