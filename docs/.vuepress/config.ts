@@ -9,6 +9,7 @@ import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
 import { dateSorter } from "@vuepress/helper";
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 import { markdownTabPlugin } from '@vuepress/plugin-markdown-tab';
+import { removePwaPlugin } from '@vuepress/plugin-remove-pwa';
 
 // sidebars
 import sidebarAdmin from './sidebar-menus/administration'
@@ -204,10 +205,10 @@ export default defineUserConfig({
           '/manual/workflow-strategies/ruleset.html' : '/manual/jobs/workflow-strategies/ruleset.html'
        }
       },
-      pwa: {
-        update: 'force',
-        cacheHTML: true
-      },
+      // pwa: {
+      //   update: 'force',
+      //   cacheHTML: true
+      // },
       feed: {
         hostname: 'https://docs.rundeck.com',
         rss: true,
@@ -287,6 +288,9 @@ export default defineUserConfig({
   },
   //Plugins Config
   plugins: [
+    removePwaPlugin({
+      // use default options
+    }),
     markdownTabPlugin({
       // Enable code tabs
       codeTabs: true,
