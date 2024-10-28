@@ -205,7 +205,7 @@ export default defineUserConfig({
        }
       },
       pwa: {
-        update: 'hint',
+        update: 'force',
         cacheHTML: true
       },
       feed: {
