@@ -289,7 +289,8 @@ export default defineUserConfig({
   //Plugins Config
   plugins: [
     removePwaPlugin({
-      // use default options
+      cachePrefix: 'workbox',
+      swLocation: 'service-worker.js'
     }),
     markdownTabPlugin({
       // Enable code tabs
