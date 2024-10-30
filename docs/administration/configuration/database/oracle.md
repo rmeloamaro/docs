@@ -5,13 +5,12 @@ Original
 http://support.rundeck.com/customer/en/portal/articles/2415681-oracle-setup)
 --->
 
-## Simple Guide
+## Guide
 
-- Download the latest oracle driver (eg, ojdbc7.jar version 12.1.0.2):
+In order for Rundeck to connect to an Oracle Database, it requires the Oracle Database JDBC driver. Picking the correct JAR file depends on the version of Java in use by Rundeck and the version of the database you wish to connect to.  These files can be downloaded from the Oracle customer portal.
 
-[http://www.oracle.com/technetwork/database/features/jdbc/default-2280470.html](http://www.oracle.com/technetwork/database/features/jdbc/default-2280470.html)
 
-- Copy the downloaded file `ojdbc7.jar` to the `$RDECK_BASE/server/lib` for war launcher or in `/var/lib/rundeck/lib` (create it) for RPM and DEB installations
+- Copy the downloaded jar file to the `$RDECK_BASE/server/lib` for war launcher or in `/var/lib/rundeck/lib` (create it) for RPM and DEB installations
 - Update `rundeck-config.properties` file according to your installation [layout](/administration/configuration/config-file-reference.md#configuration-layout):
 
 ```properties
@@ -24,5 +23,5 @@ dataSource.properties.validationQuery = SELECT 1 FROM DUAL
 ```
 
 :::tip
-The config properties above are case sensitive.
+The config properties above are case sensitive and an example.  Adjust accordingly for your installation.
 :::

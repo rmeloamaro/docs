@@ -15,7 +15,7 @@
 
 Rundeck is a Java-Servlet based server and therefore requires the Java runtime.
 
-As of version 5.x, Java 11 is required. Java must be installed prior to running the install process. [Open JDK](http://openjdk.java.net/) and [Sun/Oracle](https://java.com/) JVMs are supported. Ensure the JAVA\_HOME environment variable is defined properly in your environment before running the launcher. Installers will use the java found on your path. See [Setting JAVA\_HOME](/administration/maintenance/startup.md#setting-java_home) if you want to run a different version of java.
+As of version 5.x, Java 11 is required. Java must be installed prior to running the install process. Ensure the JAVA\_HOME environment variable is defined properly in your environment before running the launcher. Installers will use the java found on your path. See [Setting JAVA\_HOME](/administration/maintenance/startup.md#setting-java_home) if you want to run a different version of java.
 
 Verify your Java version to check it meets the requirement:
 
@@ -33,6 +33,10 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.7+8-LTS, mixed mode)
 
 ::: warning Java Versions
 At this time the 5.x series ONLY supports Java 11.  Java 17+ is not currently validated or tested so we recommend using version 11.
+
+[Azul Zulu Open JDK](https://www.azul.com/downloads/?package=jdk#zulu) is what the software is built and tested with and is the recommended distribution.
+
+Sun/Oracle and other flavors of Java may work, but our team has limited capabilities to troubleshoot problems specific to those distributions. The [Azul Zulu Open JDK](https://www.azul.com/downloads/?package=jdk#zulu) is strongly recommended.
 :::
 
 ## Network access
