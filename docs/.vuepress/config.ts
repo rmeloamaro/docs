@@ -202,7 +202,8 @@ export default defineUserConfig({
           '/manual/execution-lifecycle/result-data.html' : '/manual/jobs/result-data.html',
           '/manual/execution-lifecycle/roi-metrics.html' : '/manual/jobs/roi-metrics.html',
           '/manual/workflow-strategies.html' : '/manual/jobs/workflow-strategies.html',
-          '/manual/workflow-strategies/ruleset.html' : '/manual/jobs/workflow-strategies/ruleset.html'
+          '/manual/workflow-strategies/ruleset.html' : '/manual/jobs/workflow-strategies/ruleset.html',
+          '/learning/solutions/automated-diagnostics/examples/kubernetes.html' : '/learning/solutions/containers/kubernetes.html'
        }
       },
       // pwa: {
