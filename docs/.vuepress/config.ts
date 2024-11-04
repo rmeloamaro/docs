@@ -19,6 +19,7 @@ import sidebarDeveloper from './sidebar-menus/plugin-development'
 import sidebarLearning from './sidebar-menus/learning'
 import sidebarHistory from './sidebar-menus/history'
 import sidebarAbout from './sidebar-menus/about'
+
 import apiMenu from './sidebar-menus/api'
 
 
@@ -285,6 +286,10 @@ export default defineUserConfig({
   "@theme-hope/modules/sidebar/components/Sidebar": path.resolve(
     __dirname,
     "./components/SidebarAnnounce.vue",
+  ),
+  "@theme-hope/layouts/NotFound": path.resolve(
+    __dirname,
+    "./components/notFoundCustom.vue",
   ),
   },
   //Plugins Config

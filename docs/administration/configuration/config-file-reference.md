@@ -1,11 +1,11 @@
-# Configuration
+# Configuration File Reference
 
-# Configuration layout
+## Configuration layout
 
 Configuration file layout differs between the RPM and Launcher
 installation methods.
 
-## DEB/RPM layout
+### DEB/RPM layout
 
     /etc/rundeck/
     ├── admin.aclpolicy
@@ -39,7 +39,7 @@ installation methods.
     ├── var
     └── work
 
-## Launcher layout
+### Launcher layout
 
     $RDECK_BASE/etc/
     ├── admin.aclpolicy
@@ -58,14 +58,14 @@ installation methods.
     ├── rundeck-config.properties
     └── ssl.properties
 
-# Configuration files
+## Configuration files
 
 Configuration is specified in a number of standard Rundeck
 configuration files generated during the installation process.
 
 The purpose of each configuration file is described in its own section.
 
-## admin.aclpolicy
+### admin.aclpolicy
 
 Administrator access control policy defined with a [aclpolicy]
 document.
@@ -76,7 +76,7 @@ See [role based access control](/administration/security/authorization.md) for i
 
 [aclpolicy]: /manual/document-format-reference/aclpolicy-v10
 
-## framework.properties
+### framework.properties
 
 Configuration file used by shell tools and core Rundeck services. This file will be created for you at install time.
 
@@ -105,7 +105,7 @@ Other settings:
 - `execution.script.tokenexpansion.enabled`: Whether inline script token expansion is enabled, default `true`. If `false`, the "Inline Script Content" syntax described in [User Guide - Creating Job Workflows - Context Variables](/manual/jobs/job-workflows.md#context-variables) is disabled.
 - `communityNews.disabled`: Default is not set, or false. Disables the external polling of Community News feed. Link will persist but will not poll, and clicking this link will open a new browser tab and navigate to the web-based version of Community News.
 
-### Static authentication tokens for API access:
+#### Static authentication tokens for API access:
 
 :::tip
 Make sure your $RDECK_BASE environment variable is pointed correctly to your current installation, otherwise the tokens wont be loaded in runtime.
@@ -125,18 +125,18 @@ The token_strings can be used as Authentication tokens to the [API](/api/index.m
 
 To ease the rotation of tokens, several tokens can be specified by separating them with a semicolon.
 
-### Global execution variables
+#### Global execution variables
 
 Entries in `framework.properties` in the form `framework.globals.X=Y` Adds a variable `X` available in all execution contexts as `${globals.X}`.
 
 Global variables can be overridden in the [`project.properties`](#project-properties) by adding a line in the form of `project.globals.X=Y` and then accessing it as `${globals.X}`.
 
-## log4.properties - Legacy
+### log4.properties - Legacy
 
 Rundeck uses [log4j](http://logging.apache.org/log4j/1.2/) as its application logging facility. This file
 defines the logging configuration for the Rundeck server.
 
-## log4j2.properties - New in Rundeck 3.3.x
+### log4j2.properties - New in Rundeck 3.3.x
 
 Rundeck uses [log4j2](https://logging.apache.org/log4j/2.x/) as its application logging facility. This file
 defines the logging configuration for the Rundeck server.
@@ -153,13 +153,13 @@ If you have customized your old log4j.properties file you will need to ensure th
 
 Please refer to the log4j2 [documentation](https://logging.apache.org/log4j/2.x/manual/migration.html) to see how to update your old log4j.properties to be compliant with the new log4j2 format.
 
-## profile
+### profile
 
 Shell environment variables used by the shell tools. This file
 contains several parameters needed during the startup of the shell
 tools like umask, Java home and classpath, and SSL options.
 
-## project.properties
+### project.properties
 
 Rundeck project configuration file when using Filesystem based project definitions (see [Project Setup - Project Definitions](https://rundeck.org/docs/manual/projects/configuration.html)).
 
