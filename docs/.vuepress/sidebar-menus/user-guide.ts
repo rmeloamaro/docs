@@ -344,7 +344,7 @@ export default [{
     {
       text: 'Integrations',
       collapsible: true,
-      link: '/manual/integrations',
+      link: '/manual/integrations/index.md',
       children: [
           '/manual/integrations/servicenow-app.md'
       ]
