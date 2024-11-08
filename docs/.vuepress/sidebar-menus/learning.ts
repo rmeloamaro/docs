@@ -240,6 +240,8 @@ export default [{
           children: [
             { link: '/learning/solutions/database-management/index.md', text: 'Solution Summary' },
             { link: '/learning/solutions/database-management/db-and-autodiag.md', text: 'Databases + Auto Diagnostics' },
+            { link: '/learning/solutions/database-management/postgres-reindex.md', text: 'Reindex PostgreSQL Database' },
+            { link: '/learning/solutions/database-management/postgres-backup-restore.md', text: 'Adhoc Backup and Restore PostgreSQL' },
           ]
         }
       ]

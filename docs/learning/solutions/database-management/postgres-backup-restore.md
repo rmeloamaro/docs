@@ -1,0 +1,52 @@
+# Adhoc Backup and Restore a PostgreSQL Database
+
+Backing up a database before major operations saves your shorts.
+
+
+## Pre-requisites & Environment Setup
+
+- Environment setup with Enterprise Runner active.
+- The Backup job requires that the `pg_dump` command to be installed on the same machine as the Enterprise Runner and be available in the default path.
+- The Restore job requires the `psql` command to be installed on the same machine as the Enterprise Runner and be available in the default path.
+- The Restore job will need to access the `.sql` file to import from the Enterprise Runner.
+- The Enterprise Runner must have access to an existing PostgreSQL instance.
+- Be sure to select a runner before starting the job.  No Runners are selected by default.  
+
+## Backup Job
+
+1. The output will be written to a plain text SQL file.
+1. The SQL file will be read out using cat to the output log.
+1. The SQL file will then be optionally deleted as a cleanup step based on the input choice.  If you plan to restore the file choose `No` for the delete option.
+
+**Database Host Name**: The host name or IP address of the PostgreSQL server.
+
+**Database Name**: The name of the database to backup.
+
+**Database User Name**: The login name to authenticate to the PostgreSQL server.
+
+**Login Password**: The password for the login name.  >(Note: The password can be provided directly as part of the input options. For production use we recommend using a Key Storage entry.)
+
+**Delete the File?**: Should the job delete the SQL output file at the end of the job? Answer `Yes` to just view the SQL definition in the job log. Answer `No` if you plan to use the SQL file to restore a database.
+
+![job-options](/assets/img/solutions-postgres-backup-options.png)<br>
+
+
+### Successful Execution
+
+![success-output](/assets/img/solutions-postgres-backup-success.png)<br>
+
+## Restore Job
+
+1. The job will read the `.sql` file from the path provided and use `psql` to rebuild the database.
+
+> The first four Job options are same as Backup job above
+
+**SQL File Path**: This value needs to be a path to the `.sql` file with the database to import.  Example: _./mytestdb.sql_ to use a file from the default execution directory of the Enterprise Runner.
+
+![job-options-restore](/assets/img/solutions-postgres-restore-options.png)
+
+### Successful Execution
+
+![job-success-restore](/assets/img/solutions-postgres-restore-output.png)
+
+> Note: The errors in the screenshot above are expected as the table was not deleted prior to executing.
