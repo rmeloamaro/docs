@@ -58,8 +58,7 @@ To use SFTP as the method for dispatching files and executing scripts against re
 
 In addition to the general SSH configuration mentioned for in this section, some additional configuration can be done for SCP.
 
-When a Script is executed on a remote node, it is copied over via SCP first, and then executed. In addition to the SSH connection properties, some attributes
-can be configured. See [File Copier destination directory](/manual/projects/node-execution/builtin.md#file-copier-destination-directory).
+When a Script is executed on a remote node, it is copied over via SCP first, and then executed. In addition to the SSH connection properties, some attributes can be configured. See [File Copier destination directory](/manual/projects/node-execution/builtin.md#file-copier-destination-directory).
 
 ### Authentication types
 
@@ -113,7 +112,9 @@ SSH config options can be specified by setting the following properties:
 ### Specifying SSH Timeout options
 
 SSH timeout options can be specified. The timeout values are in milliseconds.
-A value of 0 means the timeout will be indefinite.
+
+A value of `0` means the timeout will be indefinite.
+
 The precedence level is Node > Project > Rundeck.
 
 1. **Node level**: attribute on the Node. Applies only to the target node.
@@ -185,9 +186,7 @@ You can use a Job Option for a passphrase for privateKey authentication. When th
 
 Passphrases are input either via the GUI or arguments to the job if executed via CLI or API.
 
-First, configure a Job, and include an Option definition where `secureInput` is set to `true`.
-The name of this option can be anything you want,
-but the default value of `sshKeyPassphrase` assumed by the node configuration is easiest.
+First, configure a Job, and include an Option definition where `secureInput` is set to `true`. The name of this option can be anything you want, but the default value of `sshKeyPassphrase` assumed by the node configuration is easiest.
 
 If the value is not `sshKeyPassphrase`, then make sure to set the following attribute on each Node for password authentication:
 
@@ -228,10 +227,7 @@ Job:
 
 **Note:** See [Using Key Storage for SSH](#using-key-storage-for-ssh).
 
-When connecting to the remote node with a private key,
-Rundeck will look for a property/attribute
-specifying the location of the **private key passphrase storage path**,
-in this order, with the first match having precedence:
+When connecting to the remote node with a private key, Rundeck will look for a property/attribute specifying the location of the **private key passphrase storage path**, in this order, with the first match having precedence:
 
 1. **Node level**: `ssh-key-passphrase-storage-path` attribute on the Node. Applies only to the target node.
 2. **Project level**: `project.ssh-key-passphrase-storage-path` property in `project.properties`. Applies to any project node by default.
@@ -429,59 +425,32 @@ See example Node configuration below:
 
 ### Multiple Sudo Password Authentication
 
-You can enable a further level of sudo password support for a node. If you have
-the requirement of executing a chain of "sudo" commands, such as "sudo -u user1
-sudo -u user2 command", and need to enable password input for both levels of
-sudo. This is possible by configuring a secondary set of properties for your
-node/project/framework.
+You can enable a further level of sudo password support for a node. If you have the requirement of executing a chain of "sudo" commands, such as "sudo -u user1 sudo -u user2 command", and need to enable password input for both levels of sudo. This is possible by configuring a secondary set of properties for your node/project/framework.
 
-The configuration properties are the same as those for the first-level of sudo
-password authentication described in [Configuring Secondary Sudo Password Authentication](#secondary-sudo-password-authentication), but with a
-prefix of "sudo2-" instead of "sudo-", such as:
+The configuration properties are the same as those for the first-level of sudo password authentication described in [Configuring Secondary Sudo Password Authentication](#secondary-sudo-password-authentication), but with a prefix of "sudo2-" instead of "sudo-", such as:
 
     sudo2-command-enabled="true"
     sudo2-command-pattern="^sudo .+? sudo .*$"
 
-This would turn on a mechanism to expect and respond to another sudo password
-prompt when the command matches the given pattern.
+This would turn on a mechanism to expect and respond to another sudo password prompt when the command matches the given pattern.
 
-If a value for "sudo2-password-option" is not set, then a default value of
-`option.sudo2Password` will be used.
+If a value for "sudo2-password-option" is not set, then a default value of `option.sudo2Password` will be used.
 
 **A note about the "sudo2-command-pattern":**
 
-The sudo authentication mechanism uses two regular expressions to test whether it should be
-invoked.
+The sudo authentication mechanism uses two regular expressions to test whether it should be invoked.
 
-For the first sudo authentication, the "sudo-command-pattern" value is matched against
-the **first component of the command being executed**. The default value for this pattern is `^sudo$`.
-So a command like "sudo -u user1 some command" will match correctly. You can modify the
-regular expression (e.g. to support "su"), but it will always only match against the first
-part of the command.
+For the first sudo authentication, the "sudo-command-pattern" value is matched against the **first component of the command being executed**. The default value for this pattern is `^sudo$`. So a command like "sudo -u user1 some command" will match correctly. You can modify the regular expression (e.g. to support "su"), but it will always only match against the first part of the command.
 
-If "sudo2-command-enabled" is "true", then the "sudo2-command-pattern" is also checked
-and if it matches then another sudo authentication is enabled.
-However this regular expression is tested against the **entire command string**
-to make it possible to determine whether it should be enabled. The default value is
-`^sudo .+? sudo .*$`. If necessary you should customize the value.
+If "sudo2-command-enabled" is "true", then the "sudo2-command-pattern" is also checked and if it matches then another sudo authentication is enabled. However this regular expression is tested against the **entire command string** to make it possible to determine whether it should be enabled. The default value is `^sudo .+? sudo .*$`. If necessary you should customize the value.
 
 ### SSH Agent support
 
 Note: **Incubator feature**
 
-This will start /usr/bin/ssh-agent on each command step execution
-(if enabled),
-inject the private key the job would normally use in the agent,
-make the agent available on the newly created jsch connection
-and enable agent forwarding on the connection.
-Once the job is done the ssh-agent is killed.
-Optionally ssh-agent can be started with `-t <ttl>`
-which will guarantee the private key will be flushed at that time
-if by some chance it's not killed.
+This will start `/usr/bin/ssh-agent` on each command step execution (if enabled), inject the private key the job would normally use in the agent, make the agent available on the newly created jsch connection and enable agent forwarding on the connection. Once the job is done the ssh-agent is killed. Optionally ssh-agent can be started with `-t <ttl>` which will guarantee the private key will be flushed at that time if by some chance it's not killed.
 
-Obviously with this enabled you cannot rely on Rundeck to limit
-what hosts are accessible to your users,
-proper key management is required on all hosts.
+Obviously with this enabled you cannot rely on Rundeck to limit what hosts are accessible to your users, proper key management is required on all hosts.
 
 New variables are:
 
@@ -508,24 +477,19 @@ local-ttl-ssh-agent=<time in sec>
 
 ## SSH System Configuration
 
-- The SSH configuration requires that the Rundeck server machine can
-  ssh commands to the client machines.
-- SSH is assumed to be installed and configured appropriately to allow
-  this access.
+- The SSH configuration requires that the Rundeck server machine can ssh commands to the client machines.
+- SSH is assumed to be installed and configured appropriately to allow this access.
 - SSH can be configured for either _password_ based authentication or _public/private key_ based authentication.
 - For public/private key authentication:
-  _ There are many resources
-  available on how to configure ssh to use public key authentication
-  instead of passwords such as [this article from ArchLinux](https://wiki.archlinux.org/title/SSH_keys).
-  _ If your private key file has a passphrase, each Job definition that will execute on the node must be configured correctly.
+  - There are many resources available on how to configure ssh to use public key authentication  instead of passwords such as [this article from ArchLinux](https://wiki.archlinux.org/title/SSH_keys).
+  - If your private key file has a passphrase, each Job definition that will execute on the node must be configured correctly.
 - For password authentication:
   - each Node definition must be configured to allow password authentication
   - each Job definition that will use it must be configured correctly
 
 ### SSH key generation
 
-- The Rundeck installation can be configured to use RSA _or_ DSA
-  type keys.
+- The Rundeck installation can be configured to use RSA _or_ DSA type keys.
 - Run key generation command(s) on a secure machine separate from the Rundeck Server.
 - After importing keys to nodes/Rundeck Key Storage remove the generated files from the secure machine.
 - When re-generating keys be sure to over-write the existing key.
@@ -580,25 +544,19 @@ If you're using OpenSSH-Client 8.0p1-6build1 or higher (which is installed on Ub
 
 ### Configuring remote machine for SSH
 
-To be able to directly ssh to remote machines, an SSH public key of
-the client should be shared to the remote machine.
+To be able to directly ssh to remote machines, an SSH public key of the client should be shared to the remote machine.
 
 Follow the steps given below to enable ssh to remote machines.
 
 Generate a new SSH Key using steps above.  Never use an existing key unless you know its origin.
 
-The ssh public key should be copied to the `authorized_keys` file of
-the remote machine. The public key will be available in
-`~/.ssh/id_rsa.pub` file.
+The ssh public key should be copied to the `authorized_keys` file of the remote machine. The public key will be available in `~/.ssh/id_rsa.pub` file.
 
 Be sure to remove any keys that are no longer needed.
 
-The `authorized_keys` file should be created in the `.ssh` directory of
-the remote machine.
+The `authorized_keys` file should be created in the `.ssh` directory of the remote machine.
 
-The file permission of the authorized key should be read/write for
-the user and nothing for group and others. To do this check the
-permission and change it as shown below.
+The file permission of the authorized key should be read/write for the user and nothing for group and others. To do this check the permission and change it as shown below.
 
     $ cd ~/.ssh
     $ ls -la
@@ -608,10 +566,7 @@ permission and change it as shown below.
     $ ls -la
     -rw-------   1 raj  staff     0 Nov 22 18:14 authorized_keys
 
-The permission for the .ssh directory of the remote machine should
-be read/write/execute for the user and nothing for the group and
-others. To do this, check the permission and change it as shown
-below.
+The permission for the .ssh directory of the remote machine should be read/write/execute for the user and nothing for the group and others. To do this, check the permission and change it as shown below.
 
     $ ls -la
     drwxr-xr-x   2 raj  staff    68 Nov 22 18:19 .ssh
@@ -619,22 +574,15 @@ below.
     $ ls -la
     drwx------   2 raj  staff    68 Nov 22 18:19 .ssh
 
-If you are running Rundeck on Windows, we heartily recommend using
-[Cygwin] on Windows as it includes SSH and a number of
-Unix-like tools that are useful when you work in a command line
-environment.
+If you are running Rundeck on Windows, we heartily recommend using [Cygwin] on Windows as it includes SSH and a number of Unix-like tools that are useful when you work in a command line environment.
 
 [cygwin]: https://cygwin.org/
 
 ### Passing environment variables through remote command
 
-To pass environment variables through remote command
-dispatches, it is required to properly configure the SSH server on the
-remote end. See the `AcceptEnv` directive in the "sshd_config(5)"
-manual page for instructions.
+To pass environment variables through remote command dispatches, it is required to properly configure the SSH server on the remote end. See the `AcceptEnv` directive in the "sshd_config(5)" manual page for instructions.
 
-Use a wild card pattern to permit `RD_` prefixed variables to provide
-open access to Rundeck generated environment variables.
+Use a wild card pattern to permit `RD_` prefixed variables to provide open access to Rundeck generated environment variables.
 
 Example in sshd_config:
 
