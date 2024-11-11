@@ -5,7 +5,7 @@ Ad hoc database backups and restores in PostgreSQL are essential for various ope
 
 ## Pre-requisites & Environment Setup
 
-- Environment setup with Enterprise Runner active.
+- Environment setup with active [Enterprise Runner](/administration/runner/index.md).
 - The Backup job requires that the `pg_dump` command to be installed on the same machine as the Enterprise Runner and be available in the default path.
 - The Restore job requires the `psql` command to be installed on the same machine as the Enterprise Runner and be available in the default path.
 - The Restore job will need to access the `.sql` file to import from the Enterprise Runner.

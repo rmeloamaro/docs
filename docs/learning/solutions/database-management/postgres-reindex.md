@@ -5,12 +5,11 @@ Reindexing a PostgreSQL database is often necessary to maintain optimal performa
 
 ## Pre-requisites & Environment Setup
 
-- Environment setup with Enterprise Runner active.
-- The `psql` command must be installed on the same machine as the Enterprise Runner and be available in the default path.
+- Environment setup with active [Enterprise Runner](/administration/runner/index.md).
+- The `psql` command must be installed on the same machine as the Enterprise Runner and available in the default path.
 - The Enterprise Runner must have access to an existing PostgreSQL instance.
 
-## Notes
-Note: The verbose output text of the index command will be shown in red, but it does not represent a failure if the step ends in `REINDEX` or no error messages are presented.
+## Configuration
 
 **Database Host Name**: The host name or IP address of the PostgreSQL server.
 
@@ -24,5 +23,9 @@ Note: The verbose output text of the index command will be shown in red, but it 
 
 
 ## Successful Execution
+
+:::warning Verbose Output
+The verbose output text of the index command will be shown in red, but it does not represent a failure if the step ends in `REINDEX` or no error messages are presented.
+:::
 
 ![success-output](/assets/img/solutions-postgres-reindex-success.png)<br>
