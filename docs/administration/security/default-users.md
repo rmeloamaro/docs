@@ -4,13 +4,10 @@ Rundeck supports a number of user directory configurations.
 
 See [Authentication](/administration/security/authentication.md).
 
-The Rundeck installation process will have defined a set of temporary
-logins useful during the getting started phase.
+The Rundeck installation process will have defined a set of temporary logins useful during the getting started phase.
 
-- `admin`: Belongs to the "admin" group and is automatically granted
-  the "admin" and "user" role privileges. Password: `admin` Role: `admin`
-- `user`: Has access to run commands and jobs but unable to modify job
-  definitions. Password: `user` Role: `user`
+- `admin`: Belongs to the "admin" group and is automatically granted the "admin" and "user" role privileges. Password: `admin` Role: `admin`
+- `user`: Has access to run commands and jobs but unable to modify job definitions. Password: `user` Role: `user`
 
 These two accounts are configured with the `realm.properties` option [described here](/administration/security/authentication.md#propertyfileloginmodule).
 

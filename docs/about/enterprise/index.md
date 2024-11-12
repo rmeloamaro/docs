@@ -2,8 +2,7 @@
 
 Runbook Automation is a server application hosted in a local or private cloud environment as a central administrative control point. Internally, Runbook Automation stores job definitions and execution history in a relational database. Output from command and job executions is saved on disk but can be forwarded to remote stores like S3 or Logstash.
 
-Runbook Automation distributed command execution is performed using a pluggable
-node execution layer that defaults to SSH but plugins allows the use of other means like AWS SSM, Salt, WinRM, or your custom method. Runbook Automation server configuration includes settings to define the outbound user allowed by the remote hosts. Remote machines are not required to make connections back to the server.
+Runbook Automation distributed command execution is performed using a plugin based node execution layer that defaults to SSH but plugins allows the use of other means like AWS SSM, Salt, WinRM, or your custom method. Runbook Automation server configuration includes settings to define the outbound user allowed by the remote hosts. Remote machines are not required to make connections back to the server.
 
 ![Runbook Automation architecture](/assets/img/fig0001.png)
 

@@ -22,13 +22,13 @@ Runbook Automation will take care of security patching, protection, monitoring, 
 
 Runbook Automation can be evaluated and purchased under the Automation category [here](https://www.pagerduty.com/pricing/). PagerDuty and Runbook Automation accounts are separate at the moment, however, Single Sign On (ex. Okta or Azure AD) for both products can be configured resulting in a unified login experience. [Read the doc](/administration/security/sso/index.md) on how to configure SSO with Rundeck.
 
-## Self Hostd and SaaS differences
+## Self Hosted and SaaS differences
 
 Runbook Automation has two versions available; Self Hosted and SaaS.  Both share the same software foundation, however there are differences stemming from the different deployment architectures in what user classes and plugins are available and how job execution is carried out. 
 
 ### User roles and classes
 
-The Opsadmin and FullAdmin roles are not available in Runbook Automation, and a user cannot assign those user classes. The highest privileged user role is the AppAdmin which allows full access to manage content (like projects, jobs, node sources etc) but cannot change any infrastructure configuration for the customer account instance. [Read more](/administration/security/default-users.md) about the different roles.
+The `opsadmin` and `fulladmin` roles are not available in Runbook Automation Cloud, and a user cannot assign those user classes. The highest privileged user role is the `appadmin` which allows full access to manage content (like projects, jobs, node sources etc) but cannot change any infrastructure configuration for the customer account instance. [Read more](/administration/security/default-users.md) about the different roles.
 
 ### Job execution
 
@@ -43,7 +43,7 @@ With the new architecture we have changed this behavior and now Runners a explic
 #### Key Storage Access
 Runbook Automation can integrate with both SaaS and self-hosted secrets-management providers.  For self-hosted secrets management providers, use [Key Storage through the Enterprise Runner](/manual/key-storage/enterprise-runner-key-storage.md).
 
-#### Runner administration
+#### Runner Administration
 [Read the Runner docs](/administration/runner/index.md) about how to install, configure and manage the Runner.
 
 #### APIs
@@ -69,7 +69,7 @@ Licensing is provisioned and updated automatically once a subscription is purcha
 User accounts do not have a choice when it comes to scheduling upgrades. We will notify customers ahead of time and customers should expect one planned monthly update. At the moment planned updates will incur some downtime (blackout period), however we will be striving to minimize that and cause as little ops disruption as possible.
 - **Where is Runbook Automation hosted?**
 Runbook Automation is hosted in several AWS US regions.
-- **Safelisting IPs**
+- **Safe Listing IPs**
 Runbook Automation Web URL IP addresses are unlikely to change, but may do
 so in the future. All DNS records resolve to multiple IPs, which you can find by
 querying the A records for your subdomain using `dig` or `nslookup`.

@@ -1,55 +1,31 @@
 # Access Control Policy
 
-Based on the [Authentication](/administration/security/authentication.md) mechanism,
-the Container provides Rundeck
-with a list of "group" or "role" names
-that the user belongs to.
-Rundeck uses this list to determine what access rights the user has.
-For more about the role list,
-refer to [Authenticating Users - Container authentication and authorization](/administration/security/authentication.md#container-authentication-and-authorization).
+Based on the [Authentication](/administration/security/authentication.md) mechanism, the Container provides Rundeck with a list of "group" or "role" names that the user belongs to. Rundeck uses this list to determine what access rights the user has. For more about the role list, refer to [Authenticating Users - Container authentication and authorization](/administration/security/authentication.md#container-authentication-and-authorization).
 
-A Rundeck _access control policy_ grants users
-and user groups certain
-privileges to perform actions against rundeck resources
-like projects, jobs, nodes, commands and API.
-Every action requested by a user is evaluated by the
-Rundeck authorization system and logged for
-reporting and auditing purposes.
+A Rundeck _access control policy_ grants users and user groups certain privileges to perform actions against rundeck resources like projects, jobs, nodes, commands and API. Every action requested by a user is evaluated by the Rundeck authorization system and logged for reporting and auditing purposes.
 
-Since Rundeck respects the policy definition, you can define role-based
-authorization to restrict users to only a subset of actions. This
-enables a self-service type interface, where some users have
-access to a limited set of executable actions.
+Since Rundeck respects the policy definition, you can define role-based authorization to restrict users to only a subset of actions. This enables a self-service type interface, where some users have access to a limited set of executable actions.
 
 Two dimensions of information dictate authorization inside Rundeck:
 
-- _group_ memberships assigned to a _user_ login.
-- access control policy that grants access to one or more *policy
+- _Group_ memberships assigned to a _user_ login.
+- Access control policy that grants access to one or more *policy
   action*s to a _group_ or _user_.
 
-The remainder of this section will describe how to use the access
-control policy, or watch the video below for an overview:
+The remainder of this section will describe how to use the access control policy, or watch the video below for an overview:
 
 <VidStack src="youtube/i859f1WG3Bo"/>
 
 ## Access control policy
 
-Access to running or modifying Jobs is managed in an access control
-policy defined using the aclpolicy YAML document.
-This file contains a number of policy elements that describe what user
+Access to running or modifying Jobs is managed in an access control policy defined using the aclpolicy YAML document. This file contains a number of policy elements that describe what user
 group is allowed to perform which actions.
 
-Please read over this document for information on how to define it, and how to
-grant access for certain actions to certain resources:
+Please read over this document for information on how to define it, and how to grant access for certain actions to certain resources:
 
 - [aclpolicy](/manual/document-format-reference/aclpolicy-v10.md)
 
-Policies can be organized into more than one file to help organize
-access by group or pattern of use. The normal Rundeck install will
-have generated a policy for the "admin" group. Not all users will need
-to be given "admin" access level to control and modify all Jobs. More
-typically, a group of users will be given access to just a subset of
-Jobs.
+Policies can be organized into more than one file to help organize access by group or pattern of use. The normal Rundeck install will have generated a policy for the "admin" group. Not all users will need to be given "admin" access level to control and modify all Jobs. More typically, a group of users will be given access to just a subset of Jobs.
 
 ### Policy File Locations
 
@@ -64,14 +40,9 @@ Rundeck loads ACL Policy definitions from these locations:
 
 The Rundeck server does not need to be restarted for changes to aclpolicy files to take effect.
 
-The files are loaded at startup and are cached.
-When an authorization request occurs, the policies may be reloaded if the file was modified.
-A file's contents are cached for at least 2 minutes before checking if they need to be reloaded.
-Also, the etc directory is only re-scanned for new/removed files after a 2 minute delay.
+The files are loaded at startup and are cached. When an authorization request occurs, the policies may be reloaded if the file was modified. A file's contents are cached for at least 2 minutes before checking if they need to be reloaded. Also, the etc directory is only re-scanned for new/removed files after a 2 minute delay.
 
-If an authorization request occurs in the context of a specific Project
-(e.g. "does a user have Run access for a specific Job in this project?")
-then the Project-level policies created via the API area also used to evaluate the authorization request.
+If an authorization request occurs in the context of a specific Project (e.g. "does a user have Run access for a specific Job in this project?") then the Project-level policies created via the API area also used to evaluate the authorization request.
 
 Otherwise, only the policies on the filesystem, and uploaded to the System ACLs API are evaluated for the request.
 
@@ -142,37 +113,26 @@ by:
   group: admin
 ```
 
-The example policy document above demonstrates the access granted to
-the users in group "admin".
+The example policy document above demonstrates the access granted to the users in group "admin".
 
 Both `username` and `group` can use regular expressions to match multiple users or groups.
 
-Two separate policies define two levels of access control. The first is the "project"
-context, which allows access to actions on resources within a specific project.
-The second is the "application" level context, which allows access to things
-like creating projects, access to projects, managing users, and access to system
-information.
+Two separate policies define two levels of access control. The first is the "project" context, which allows access to actions on resources within a specific project. The second is the "application" level context, which allows access to things like creating projects, access to projects, managing users, and access to system information.
 
 ## Specific Resources and Resource Types
 
-As described in the [ACL Policy](/manual/document-format-reference/aclpolicy-v10.md) definition, access
-is granted or denied to specific "resources". Resources can take two forms:
+As described in the [ACL Policy](/manual/document-format-reference/aclpolicy-v10.md) definition, access is granted or denied to specific "resources". Resources can take two forms:
 
 - A specific resource, with a type and properties
 - Resource types, which applies to all resources of a specific type or "kind"
 
-For example, you might want to restrict access to a job or jobs within a certain
-group. This corresponds to specific "job" resources with a "group" property
-matching a certain pattern.
+For example, you might want to restrict access to a job or jobs within a certain group. This corresponds to specific "job" resources with a "group" property matching a certain pattern.
 
-You might also want to restrict who can create _new_ jobs. Since a new job does
-not exist yet, you cannot create a rule for this action to apply to an existing
-job. Which means this corresponds to a generic resource with a "kind" called "job".
+You might also want to restrict who can create _new_ jobs. Since a new job does not exist yet, you cannot create a rule for this action to apply to an existing job. Which means this corresponds to a generic resource with a "kind" called "job".
 
 ## API Token Authorization Roles
 
-In Rundeck 2.8.x and later, Authentication Tokens are given a set of _Authorization Roles_ at generation time,
-so the access levels for the Token depend on how it was generated.
+In Rundeck 2.8.x and later, Authentication Tokens are given a set of _Authorization Roles_ at generation time, so the access levels for the Token depend on how it was generated.
 
 See: [API Token](/api/index.md#token-authentication) usage instructions.
 
@@ -196,8 +156,7 @@ You define application scope rules in the aclpolicy, by declaring this context:
     context:
       application: 'rundeck'
 
-These are the Application scope actions that can be allowed or denied via the
-aclpolicy:
+These are the Application scope actions that can be allowed or denied via the aclpolicy:
 
 - Creating Projects (`create` action on a resource type with kind 'project')
 - Reading system information (`read` action on a resource type with kind 'system')
@@ -373,18 +332,11 @@ by:
   group: sec_ops
 ```
 
-Service Tokens implicitly allow a subset of the user's own authorization roles and username
-(`generate_service_token` implies `generate_user_token`), so the usernames and roles authorized in the
-ACL Policy must specify any _extra_ roles. When a Service Token is generated, any requested roles not
-already allowed by `generate_user_token` will be checked against the ACL Policy. However,
-it is best to be explicit in the list of roles you want to allow.
+Service Tokens implicitly allow a subset of the user's own authorization roles and username (`generate_service_token` implies `generate_user_token`), so the usernames and roles authorized in the ACL Policy must specify any _extra_ roles. When a Service Token is generated, any requested roles not already allowed by `generate_user_token` will be checked against the ACL Policy. However, it is best to be explicit in the list of roles you want to allow.
 
 **Important:**
 
-The `subset:` match for `roles:` declares that _extra_ roles for the Service Token may only
-come from this list, but doesn't require the token to have all of the roles.
-(If you used `contains:` it would be the inverse, and grant access only if
-the extra Service Token roles contained all of those in the `roles:` list, i.e. a superset vs. a subset.)
+The `subset:` match for `roles:` declares that _extra_ roles for the Service Token may only come from this list, but doesn't require the token to have all of the roles. (If you used `contains:` it would be the inverse, and grant access only if the extra Service Token roles contained all of those in the `roles:` list, i.e. a superset vs. a subset.)
 
 ### Project Scope Resources and Actions
 
@@ -393,17 +345,13 @@ You define project scope rules in the aclpolicy by declaring this context:
     context:
       project: "(regex)"
 
-The regex can match all projects using ".\*", or you can simply put the project
-name.
+The regex can match all projects using ".\*", or you can simply put the project name.
 
-Note that for projects not matched by an aclpolicy, _no_ actions will be granted
-to users.
+Note that for projects not matched by an aclpolicy, _no_ actions will be granted to users.
 
-Also note that to hide projects completely from users, you would need to grant
-or deny the "read" access to the project in the [Application Scope](#application-scope-resources-and-actions).
+Also note that to hide projects completely from users, you would need to grant or deny the "read" access to the project in the [Application Scope](#application-scope-resources-and-actions).
 
-These are the Project scope actions that can be allowed or denied via the
-aclpolicy:
+These are the Project scope actions that can be allowed or denied via the aclpolicy:
 
 - Create Jobs ('create' action on a resource type with kind 'job')
 - Delete Jobs ('delete' action on a resource type with kind 'job')
@@ -480,9 +428,7 @@ _Note_: Jobs can be referenced using "name" and "group" or using "uuid".
 _Note_: `runAs` and `killAs` actions only apply to certain API endpoints, and allow running jobs or adhoc executions or killing executions to be performed with a different username attached as the author of the action. See [Rundeck API - Running a Job](/api/index.md#running-a-job).
 
 _Note_:
-Job deletion requires allowing the 'delete' action
-both at the generic type
-and specific resource levels.
+Job deletion requires allowing the 'delete' action both at the generic type and specific resource levels.
 
 Recall that defining rules for a generic resource type is done in this way:
 
@@ -537,15 +483,7 @@ Pre-defined Node resource properties for authorization filters
 
 ### Access control policy actions example
 
-Below is an example policy document demonstrating policy actions
-to create limited access for a group of users.
-Users in the group "restart_user", are allowed to run three jobs in the "adm"
-group, Restart, stop and start. By allowing `run` but not `read`,
-the "stop" and "start" jobs will not be visible.
-Allowing `view` for the 'Restart' job, but not `read`,
-means that the users can view the job,
-but not its workflow definition,
-nor can they download the Job definition file.
+Below is an example policy document demonstrating policy actions to create limited access for a group of users. Users in the group "restart_user", are allowed to run three jobs in the "adm" group, Restart, stop and start. By allowing `run` but not `read`, the "stop" and "start" jobs will not be visible. Allowing `view` for the 'Restart' job, but not `read`, means that the users can view the job, but not its workflow definition, nor can they download the Job definition file.
 
 File listing: restart_user.aclpolicy example
 
@@ -590,11 +528,9 @@ by:
 
 ## Prevent Local Execution on the Rundeck Server
 
-Below is an example policy to prevent any user on the "remote" group to
-execute any command or job on the local rundeck server.
+Below is an example policy to prevent any user on the "remote" group to execute any command or job on the local rundeck server.
 
-If a job is tried to be executed locally, it will fail. Also, the local
-rundeck server will not appear on the node filter list.
+If a job is tried to be executed locally, it will fail. Also, the local rundeck server will not appear on the node filter list.
 
 File listing: remote.aclpolicy
 
@@ -619,21 +555,12 @@ by:
 
 ## Troubleshooting access control policy
 
-After defining an aclpolicy file to grant access to a particular group
-of users, you may find them getting "unauthorized" messages or
-complaints that certain actions are not possible.
+After defining an aclpolicy file to grant access to a particular group of users, you may find them getting "unauthorized" messages or complaints that certain actions are not possible.
 
 To diagnose this, begin by checking two bits:
 
-1. The user's group membership. This can be done by going to the
-   user's profile page in Rundeck. That page will list the groups the
-   user is a member.
-2. Read the messages inside the `rundeck.audit.log` log file. The
-   authorization facility generates fairly low level messages describing
-   how the policy is matched to the user context.
+1. The user's group membership. This can be done by going to the user's profile page in Rundeck. That page will list the groups the user is a member.
+2. Read the messages inside the `rundeck.audit.log` log file. The  authorization facility generates fairly low level messages describing how the policy is matched to the user context.
 3. Use the [rd-acl](/manual/command-line-tools/rd-acl.md) tool to test and validate your policy files
 
-For each entry in the audit log, you'll see all decisions leading up to either a
-AUTHORIZED or a REJECTED message. It's not uncommon to see REJECTED
-messages followed by AUTHORIZED. The important thing is to look at
-the last decision made.
+For each entry in the audit log, you'll see all decisions leading up to either a AUTHORIZED or a REJECTED message. It's not uncommon to see REJECTED messages followed by AUTHORIZED. The important thing is to look at the last decision made.
