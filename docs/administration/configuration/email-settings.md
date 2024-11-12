@@ -1,7 +1,7 @@
 # Email Settings
 
-This document describes how to configure Rundeck for email
-support.
+This document describes how to configure Rundeck for email support. 
+
 Email settings are located in the rundeck-config.properties file. Depending on the installer used, the configuration files will be under a base directory:
 
 - RPM/DEB: /etc/rundeck/rundeck-config.properties
@@ -12,6 +12,7 @@ Refer to the appropriate configuration file paths from [Configuration -> Configu
 ## SMTP server settings
 
 By default the plugin assumes an unsecured mail server configured at localhost on port 25.
+
 You can specify your own with these settings:
 
 ```properties
@@ -28,8 +29,8 @@ grails.mail.password=pass
 
 ### Advanced SMTP settings
 
-If you need more advanced configuration (e.g., authenticated and secured over SSL),
-see the grails Mail plugin configuration:
+If you need more advanced configuration (e.g., authenticated and secured over SSL), see the grails Mail plugin configuration:
+
 [Grails Mail Configuration](https://gpc.github.io/grails-mail/guide/2.%20Configuration.html)
 
 :::tip
@@ -88,8 +89,7 @@ In addition these properties are defined:
 
 #### Custom Attached Log Output file
 
-When the log output is attached as a file, the file's extension can be defined by adding new settings on rundeck-config.properties.
-For example:
+When the log output is attached as a file, the file's extension can be defined by adding new settings on rundeck-config.properties.  For example:
 
 ```properties
 rundeck.mail.template.log.extension=html

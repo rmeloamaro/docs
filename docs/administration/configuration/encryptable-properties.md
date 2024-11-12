@@ -80,11 +80,9 @@ binder123 (this won't be displayed)
 encrypted: i67e4g3jAUML0KCh+KwmnqX9lCflThMuu6CXm++VSqU=
 ```
 
-Notice we are setting an rd.encryption config with the name STRONG. Then when prompted for the `Encrypter Config` by the tool we type in the value `STRONG`.
-This sets the encryptor to use the algorithm passed by `rd.encryption.STRONG.algorithm` instead of the default configuration which uses a different algorithm.
+Notice we are setting an rd.encryption config with the name STRONG. Then when prompted for the `Encrypter Config` by the tool we type in the value `STRONG`. This sets the encryptor to use the algorithm passed by `rd.encryption.STRONG.algorithm` instead of the default configuration which uses a different algorithm.
 
-To use your custom encrypted password when you start Rundeck, it is very important to ensure that the same system properties you used at encrypt time
-are set at launch time. Otherwise Rundeck will use the default decryptor settings which will not match your customized settings, and startup will fail.
+To use your custom encrypted password when you start Rundeck, it is very important to ensure that the same system properties you used at encrypt time are set at launch time. Otherwise Rundeck will use the default decryptor settings which will not match your customized settings, and startup will fail.
 
 To start Rundeck with the settings in our example, the startup string would be something like:
 

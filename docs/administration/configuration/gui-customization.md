@@ -1,7 +1,7 @@
 # GUI Customization
 
 ::: warning
-As of version 3.4.0 some of these setting may not work as intended.  We will be testing and improving this list over the 3.4.x series.
+As of version 3.4.0 some of these setting may not work as intended.
 :::
 
 You can modify some display features of the Rundeck GUI by setting

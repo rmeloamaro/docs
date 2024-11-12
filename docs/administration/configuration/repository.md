@@ -1,6 +1,7 @@
 # Repository
 
 This document describes the Rundeck Repository features, which allow you to install plugins from the official Rundeck Repository, or to configure your own repositories for serving plugins to your own private installation.
+
 You can use the repositories to find plugins using the "Find Plugins" entry under the Plugins menu that is accessed from the gear icon in the GUI. You can also use the `rd` tool to install, uninstall, and upload plugins that are saved in these repositories.
 
 ### Prerequisites

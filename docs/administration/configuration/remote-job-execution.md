@@ -5,12 +5,7 @@
 
 ### Cluster Remote Execution
 
-This feature allows Runbook Automation Self-Hosted cluster members to forward job executions to
-other cluster members based on a policy configuration. By default, each member
-of the cluster executes jobs locally and does not forward them. You can define
-multiple profiles and assign different projects to different profiles. If a job
-is executed in a project which is not assigned to a specific profile, the
-default policy is used.
+This feature allows Runbook Automation Self-Hosted cluster members to forward job executions to other cluster members based on a policy configuration. By default, each member of the cluster executes jobs locally and does not forward them. You can define multiple profiles and assign different projects to different profiles. If a job is executed in a project which is not assigned to a specific profile, the default policy is used.
 
 Configure the following remote execution policy parameters in `rundeck-config.properties`.
 
