@@ -40,11 +40,15 @@ API versions below `{{$apiDepVersion}}` are *deprecated*.  Clients using earlier
 * Updated Endpoints:
   * [`GET /api/V/job/[ID]/executions`][GET /api/V/job/\[ID\]/executions] - Now supports `includeJobRef` parameter to include executions from job reference in the response
 
+### Version 49
+
+* New Endpoints:
+  * [`GET /api/V/plugin/detail/[SERVICE]/[PROVIDER]`][GET /api/V/plugin/detail/\[SERVICE\]/\[PROVIDER\]] - Get Plugin Detail for a specific provider name
+
 ### Version 48
 
 * Updated Endpoints:
   * [`GET /api/V/job/[ID]/forecast`][GET /api/V/job/\[ID\]/forecast] - Forecast now includes average duration, and information if the project has executions and scheduling disabled
-
 
 ### Version 46
 

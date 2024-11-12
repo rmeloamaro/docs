@@ -6295,6 +6295,60 @@ Same response as [Setup SCM Plugin for a Project](#setup-scm-plugin-for-a-projec
 * `iconUrl` - URL to icon file for the plugin if present. **since V40**
 * `providerMetadata` - Map of metadata about the plugin if present. **since V40**
 
+### Get Plugin Detail
+
+Get details for a specific plugin provider.
+
+Since: v49
+
+**Request**
+
+    GET /api/49/plugin/detail/[SERVICE]/[PROVIDER]
+
+**Response**
+
+`Content-Type: application/json`:
+
+```json
+{
+  "title": "Plugin Title",
+  "targetHostCompatibility": "all",
+  "ver": null,
+  "id": "d36b17dfae7b",
+  "providerMetadata": {},
+  "dynamicProps": null,
+  "thirdPartyDependencies": null,
+  "name": "<provider-name>",
+  "desc": null,
+  "iconUrl": null,
+  "projectMapping": {},
+  "vueConfigComponent": null,
+  "props": [
+    {
+      "allowed": null,
+      "defaultValue": "",
+      "desc": "description",
+      "name": "prop-name",
+      "options": {
+        
+      },
+      "required": true,
+      "scope": "Unspecified",
+      "selectLabels": null,
+      "title": "Prop Title",
+      "type": "String"
+    }
+  ],
+  "rundeckCompatibilityVersion": "unspecified",
+  "license": "unspecified",
+  "pluginVersion": "<version>",
+  "description": "description",
+  "sourceLink": null,
+  "fwkMapping": {},
+  "dynamicDefaults": null
+}
+```
+
 ## Webhooks
 
 ### List Project Webhooks
@@ -8140,6 +8194,10 @@ Content-Type: `application/json`:
 * `GET` [List roles][/api/V/user/roles]
 
 [Response Format]: #xml-response-format
+
+[/api/V/plugin/detail/\[SERVICE\]/\[PROVIDER\]][]
+
+* `GET` [Get Plugin Detail][GET /api/V/plugin/detail/\[SERVICE\]/\[PROVIDER\]]
 
 [/api/V/plugin/list][]
 
