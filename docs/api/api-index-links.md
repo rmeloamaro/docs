@@ -52,6 +52,7 @@
 [DELETE /api/V/job/\[ID\]]:/api/index.md#deleting-a-job-definition
 
 [/api/V/job/\[ID\]/executions]:/api/index.md#getting-executions-for-a-job
+[GET /api/V/job/\[ID\]/executions]:/api/index.md#getting-executions-for-a-job
 
 [/api/V/job/\[ID\]/execution/enable]:/api/index.md#enable-executions-for-a-job
 
