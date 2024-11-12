@@ -8,9 +8,9 @@ The functionality of plugins ranges from executing commands on nodes, performing
 
 This section is a guide for the basic configuration of plugins. For a detailed list of the various types of plugins, click [here](/administration/configuration/plugins/plugin-types.md#types-of-plugins).
 
-For administrators and advanced-users, here is additional documentation on Installing Plugins and [advanced configuration settings](/administration/configuration/plugins/configuring).
+For administrators and advanced-users, here is additional documentation on Installing Plugins and [advanced configuration settings](/administration/configuration/plugins/configuring.md).
 
-For developers interested in developing new plugins or contributing to open-source plugins, click [here](/developer/01-plugin-development).
+For developers interested in developing new plugins or contributing to open-source plugins, click [here](/developer/01-plugin-development.md).
 
 ## Plugins Configuration
 
@@ -23,7 +23,7 @@ Plugin properties are prioritized for usage in the following order:
 
 For example, if credentials for integrating with Jira are defined both in the _**Project**_ configuration _and_ in a specific Jira Job Step plugin, then the credentials defined in the Job Step will be used.
 
-A plugin _suite_ is a group of plugins that share a set of the same properties.  Most often, this is a group of plugins that are built to integrate with the same third-party product - such as the [PagerDuty Plugins](/manual/workflow-steps/pagerduty).
+A plugin _suite_ is a group of plugins that share a set of the same properties.  Most often, this is a group of plugins that are built to integrate with the same third-party product - such as the [PagerDuty Plugins](/manual/workflow-steps/pagerduty.md).
 
 ### Project Level Plugin Configuration
 
