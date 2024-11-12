@@ -202,6 +202,10 @@
 [/api/V/user/roles]:/api/index.md#list-roles
 
 [/api/V/project/\[PROJECT\]/webhooks]:/api/index.md#list-project-webhooks
+
+[/api/V/plugin/detail/\[SERVICE\]/\[PROVIDER\]]: /api/index.md#get-plugin-detail
+[GET /api/V/plugin/detail/\[SERVICE\]/\[PROVIDER\]]: /api/index.md#get-plugin-detail
+
 [/api/V/plugin/list]:/api/index.md#list-installed-plugins
 [GET /api/V/plugin/list]:/api/index.md#list-installed-plugins
 
