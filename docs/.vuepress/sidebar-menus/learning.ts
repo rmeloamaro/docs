@@ -233,7 +233,7 @@ export default [{
           ]
         },
         {
-          text: 'Database Mangement',
+          text: 'Database Management',
           link: '/learning/solutions/database-management/index.md',
           collapsible: true,
           children: [
@@ -241,6 +241,14 @@ export default [{
             { link: '/learning/solutions/database-management/db-and-autodiag.md', text: 'Databases + Auto Diagnostics' },
             { link: '/learning/solutions/database-management/postgres-reindex.md', text: 'Reindex PostgreSQL Database' },
             { link: '/learning/solutions/database-management/postgres-backup-restore.md', text: 'Backup and Restore PostgreSQL' },
+          ]
+        },
+        {
+          text: 'Storage Management',
+          link: '/learning/solutions/storage-management/index.md',
+          collapsible: true,
+          children: [
+            { link: '/learning/solutions/storage-management/index.md', text: 'Solution Summary' },
           ]
         }
       ]
