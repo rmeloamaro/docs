@@ -48,5 +48,11 @@ highlights:
       icon: shuffle
       details: Database administrators (DBAs) face numerous challenges related to data security, maintaining high availability, and optimizing performance.  Check out how Automation can make these problems yesterday's stress.
       link: /learning/solutions/database-management/index.md
-  
+    
+    - title: Storage Management
+      icon: hard-drive
+      details: Technology users and leaders face challenges with time-consuming and error-prone manual processes when managing storage across various systems.  Without automation managing storage across complex systems requires significant effort and risks operational inefficiencies, and service disruptions.
+      link: /learning/solutions/storage-management/index.md  
+
+
 ---
