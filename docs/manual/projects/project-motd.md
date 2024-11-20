@@ -1,7 +1,7 @@
 # Project Message Of The Day (MOTD)
 
-A motd file is a great way to make an announcement to the project's users.
-The motd content is interpreted as [markdown](http://commonmark.org/help/) text letting you format your text and embed images and links.
+A MOTD file is a great way to make an announcement to the project's users.
+The MOTD content is interpreted as [markdown](http://commonmark.org/help/) text letting you format your text and embed images and links.
 
 ## Graphical Interface
 
