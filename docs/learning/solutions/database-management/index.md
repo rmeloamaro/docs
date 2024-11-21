@@ -19,4 +19,5 @@ To see example content listed below check out the [Getting Started with Solution
 | Examples |
 | --- |
 | <img src="/assets/img/rds-logo.png" width="30" height="30"> [Check Database Storage Status](/learning/solutions/database-management/db-and-autodiag.md) |
-
+| <img src="/assets/img/postgres-logo.png" width="30" height="30"> [Postgres Backup and Restore](/learning/solutions/database-management/postgres-backup-restore.md) |
+| <img src="/assets/img/postgres-logo.png" width="30" height="30"> [Postgres Reindex Database](/learning/solutions/database-management/postgres-reindex.md) |
