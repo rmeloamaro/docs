@@ -11,7 +11,7 @@ on:
         pull-requests: read
       name: PR Milestone Check
       runs-on: ubuntu-latest
-  
+        
       steps:
         - name: PR requires a milestone
           run: |
@@ -27,3 +27,4 @@ on:
           env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             PR: ${{ github.event.pull_request.html_url }}
+  
