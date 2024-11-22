@@ -6,7 +6,7 @@
 
 Runbook Automation integrates with Kubernetes through a variety of plugins. By integrating Runbook Automation with Kubernetes, users can automate and provide self-service interfaces for operations in their Kubernetes Clusters. These integrations allow operations teams to provide self-service mechanisms to users throughout the business, as well as setup event-driven automation for workflows with Kubernetes.
 
-<details><summary> <font size="5">Kubernetes Plugins</font>
+<details><summary> <font size="5">List of Kubernetes Plugins</font>
 </summary>
 
 **Available in Rundeck Open Source**
@@ -56,7 +56,10 @@ Runbook Automation integrates with Kubernetes through a variety of plugins. By i
 
 </details>
 <br>
-<em>Click to expand to see the full list of Runbook Automation plugins for Kubernetes.</em>
+
+:::tip
+Click above see the full list of plugins for Kubernetes.
+:::
 
 ## Setup the Open Source Kubernetes Plugins
 
