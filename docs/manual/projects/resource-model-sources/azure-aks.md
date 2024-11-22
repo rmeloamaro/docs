@@ -3,13 +3,13 @@
 ::: enterprise
 :::
 
-The Azure AKS (Azure Kubernetes Service) Resource Model Source allows you to import your AKS clusters as nodes within Rundeck. This plugin provides node source functionality for managing and executing jobs on your Azure Kubernetes clusters directly from Rundeck.
+The Azure AKS (Azure Kubernetes Service) Resource Model Source allows you to import your AKS clusters as nodes within Runbook Automation. This plugin provides node source functionality for managing and executing jobs on your Azure Kubernetes clusters directly from Runbook Automation.
 
 ### Configuration
 
 To configure the Azure AKS Resource Model Source:
 
-1. In your Rundeck project, go to "Project Settings" > "Edit Nodes".
+1. In your project, go to "Project Settings" > "Edit Nodes".
 2. Click "Add a new Node Source".
 3. Select "Azure Kubernetes Clusters" from the list of available node sources.
 4. Configure the following settings:

@@ -3,13 +3,13 @@
 ::: enterprise
 :::
 
-The GCP GKE (Google Kubernetes Engine) Resource Model Source allows you to import your GKE clusters as nodes within Rundeck. This plugin provides node source functionality for managing and executing jobs on your Google Cloud Platform Kubernetes clusters directly from Rundeck.
+The GCP GKE (Google Kubernetes Engine) Resource Model Source allows you to import your GKE clusters as nodes within Runbook Automation. This plugin provides node source functionality for managing and executing jobs on your Google Cloud Platform Kubernetes clusters directly from Runbook Automation.
 
 ### Configuration
 
 To configure the GCP GKE Resource Model Source:
 
-1. In your Rundeck project, go to "Project Settings" > "Edit Nodes".
+1. In your project, go to "Project Settings" > "Edit Nodes".
 2. Click "Add a new Node Source".
 3. Select "GCP Kubernetes Engine Clusters" from the list of available node sources.
 4. Configure the following settings:
@@ -49,18 +49,18 @@ Each GKE cluster will be represented as a node with the following attributes:
 The plugin supports two authentication modes:
 
 1. **GCP API Authentication**: Default mode when `Use Pod Service Account` is set to `false`. Uses GCP credentials for authentication.
-2. **Pod Service Account**: When set to `true`, uses the Kubernetes service account of the pod for authentication. Ideal when Rundeck is running within the same cluster.
+2. **Pod Service Account**: When set to `true`, uses the Kubernetes service account of the pod for authentication. Ideal when Runbook Automation is running within the same cluster.
 
 ### Troubleshooting
 
 If you encounter issues:
 
-1. Check the Rundeck logs for any error messages.
+1. Check the Runbook Automation logs for any error messages.
 2. Verify your GCP credentials and permissions:
 - Ensure the service account has the necessary GKE permissions
 - Verify the credentials file is properly stored in Key Storage
 3. Ensure your GKE cluster is running and accessible.
-4. Check network connectivity between Rundeck and your GCP resources.
+4. Check network connectivity between Runbook Automation and your GCP resources.
 5. Verify the correct Project ID and Region/Zone settings.
 
 ### Additional Resources
