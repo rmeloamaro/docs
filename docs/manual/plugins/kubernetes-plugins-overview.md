@@ -4,12 +4,12 @@
 
 ![](/assets/img/kubernetes-icon.png)
 
-Runbook Automation integrates with Kubernetes through a variety of plugins listed below.
-By integrating Runbook Automation with Kubernetes, users can automate and provide self-service interfaces for operations in their Kubernetes Clusters.
-These integrations allow operations teams to provide self-service mechanisms to users throughout the business, as well as setup event-driven automation for workflows with Kubernetes.
+Runbook Automation integrates with Kubernetes through a variety of plugins. By integrating Runbook Automation with Kubernetes, users can automate and provide self-service interfaces for operations in their Kubernetes Clusters. These integrations allow operations teams to provide self-service mechanisms to users throughout the business, as well as setup event-driven automation for workflows with Kubernetes.
 
 <details><summary> <font size="5">Kubernetes Plugins</font>
 </summary>
+
+**Available in Rundeck Open Source**
 
 |Plugin Name| Plugin Type| Description|
 |:---------------------------------------------------------|:---------------------------------------------------------:|:---------------------------------------------------------|
@@ -36,21 +36,37 @@ These integrations allow operations teams to provide self-service mechanisms to 
 |[**Debug Pod**](/manual/jobs/job-plugins/node-steps/kubernetes-debug-plugins.md#kubernetes-debug-ephemeral-container)|Node Step|Debug a running container inside an existing pod using an ephemeral container.|
 |[**Waitfor StatefulSet**](/manual/jobs/job-plugins/node-steps/kubernetes-statefulset-plugins.md#kubernetes-statefulset-waitfor)|Node Step|Pause workflow until StatefulSet has been successfully deployed.|
 
+**Plugins available only in Commercial products**
+> Note: All Open Source plugins also included.
+
+|Plugin Name| Plugin Type| Description|
+|:---------------------------------------------------------|:---------------------------------------------------------:|:---------------------------------------------------------|
+|[**Amazon EKS Node Source**](/manual/projects/resource-model-sources/aws-eks.md)|Node Source|Imports Amazon Web Services EKS Clusters as Nodes.|
+|[**Azure AKS Node Source**](/manual/projects/resource-model-sources/azure-aks.md)|Node Source|Imports Azure AKS Clusters as Nodes.|
+|[**Google Cloud GKE Node Source**](/manual/projects/resource-model-sources/gcp-gke.md)|Node Source|Imports Google Cloud GKE Clusters as Nodes.|
+|[**Kubernetes Cluster Create Object**](/manual/jobs/job-plugins/node-steps/kubernetes-create-object)|Node Step|This plugin creates an object of a selected kind within a Kubernetes cluster.|
+|[**Kubernetes Cluster Delete Object**](/manual/jobs/job-plugins/node-steps/kubernetes-delete-object)|Node Step|This plugin deletes an object of a selected kind within a Kubernetes cluster.|
+|[**Kubernetes Cluster Describe Object**](/manual/jobs/job-plugins/node-steps/kubernetes-describe-object)|Node Step|This plugin describes an object of a selected kind within a Kubernetes cluster.|
+|[**Kubernetes Cluster List Objects**](/manual/jobs/job-plugins/node-steps/kubernetes-list-objects)|Node Step|This plugin lists objects of a selected kind within a Kubernetes cluster.|
+|[**Kubernetes Cluster Object Logs**](/manual/jobs/job-plugins/node-steps/kubernetes-object-logs)|This plugin allows you to view the logs of an object within a Kubernetes cluster.|
+|[**Kubernetes Cluster Run Command**](/manual/jobs/job-plugins/node-steps/kubernetes-run-command)|Node Step|This plugin allows you to execute a command in a pod within a Kubernetes cluster.|
+|[**Kubernetes Cluster Run Script**](/manual/jobs/job-plugins/node-steps/kubernetes-run-script)|Node Step|This plugin executes a script using a predefined container image within a Kubernetes cluster.|
+|[**Kubernetes Cluster Update Object**](/manual/jobs/job-plugins/node-steps/kubernetes-update-object)|Node Step|This plugin updates a specified object of a selected kind within a Kubernetes cluster.|
+
+
 </details>
 <br>
 <em>Click to expand to see the full list of Runbook Automation plugins for Kubernetes.</em>
 
-## Setup
+## Setup the Open Source Kubernetes Plugins
 
 ### Python Dependencies
 
-In order to use the Kubernetes python must be installed on the Runbook Automation cluster-members or on the [Enterprise Runner](/administration/runner/runner-intro) - depending on where the
-connection to Kubernetes is going to originate.  
+In order to use the Open Source Kubernetes plugins listed in the Summary above, Python must be installed on the Runbook Automation cluster-members or on the [Enterprise Runner](/administration/runner/index.md) - depending on where the connection to Kubernetes will originate.  _(These steps are also needed for Commercial versions using the listed Open Source plugins.)_
 
-The Kubernetes plugins will work with both **Python 2.7.x** and **Python 3.x.x**.
+The plugins will work with both **Python 2.7.x** and **Python 3.x.x**.
 
-Once python is installed, download and install the **`kubernetes`** python client.  For **Python 2.7.x** this can be done with **`pip install kubernetes`** and for **Python 3.x.x** this can be
-done with **`pip3 install kubernetes`**.
+Once python is installed, download and install the **`kubernetes`** python client.  For **Python 2.7.x** this can be done with **`pip install kubernetes`** and for **Python 3.x.x** this can be done with **`pip3 install kubernetes`**.
 
 Optionally test that the Kubernetes client has been installed successfully by executing the following at the command-line: **`python`** followed by **`from kubernetes import client, config`**:
 

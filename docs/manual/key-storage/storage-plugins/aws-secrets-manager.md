@@ -120,7 +120,7 @@ To use this secret and the SSH Key for connecting to nodes:
 In AWS Secrets Manager, secrets can have multiple key-value pairs. This is the case for the **RDS Credentials** type of secret:
 ![RDS Secret](/assets/img/rds-secret-type.png)<br>
 
-This example assumes that you already have an [**Enterprise Runner**](/administration/runner/runner-intro.md) installed in a security group that can connect to the RDS database _or_ that the self-hosted software has a direct path to the RDS database.
+This example assumes that you already have an [**Enterprise Runner**](/administration/runner/index.md) installed in a security group that can connect to the RDS database _or_ that the self-hosted software has a direct path to the RDS database.
 
 1. Within the Project inside Runbook Automation, navigate to **Jobs**.
 2. Click **+ New Job**.
