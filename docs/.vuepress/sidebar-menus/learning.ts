@@ -249,6 +249,7 @@ export default [{
           collapsible: true,
           children: [
             { link: '/learning/solutions/storage-management/index.md', text: 'Solution Summary' },
+            { link: '/learning/solutions/storage-management/storage-list-largest-files.md', text: 'List Largest Files' },
           ]
         }
       ]
