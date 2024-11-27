@@ -14,4 +14,7 @@ Technology users and leaders face challenges with time-consuming and error-prone
 ### Prebuilt Automation 
 PagerDuty provides a solution that helps users start automating diagnostics quickly. This Solution consists of **prebuilt Automation Jobs** that show how the use cases above can be implemented in your environment.  (Note: Some of these solutions may exist in other Solution Packages.)
 
-**Coming soon!**
+| Examples |
+| --- |
+| <img src="/assets/img/linux-penguin.png" width="30" height="30"> [List Largest Files](/learning/solutions/storage-management/storage-list-largest-files.md) |
+| <img src="/assets/img/linux-penguin.png" width="30" height="30"> [Log Rotation](/learning/solutions/storage-management/storage-log-rotation.md) |
