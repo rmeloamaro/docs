@@ -12,6 +12,7 @@ Once you have [created and downloaded a Runner](/administration/runner/runner-in
     - The operating systems that we officially support for the Runner are listed [here](/administration/install/system-requirements.md).
     - Note that the Runner can be installed on a *different* operating system than the self-hosted cluster.
 - Java 11 is required to run the Runner JAR file.
+- Runner User: This user (Default: rundeck) will run the Runner service with the necessary permissions.
 - The Runner binary size is 164MB.
 
 #### Resource Allocation
@@ -56,7 +57,13 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-1. Run the following shell commands to enable and start the service.
+2. Create the Runner folder (e.g. /opt/apps/runner ) and set the permissions for the rundeck user and group.
+```
+sudo mkdir -p /opt/apps/runner
+sudo chown rundeck:rundeck /opt/apps/runner
+```
+
+3. Run the following shell commands to enable and start the service.
 ```
 # sudo systemctl daemon-reload
 # sudo systemctl enable runner
