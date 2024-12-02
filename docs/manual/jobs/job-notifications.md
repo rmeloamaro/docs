@@ -20,7 +20,7 @@ Time delta from the average: +20s, +20
 Absolute time: 30s, 5m Use s,m,h,d,w,y etc as time units for seconds, minutes, hours, etc. Unit will be seconds if it is not specified.
 NoteCan include option value references like ${option.avgDurationThreshold}.
 
-##  Notification Types:
+##  Notification Types
 
 Notification Types the actions that can be performed at each of the events above.
 
