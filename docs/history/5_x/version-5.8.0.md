@@ -49,7 +49,7 @@ Check out the new features and enhancements for PagerDuty Runbook Automation com
 * [UI: Project Dashboard: Fix: activity summary should not be shown for 0 counts](https://github.com/rundeck/rundeck/pull/9428)
 * [Update spring security for CVE-2024-38821](https://github.com/rundeck/rundeck/pull/9424)
 * [Fix the project export right managing both export and delete action](https://github.com/rundeck/rundeck/pull/9415)
-* [fix: invalid job components are not reported](https://github.com/rundeck/rundeck/pull/9394)
+* [Fix: invalid job components are not reported](https://github.com/rundeck/rundeck/pull/9394)
 * [Remove build dependency on local Groovy SDK](https://github.com/rundeck/rundeck/pull/9389)
 * [Add missing security headers](https://github.com/rundeck/rundeck/pull/9383)
 
@@ -57,7 +57,7 @@ Check out the new features and enhancements for PagerDuty Runbook Automation com
 [Here is a link to the full list of public PRs](https://github.com/rundeck/rundeck/pulls?q=is%3Apr+milestone%3A5.8.0+is%3Aclosed)
 
 ## Ansible Plugin Updates
-* [update ansible version](https://github.com/rundeck-plugins/ansible-plugin/pull/403)
+* [Update ansible version](https://github.com/rundeck-plugins/ansible-plugin/pull/403)
 * [Fix - Ansible process sub children](https://github.com/rundeck-plugins/ansible-plugin/pull/400)
 * [Fix - Ansible YAML parsing error](https://github.com/rundeck-plugins/ansible-plugin/pull/399)
 * [Allow custom bin path on gather facts false](https://github.com/rundeck-plugins/ansible-plugin/pull/398)
