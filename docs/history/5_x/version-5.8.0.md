@@ -24,11 +24,11 @@ Check out the new features and enhancements for PagerDuty Runbook Automation com
 
 ### Updated Kubernetes Plugin Suite
 
-- **Dynamic Cluster Discovery**: New [EKS](/manual/projects/resource-model-sources/aws-eks.md), [AKS](/manual/projects/resource-model-sources/azure-aks.md) and [GKE](/manual/projects/resource-model-sources/gcp-gke.md) resource-model plugins automatically discover new clusters and add the clusters as nodes to the inventory.
-- **Cloud Provider Authentication**: AWS, Azure and GCP provide a mechanism to retrieve the kubernetes auth through their API’s. New Job step plugins can use the AWS/Azure/GCP credentials to retrieve the necessary Kubernetes authentication to communicate with the clusters.
-- **Optimized for Numerous Clusters**: Clusters are added as nodes to the inventory, customers can easily target any number of clusters with a given operation.
-- **Native in-cluster Support from Runner**: Customers can now easily place a Runner in their clusters and Runbook Automation can use the Service Account of the pod that the Runner is hosted in as a means for authenticating with the cluster that the pod is in.
-- **No Python Dependency**: Python is not required for these plugins.
+- **Dynamic Cluster Discovery**: New [EKS](/manual/projects/resource-model-sources/aws-eks.md), [AKS](/manual/projects/resource-model-sources/azure-aks.md) and [GKE](/manual/projects/resource-model-sources/gcp-gke.md) resource-model plugins automatically discover new clusters and add the clusters as nodes to the inventory. This reduces manual effort, minimizes errors, and accelerates the deployment of infrastructure changes, enabling teams to scale efficiently.
+- **Cloud Provider Authentication**: AWS, Azure and GCP provide a mechanism to retrieve the kubernetes auth through their API’s. New Job step plugins can use the AWS/Azure/GCP credentials to retrieve the necessary Kubernetes authentication to communicate with the clusters. Teams save time by avoiding manual credential management, improving productivity and compliance.
+- **Optimized for Numerous Clusters**: Clusters are added as nodes to the inventory, customers can easily target any number of clusters with a given operation. Now, users can execute bulk operations reliably and consistently, leading to improved operational efficiency and reduced downtime.
+- **Native in-cluster Support from Runner**: Customers can now easily place a Runner in their clusters and Runbook Automation can use the Service Account of the pod that the Runner is hosted in as a means for authenticating with the cluster that the pod is in. This native integration reduces complexity, ensures secure access, and enhances the portability of automation workflows across environments.
+- **No Python Dependency**: Eliminates the need for Python, reducing dependency risks and setup complexity. This results in faster deployments, fewer compatibility issues, and lower maintenance costs, especially in environments with strict language or package requirements.
 
 In addition to the new resource-model plugins, this release includes the following new Job step plugins:
 * [**Kubernetes Clusters - Create Object**](/manual/jobs/job-plugins/node-steps/kubernetes-create-object.md)
