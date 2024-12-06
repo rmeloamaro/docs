@@ -24,11 +24,21 @@ Check out the new features and enhancements for PagerDuty Runbook Automation com
 
 ### Updated Kubernetes Plugin Suite
 
-- **Dynamic Cluster Discovery**: New [EKS](/manual/plugins/projects/resource-model-sources/aws-eks.md), [AKS](/manual/plugins/projects/resource-model-sources/azure-aks.md) and [GKE](/manual/plugins/projects/resource-model-sources/gcp-gke.md) resource-model plugins automatically discover new clusters and add the clusters as nodes to the inventory.
+- **Dynamic Cluster Discovery**: New [EKS](/manual/projects/resource-model-sources/aws-eks.md), [AKS](/manual/projects/resource-model-sources/azure-aks.md) and [GKE](/manual/projects/resource-model-sources/gcp-gke.md) resource-model plugins automatically discover new clusters and add the clusters as nodes to the inventory.
 - **Cloud Provider Authentication**: AWS, Azure and GCP provide a mechanism to retrieve the kubernetes auth through their API’s. New Job step plugins can use the AWS/Azure/GCP credentials to retrieve the necessary Kubernetes authentication to communicate with the clusters.
 - **Optimized for Numerous Clusters**: Clusters are added as nodes to the inventory, customers can easily target any number of clusters with a given operation.
 - **Native in-cluster Support from Runner**: Customers can now easily place a Runner in their clusters and Runbook Automation can use the Service Account of the pod that the Runner is hosted in as a means for authenticating with the cluster that the pod is in.
 - **No Python Dependency**: Python is not required for these plugins.
+
+In addition to the new resource-model plugins, this release includes the following new Job step plugins:
+* [**Kubernetes Clusters - Create Object**](/manual/jobs/job-plugins/node-steps/kubernetes-create-object.md)
+* [**Kubernetes Clusters - Delete Object**](/manual/jobs/job-plugins/node-steps/kubernetes-delete-object.md)
+* [**Kubernetes Clusters - Describe Object**](/manual/jobs/job-plugins/node-steps/kubernetes-describe-object.md)
+* [**Kubernetes Clusters - Update Object**](/manual/jobs/job-plugins/node-steps/kubernetes-update-object.md)
+* [**Kubernetes Clusters - List Objects**](/manual/jobs/job-plugins/node-steps/kubernetes-list-objects.md)
+* [**Kubernetes Clusters - Object Logs**](/manual/jobs/job-plugins/node-steps/kubernetes-object-logs.md)
+* [**Kubernetes Clusters - Run Command**](/manual/jobs/job-plugins/node-steps/kubernetes-run-command.md)
+* [**Kubernetes Clusters - Run Script**](/manual/jobs/job-plugins/node-steps/kubernetes-run-script.md)
 
 ## Runbook Automation Updates
 
