@@ -131,7 +131,7 @@ If your Azure Active Directory attributes are non-standard, you can specify the 
 
 ## Note: Debugging tips
 
-If you are having trouble with the Azure SSO integration, these additional config file entries will generate helpful debugging information.  Adding the following lines to the `log4j2.propertie`* file will produce additional debugging output in the `services.log` file.
+If you are having trouble with the Azure SSO integration, these additional config file entries will generate helpful debugging information.  Adding the following lines to the `log4j2.properties`* file will produce additional debugging output in the `services.log` file.
 
 ```properties
 logger.spring_security_oauth.name = org.springframework.security.oauth2

@@ -63,7 +63,7 @@ Configuration Parameters:
    ![rate-limiting-jmx-monitor](/assets/img/rate-limiting-jmx-monitor.png)
 System admin can use their monitor tools to capture the Cache overflow event.
 
-5. `rundeck.apiRateLimiting.include` - A string of semicolon separated Rate Limiter algorithm names. It defines which Rate Limitter algorithm will be applied. We have three different Rate Limiter algorithms: Session-Based, AuthToken-Based and Client IP Based, we use this parameter to let system admin choose the desired Rate Limiter algorithm. The valid algorithm names are:
+5. `rundeck.apiRateLimiting.include` - A string of semicolon separated Rate Limiter algorithm names. It defines which Rate Limiter algorithm will be applied. We have three different Rate Limiter algorithms: Session-Based, AuthToken-Based and Client IP Based, we use this parameter to let system admin choose the desired Rate Limiter algorithm. The valid algorithm names are:
    
     - `rundeckpro.security.rateLimit.AuthTokenApiRateLimiter` - This rate limiter will apply rate limiting on requests per Auth Token. 
     - `rundeckpro.security.rateLimit.SessionApiRateLimiter` - This rate limiter will apply rate limiting on requests per authenticated user session
