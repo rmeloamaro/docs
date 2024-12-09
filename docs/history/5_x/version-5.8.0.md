@@ -73,7 +73,6 @@ In addition to the new resource-model plugins, this release includes the followi
 * [Allow custom bin path on gather facts false](https://github.com/rundeck-plugins/ansible-plugin/pull/398)
 * [Fix - Ansible plugin - Resource Model Source throws NullPointerException](https://github.com/rundeck-plugins/ansible-plugin/pull/397)
 
-
 ## Community Contributors
 
 Submit your own Pull Requests to get recognition here!
