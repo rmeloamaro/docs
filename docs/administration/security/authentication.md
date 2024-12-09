@@ -1,24 +1,18 @@
 # Authenticating Users
 
-Rundeck can be configured to use several mechanisms
-to authenticate a user, and determine the user's authorized roles.
+Rundeck can be configured to use several mechanisms to authenticate a user, and determine the user's authorized roles.
 
 Primarily these are:
 
 - [Single Sign On](#single-sign-on)
 - [JAAS](#jetty-and-jaas-authentication)
 - [Container Authentication](#container-authentication-and-authorization)
-- [Preauthenticated Mode](#preauthenticated-mode)
+- [Pre-authenticated Mode](#preauthenticated-mode)
 
-For the default installation (Executable War, RPM, Deb),
-the Servlet Container is Jetty,
-and the default security mechanism is JAAS,
-so you are free to use what ever JAAS provider
-you feel is suitable for your environment.
-See [JAAS](https://en.wikipedia.org/wiki/Java_Authentication_and_Authorization_Service)
-and specifically for Jetty,
-[JAAS for Jetty](https://wiki.eclipse.org/Jetty/Feature/JAAS).
+For the default installation (Executable War, RPM, Deb), the Servlet Container is Jetty, and the default security mechanism is JAAS, so you are free to use what ever JAAS provider
+you feel is suitable for your environment. 
 
+See [JAAS](https://en.wikipedia.org/wiki/Java_Authentication_and_Authorization_Service) and specifically for Jetty, [JAAS for Jetty](https://wiki.eclipse.org/Jetty/Feature/JAAS).
 
 # Single Sign On
 
@@ -40,11 +34,7 @@ Rundeck has three basic JAAS modules.
 2. [LDAP](#ldap)
 3. [PAM](#pam)
 
-By default a new installation uses the realm.properties method.
-
-Each method determines whether the user is authenticated, and what _roles_ they have.
-
-The list of roles can be accepted as-is (default), or you can add a prefix to them using the following config in rundeck-config.properties:
+By default a new installation uses the realm.properties method.  Each method determines whether the user is authenticated, and what _roles_ they have. The list of roles can be accepted as-is (default), or you can add a prefix to them using the following config in rundeck-config.properties:
 
     rundeck.security.jaasRolePrefix=PREFIX_
 
@@ -57,21 +47,16 @@ It is recommended to use `BCRYPT` encrypted passwords with `realm.properties` as
 - NOTE: The `org.eclipse.jetty.jaas.spi.PropertyFileLoginModule` JAAS module will automatically add the username as a role to the login credentials.  
 If you do not want this behavior please use the `org.rundeck.jaas.jetty.ReloadablePropertyFileLoginModule` module.*
 
-These instructions explain how to manage user credentials for
-Rundeck using a text file containing usernames, passwords and role definitions.
-Usually this file is called <code>realm.properties</code>.
+These instructions explain how to manage user credentials for Rundeck using a text file containing usernames, passwords and role definitions. Usually this file is called <code>realm.properties</code>.
 
-The default Rundeck installation handles user authentication via
-JAAS using the realm.properties file.
-This file is created at the time that you install the server.
+The default Rundeck installation handles user authentication via JAAS using the realm.properties file. This file is created at the time that you install the server.
 
 Location:
 
 - Executable War: `$RDECK_BASE/server/config/realm.properties`
 - RPM/DEB: `/etc/rundeck/realm.properties`
 
-Assuming it wasn't modified, your realm.properties file will
-probably look something like this:
+Assuming it wasn't modified, your realm.properties file will probably look something like this:
 
 ```bash .numberLines 
 #
@@ -90,16 +75,11 @@ user:user,user
 
 _Adding additional users_
 
-You may wish to have additional users with various privileges rather
-than giving out role accounts to groups. You may also want to avoid
-having the passwords in plaintext within the configuration file.
+You may wish to have additional users with various privileges rather than giving out role accounts to groups. You may also want to avoid having the passwords in plaintext within the configuration file.
 
-To accomplish this, you'll need a properly hashed or encrypted
-password to use in the config. Rundeck has a built in command line utility to
-encrypt passwords. The default encryption service is the Jetty password utility.
+To accomplish this, you'll need a properly hashed or encrypted password to use in the config. Rundeck has a built in command line utility to encrypt passwords. The default encryption service is the Jetty password utility.
 
-In this example,
-we'll setup a new user named "jsmith", with a password of "mypass":
+Use this example to setup a new user named "jsmith", with a password of "mypass":
 
 ```
 $ java -jar rundeck-{{$rundeckVersionFull}}.war --encryptpwd Jetty
@@ -126,14 +106,11 @@ Then add this to the `realm.properties` file with a line like so:
 
 Then restart Rundeck to ensure it picks up the change and you're done.
 
-There is also a password encrypter utility user interface in the Rundeck application that
-can be used to generate encrypted passwords. Click the gear icon and then "Password Utility" to use that interface.
+There is also a password encrypter utility user interface in the Rundeck application that can be used to generate encrypted passwords. Click the gear icon and then "Password Utility" to use that interface.
 
 **Warning**
 
-The use of `CRYPT` comes with limitations. Only the first 8 characters of the
-provided password will be validated when authenticating. This encryption scheme
-should be avoided if possible.
+The use of `CRYPT` comes with limitations. Only the first 8 characters of the provided password will be validated when authenticating. This encryption scheme should be avoided if possible.
 
 #### Hot Reloading the `realm.properties` file
 
@@ -194,11 +171,9 @@ This property can be added in two ways: through the GUI in the System Configurat
 
 #### Sync Rundeck profile from LDAP user attributes
 
-You can use LDAP user attributes to update the email, first name, and last name properties of your Rundeck users.
-To enable this feature, add the property: `rundeck.security.syncLdapUser=true` to your `rundeck-config.properties` file.
+You can use LDAP user attributes to update the email, first name, and last name properties of your Rundeck users. To enable this feature, add the property: `rundeck.security.syncLdapUser=true` to your `rundeck-config.properties` file.
 
-In your JAAS LDAP login module you can specify the ldap user attributes used to source the email, and name properties.
-The properties are:
+In your JAAS LDAP login module you can specify the ldap user attributes used to source the email, and name properties. The properties are:
 
     userLastNameAttribute="sn"
     userFirstNameAttribute="givenName"
