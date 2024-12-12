@@ -4,7 +4,7 @@ sidebar: false
 
 # Older Documentation Versions
 
-<DocVersions/>
+Select your version here: <DocVersions/>
 
 ## Archives
 
