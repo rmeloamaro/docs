@@ -52,7 +52,16 @@ highlights:
     - title: Storage Management
       icon: hard-drive
       details: Technology users and leaders face challenges with time-consuming and error-prone manual processes when managing storage across various systems.  Without automation managing storage across complex systems requires significant effort and risks operational inefficiencies, and service disruptions.
-      link: /learning/solutions/storage-management/index.md  
+      link: /learning/solutions/storage-management/index.md
 
+    - title: Cost Management
+      icon: money-check-dollar
+      details: Runbook Automation for Cost Management in cloud environments streamlines complex workflows, reduces operational costs, minimizes errors, and enhances efficiency by automating resource optimization, cleanup processes, and policy enforcement across multiple platforms.
+      link: /learning/solutions/cost-management/index.md
+
+    - title: Getting Started
+      icon: circle-play
+      details: Click here to learn how to get started with Runbook Automation prebuilt solutions.
+      link: /learning/solutions/getting-started.md
 
 ---
