@@ -1,46 +1,28 @@
 # AWS - Identify Unused VPCs
 
-## Overview
+## Description
 
-This job is designed to identify unused Virtual Private Clouds (VPCs) in a specified AWS region. It helps in cost management and resource optimization by highlighting VPCs that are not associated with any active AWS resources and may be candidates for deletion.
+This automation job generates a listing of AWS Virtual Private Clouds (VPCs) that are not associated with any resources and are therefore eligible for deletion. It checks various AWS services to ensure comprehensive coverage.
 
-## Functionality
-
-The job performs the following tasks:
-
-1. Retrieves a list of all VPCs in the specified AWS region.
-2. Identifies the default VPC and excludes it from further processing.
-3. Checks each non-default VPC for associations with various AWS resources, including:
-   - EC2 instances
-   - RDS instances
-   - Classic Load Balancers (ELB)
-   - Application and Network Load Balancers (ALB/NLB)
-   - NAT Gateways
-   - VPN Connections
-   - Transit Gateway attachments
-4. Compiles a list of VPCs that are not associated with any of the above resources.
-5. Outputs a list of VPCs that can potentially be deleted.
-
-## Setup
-
-### Prerequisites
+## Prerequisites
 
 - Turn on "[Runner as Node](/administration/runner/runner-management/node-dispatch.html#runner-as-a-node)" setting on your Runner.  
   - This requires version 5.8.0 or higher.  Adjustments to Node tab may be required for earlier versions.
-- AWS CLI installed on the Enterprise Runner node.
-- Appropriate AWS IAM permissions (see below).
-
-### Job Configuration
-
-1. **Node Filter**: The job is configured to run on nodes tagged with "RUNNER".
-2. **Options**:
-   - `region`: AWS Region (required, uses aws-regions-job-options plugin)
-   - `always-show-results`: Show results even after an error (true/false)
-3. **Execution**: The job runs a bash script that utilizes AWS CLI commands.
+- AWS CLI installed on the runner node.
+- Proper AWS credentials configured on the runner node.
 
 ## AWS IAM Permissions
 
-The IAM role or user executing this job needs the following permissions:
+The AWS IAM role or user associated with this job requires the following permissions:
+
+- `ec2:DescribeVpcs`
+- `ec2:DescribeInstances`
+- `rds:DescribeDBInstances`
+- `elb:DescribeLoadBalancers`
+- `elbv2:DescribeLoadBalancers`
+- `ec2:DescribeNatGateways`
+- `ec2:DescribeVpnConnections`
+- `ec2:DescribeTransitGatewayVpcAttachments`
 
 ```json
 {
@@ -51,11 +33,12 @@ The IAM role or user executing this job needs the following permissions:
             "Action": [
                 "ec2:DescribeVpcs",
                 "ec2:DescribeInstances",
+                "rds:DescribeDBInstances",
+                "elb:DescribeLoadBalancers",
+                "elbv2:DescribeLoadBalancers",
                 "ec2:DescribeNatGateways",
                 "ec2:DescribeVpnConnections",
-                "ec2:DescribeTransitGatewayVpcAttachments",
-                "rds:DescribeDBInstances",
-                "elasticloadbalancing:DescribeLoadBalancers"
+                "ec2:DescribeTransitGatewayVpcAttachments"
             ],
             "Resource": "*"
         }
@@ -63,37 +46,56 @@ The IAM role or user executing this job needs the following permissions:
 }
 ```
 
-These permissions allow the script to describe various AWS resources across different services to determine VPC usage.
+These permissions should be applied to all resources in the specified region.
 
-## Running the Job
-1. Select the job in the Cost Management / AWS folder.
-2. Choose the target AWS region from the dropdown.
-3. Set the always-show-results option as needed.
-4. Execute the job.
+## Job Options
+
+| Option Name | Description | Default Value |
+|----|----|----|
+| `region` | AWS region to query for VPCs | N/A |
+| `always-show-results` | Show results even when checking AWS services results in Access Errors | false |
+
+## Job Workflow
+
+1. It uses the AWS CLI to list all VPCs in the specified region.
+2. The script then checks for VPCs associated with:
+   - EC2 instances
+   - RDS instances
+   - Classic load balancers
+   - Application/Network load balancers
+   - NAT Gateways
+   - VPN Connections
+   - Transit Gateway attachments
+3. It compares the list of all VPCs against those associated with the above services.
+4. The job generates a report of VPCs that are not associated with any of these services and are eligible for deletion.
 
 ## Output
 
-The job will provide:
+The job produces a detailed report with the following information:
 
-- A list of all VPCs in the region.
-- Information about associated resources for each VPC.
-- A list of VPCs that appear to be unused and can potentially be deleted.
+- List of all VPCs in the region
+- List of VPCs associated with various AWS services
+- VPCs that can be safely deleted (not associated with any service)
+- Warnings for default VPCs (which cannot be deleted)
 
-## Important Notes
+## Script Details
 
-- The job does not automatically delete any VPCs; it only identifies potential candidates for deletion.
-- Always verify the results manually before deleting any VPC.
-- The default VPC is automatically excluded from the list of deletable VPCs.
-- If errors occur during execution, the job can be configured to show partial results.
+The job uses a Bash script to perform the following tasks:
+
+1. Fetch all VPCs in the specified region
+2. Retrieve VPCs associated with various AWS services
+3. Compare the lists to identify unused VPCs
+4. Generate a report of VPCs eligible for deletion
+
+## Notes
+
+- The job does not actually delete any VPCs; it only provides recommendations.
+- Default VPCs are excluded from the deletion recommendations.
+- The script includes error handling and can optionally show the recommendation results even if some AWS API calls result in errors.
 
 ## Troubleshooting
-- Turn on "[Runner as Node](/administration/runner/runner-management/node-dispatch.html#runner-as-a-node)" setting on your Runner.  This requires version 5.8.0 or higher.  Adjustments to Node tab may be required for earlier versions.
-- Ensure the Enterprise Runner node has the AWS CLI properly configured.  There are helper jobs in the _Getting Started_ folder of the project.
-- Verify that the IAM role or user has the necessary permissions. (See above)
-- Check execution logs for any execution errors.
 
-
-## Security Considerations
-- Follow the principle of least privilege when assigning IAM permissions.
-- Regularly review and update the permissions as needed.
-- Ensure that sensitive information, like AWS credentials, are securely managed.
+If you encounter issues running this job:
+1. Ensure that the AWS CLI is properly installed on the runner node
+2. Verify that the AWS credentials on the runner node have the necessary permissions
+3. Check the `always-show-results` option if you want to see partial results in case of API errors
