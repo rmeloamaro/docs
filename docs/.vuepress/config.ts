@@ -294,7 +294,7 @@ export default defineUserConfig({
   ),
   "@theme-hope/modules/navbar/components/Navbar": path.resolve(
     __dirname,
-    "./components/DocVersions.vue",
+    "./components/CustomNavBar.vue",
   ),
   },
   //Plugins Config
