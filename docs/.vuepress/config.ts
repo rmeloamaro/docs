@@ -292,6 +292,10 @@ export default defineUserConfig({
     __dirname,
     "./components/notFoundCustom.vue",
   ),
+  "@theme-hope/modules/navbar/components/Navbar": path.resolve(
+    __dirname,
+    "./components/CustomNavBar.vue",
+  ),
   },
   //Plugins Config
   plugins: [
