@@ -130,7 +130,6 @@ export default defineUserConfig({
           '/manual/command-line-tools/index.html' : '/rd-cli/index.html',
           '/manual/command-line-tools/rd.html' : '/rd-cli/index.html',
           '/manual/command-line-tools/rd-acl.html' : '/rd-cli/rd-ext-acl.html',
-          '/history/cves/' : '/history/CVEs/',
           '/introduction/introduction.html' : '/about/introduction.html',
           '/administration/architecture-and-deployment/system-architecture.html' : '/about/enterprise/index.html',
           '/administration/architecture-and-deployment/aws.html' : '/administration/install/aws.html',
