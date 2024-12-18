@@ -1,4 +1,4 @@
-# Cost Management
+# FinOps (Cost Management)
 
 ### Overview
 

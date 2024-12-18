@@ -254,7 +254,7 @@ export default [{
           ]
         },
         {
-          text: 'Cost Management',
+          text: 'FinOps (Cost Management)',
           link: '/learning/solutions/cost-management/index.md',
           collapsible: true,
           children: [
