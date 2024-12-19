@@ -17,7 +17,10 @@ Release Date: October 21, 2024
 - Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/5.7.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.7.0)
 - [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
 - [Upgrade instructions](/upgrading/index.md)
-- [Catch us on Twitch for the Live Stream Release Video](https://www.twitch.tv/pagerduty)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/watch?v=4Pcr1k0LDTQ)
+
+<VidStack src="youtube/4Pcr1k0LDTQ"/>
+
 
 ## Overview
 
