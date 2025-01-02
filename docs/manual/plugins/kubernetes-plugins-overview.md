@@ -4,9 +4,33 @@
 
 ![](/assets/img/kubernetes-icon.png)
 
-Runbook Automation integrates with Kubernetes through a variety of plugins. By integrating Runbook Automation with Kubernetes, users can automate and provide self-service interfaces for operations in their Kubernetes Clusters. These integrations allow operations teams to provide self-service mechanisms to users throughout the business, as well as setup event-driven automation for workflows with Kubernetes.
+Runbook Automation integrates with Kubernetes through a variety of plugins. By integrating Runbook Automation with Kubernetes, users can automate and provide self-service interfaces for operations in their Kubernetes Clusters.
 
-<details><summary> <font size="5">List of Kubernetes Plugins</font>
+There are two suites of Kubernetes plugins:
+
+1. [**Kubernetes Plugins in Runbook Automation**](#kubernetes-plugins-in-runbook-automation) (**Commercial Only Products**): These plugins are only available in Runbook Automation and are suited for environments with multiple Kubernetes clusters. This suite also includes native integrations with AWS Elastic Kubernetes Service (EKS), Azure Kubernetes Service (AKS), and Google Kubernetes Engine.
+2. [**Open Source Kubernetes Plugins**](#open-source-kubernetes-plugins): These plugins are available in Rundeck Open Source and provide basic functionality for interacting with Kubernetes clusters.
+
+## Kubernetes Plugins in Runbook Automation
+
+:::enterprise
+:::
+
+### Configuration
+There are two methods for adding Kubernetes clusters to Runbook Automation and authenticating with the Kubernetes API:
+
+1. **Pod-based Service Account**
+2. **Cloud Provider Integration**
+
+#### Pod-based Service Account
+
+With this method, clusters are added to the inventory by installing a Runner in the cluster and adding the Runner as a node to the inventory. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
+
+
+
+
+## Open Source Kubernetes Plugins
+<details><summary> <font size="5">List of Open Source Plugins</font>
 </summary>
 
 **Available in Rundeck Open Source**
@@ -61,9 +85,9 @@ Runbook Automation integrates with Kubernetes through a variety of plugins. By i
 Click above see the full list of plugins for Kubernetes.
 :::
 
-## Setup the Open Source Kubernetes Plugins
+### Set up the Open Source Kubernetes Plugins
 
-### Python Dependencies
+#### Python Dependencies
 
 In order to use the Open Source Kubernetes plugins listed in the Summary above, Python must be installed on the Runbook Automation cluster-members or on the [Enterprise Runner](/administration/runner/index.md) - depending on where the connection to Kubernetes will originate.  _(These steps are also needed for Commercial versions using the listed Open Source plugins.)_
 
@@ -82,7 +106,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-### Kubernetes Authentication
+#### Kubernetes Authentication for Open Source Plugins
 
 By default, the Kubernetes plugins look for a Kube Config file at **`$RDECK_BASE/.kube/config`**.  For **Deb** and **RPM** this would translate to **`/var/lib/rundeck/.kube/config`**.
 The Kube Config file can be saved to a different location, just be sure to take note of where it is saved for later steps.
@@ -90,7 +114,7 @@ The Kube Config file can be saved to a different location, just be sure to take 
 If it is preferred to use a Kubernetes API Token, then follow the instructions outlined [here](https://www.cncf.io/blog/2020/07/31/kubernetes-rbac-101-authentication/) to generate the Service Account Token.
 Once created, save the Token to [Key Storage](/manual/system-configs.md#key-storage) as a **Password** secret type.
 
-### Upload Kubernetes Plugins (Rundeck OSS Only)
+#### Upload Kubernetes Plugins (Rundeck OSS Only)
 
 Rundeck OSS does not come preloaded with the Kubernetes plugins. To install the Kubernetes plugins, use the following steps:
 
@@ -101,7 +125,7 @@ Rundeck OSS does not come preloaded with the Kubernetes plugins. To install the 
 4. Click **Install**:
    ![Upload Kubernetes Plugins](/assets/img/upload-k8s-plugins.png)
 
-## Test Kubernetes Plugins
+### Test Open Source Kubernetes Plugins
 
 To test that the dependencies and authentication have been configured correctly, use a Kubernetes Node Step plugin - as this will provide the option to easily
 execute the plugin in _debug_ mode.
