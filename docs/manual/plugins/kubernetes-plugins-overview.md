@@ -17,16 +17,72 @@ There are two suites of Kubernetes plugins:
 :::
 
 ### Configuration
-There are two methods for adding Kubernetes clusters to Runbook Automation and authenticating with the Kubernetes API:
+There are multiple methods for adding Kubernetes clusters to Runbook Automation and authenticating with the Kubernetes API:
 
-1. **Pod-based Service Account**
-2. **Cloud Provider Integration**
+1. [**Pod-based Service Account**](#pod-based-service-account): Install a Runner in each cluster (or namespace), and target the Runner as the cluster or particular namespace. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
+2. **Cloud Provider Integration**: Use the cloud provider's API to dynamically retrieve all clusters and add them as nodes to the inventory. The cloud provider's API can also optionally be used to retrieve the necessary Kubernetes authentication to communicate with the clusters.
+3. **Manual Configuration**: Clusters are added to the inventory either manually or through method 1 or 2. The Kubernetes API Token or Kube Config file is manually added to Key Storage and configured as node-attributes.
+
+:::tip Prerequisite Configuration
+Note that all of these methods require the use of the **Automatic** mode for the Project's use of Runners. See [this documentation](/administration/runner/runner-management/project-dispatch-configuration.md) to confirm that your project is configured correctly.
+:::
 
 #### Pod-based Service Account
 
 With this method, clusters are added to the inventory by installing a Runner in the cluster and adding the Runner as a node to the inventory. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
 
+Follow these steps to set up a Runner in a Kubernetes cluster:
 
+1. Create a new Runner within your Project using the API. Replace **`URL`** with your Runbook Automation instance URL, **`PROJECT`** with the project name, and **`API_TOKEN`** with your API Token:
+   ```bash
+   curl --location --request POST 'https://[URL]/api/42/project/[PROJECT]/runnerManagement/runners' \
+   --header 'Accept: application/json' \
+   --header 'X-Rundeck-Auth-Token: [API_TOKEN]' \
+   --header 'Content-Type: application/json' \
+   --data-raw '{
+      "name": "K8s Runner US-WEST-1 Cluster 1",
+      "description": "Runner installed in US-WEST-1 Cluster 1",
+      "tagNames": ["K8S-RUNNER", "us-west-1", "cluster-1"]
+     }'
+      ```
+   The response will provide the following. Be sure to capture the **`runnerId`** and the **`token`**:
+   ```
+   {"description":"Runner installed in US-WEST-1 Cluster 1",
+   "downloadTk":"fbc12393-3454-426d-9dd0-6e72ce53b9d5",
+   "name":"K8s Runner","projectAssociations":{"network-infra":".*"},
+   "runnerId":"acc00df8-fbb8-497a-8f7f-07eaaa0c5b78","token":"6Y4bHjk4TCU1MUGBaso9Ak7sHOokwRkw"}
+   ```
+2. Create a deployment YAML for the Runner. Be sure to replace **`[namespace]`**, **`[runnerId]`** with the value from the previous step, **`[token]`**, and **`[Runbook Automation Instance URL]`**:
+   ```
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     namespace: [namespace]
+     name: rundeck-runner
+     labels:
+       app: rundeck-runner
+   spec:
+     containers:
+     - image: rundeckpro/runner
+       imagePullPolicy: IfNotPresent
+       name: rundeck-runner
+       env:
+       - name: RUNNER_RUNDECK_CLIENT_ID
+         value: "[runnerId]"
+       - name: RUNNER_RUNDECK_SERVER_TOKEN
+         value: "[token]"
+       - name: RUNNER_RUNDECK_SERVER_URL
+         value: "https://[Runbook Automation Instance URL]"
+       lifecycle:
+         postStart:
+           exec:
+             command:
+             - /bin/sh
+             - -c
+             - touch this_is_from_rundeck_runner
+     restartPolicy: Always
+   ```
+3. Create the deployment: **`kubectl apply -f deployment.yml`**.
 
 
 ## Open Source Kubernetes Plugins
