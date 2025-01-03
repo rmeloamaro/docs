@@ -20,7 +20,7 @@ There are two suites of Kubernetes plugins:
 There are multiple methods for adding Kubernetes clusters to Runbook Automation and authenticating with the Kubernetes API:
 
 1. [**Pod-based Service Account**](#pod-based-service-account): Install a Runner in each cluster (or namespace), and target the Runner as the cluster or particular namespace. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
-2. **Cloud Provider Integration**: Use the cloud provider's API to dynamically retrieve all clusters and add them as nodes to the inventory. The cloud provider's API can also optionally be used to retrieve the necessary Kubernetes authentication to communicate with the clusters.
+2. [**Cloud Provider Integration**](#cloud-provider-integration): Use the cloud provider's API to dynamically retrieve all clusters and add them as nodes to the inventory. The cloud provider's API can also optionally be used to retrieve the necessary Kubernetes authentication to communicate with the clusters.
 3. **Manual Configuration**: Clusters are added to the inventory either manually or through method 1 or 2. The Kubernetes API Token or Kube Config file is manually added to Key Storage and configured as node-attributes.
 
 :::tip Prerequisite Configuration
@@ -45,6 +45,9 @@ Follow these steps to set up a Runner in a Kubernetes cluster:
       "tagNames": ["K8S-RUNNER", "us-west-1", "cluster-1"]
      }'
       ```
+   :::tip Tip
+      It is recommended to add at least one **Tag** through the `tagNames` field to the Runner, as this simplifies adding the Node Enhancer in step 4.
+   :::
    The response will provide the following. Be sure to capture the **`runnerId`** and the **`token`**:
    ```
    {"description":"Runner installed in US-WEST-1 Cluster 1",
@@ -83,7 +86,27 @@ Follow these steps to set up a Runner in a Kubernetes cluster:
      restartPolicy: Always
    ```
 3. Create the deployment: **`kubectl apply -f deployment.yml`**.
+4. Add a Node Attribute to the Runner's node in the inventory through an  [**Attribute Match Node Enhancer**](/manual/node-enhancers.md#attribute-match).
+   - Set the **Attribute Match** to use one of the tags set in **Step 1**: **`tags=~.*K8S-RUNNER.*`**
+   - Set the **Attributes to Add** as: **`kubernetes-use-pod-service-account=true`**
+   :::tip Tip
+   This step is only required one time if you use the same tag for all Runners that are deployed into Kubernetes clusters and use the Pod-based Service Account method.
+   :::
 
+The Runner will now be able to authenticate with the Kubernetes API using the Service Account of the pod that it is hosted in. 
+
+#### Cloud Provider Integration
+
+The cloud provider integration method uses the cloud provider's API to dynamically retrieve all clusters and add them as nodes to the inventory. The cloud provider's API can also optionally be used to retrieve the necessary Kubernetes authentication to communicate with the clusters.
+
+Use the Node Source plugins for the cloud provider to add the clusters to the Node Inventory:
+
+- [**Amazon EKS Node Source**](/manual/projects/resource-model-sources/aws-eks.md)
+- [**Azure AKS Node Source**](/manual/projects/resource-model-sources/azure-aks.md)
+- [**Google Cloud GKE Node Source**](/manual/projects/resource-model-sources/gcp-gke.md)
+
+All of these Node Sources provide an option to **Use Pod Service Account for Node Steps**.  Selecting this option will allow the Runner to use the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
+If this option is not selected, an API call is made from the Runner to the Cloud Provider to retrieve credentials to communicate with the Kubernetes API.
 
 ## Open Source Kubernetes Plugins
 <details><summary> <font size="5">List of Open Source Plugins</font>
