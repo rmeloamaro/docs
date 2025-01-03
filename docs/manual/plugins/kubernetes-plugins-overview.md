@@ -11,7 +11,7 @@ This document covers the plugins available in the commercial Runbook Automation 
 
 ## Kubernetes Plugins in Runbook Automation
 
-### Configuration
+### Cluster Discovery & Authentication Options
 There are multiple methods for adding Kubernetes clusters to Runbook Automation and authenticating with the Kubernetes API:
 
 1. [**Pod-based Service Account**](#pod-based-service-account): Install a Runner in each cluster (or namespace), and target the Runner as the cluster or particular namespace. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
