@@ -21,7 +21,8 @@ For steps on how to associate an IAM Role with Runbook Automation (SaaS or Self-
 
 To configure the AWS EKS Node Source:
 
-1. In your project, go to "Project Settings" > "Edit Nodes".
+1. In your project, go to "Project Settings" > "Edit Nodes".<br>
+
 2. Click "Add a new Node Source".
 3. Select "AWS Kubernetes Clusters" from the list of available node sources:
   ![AWS EKS Node Source](/assets/img/aws-eks-node-source.png)
