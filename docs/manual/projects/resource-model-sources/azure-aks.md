@@ -30,7 +30,7 @@ Microsoft.ContainerService/managedClusters/read
 6. Click **Review + assign** and then **Save**.
 
 ### Add AKS Node Source in Runbook Automation
-To configure the Azure AKS Resource Model Source:
+To configure the Azure AKS Node Source:
 
 1. In your project, go to "Project Settings" > "Edit Nodes".<br>
 
