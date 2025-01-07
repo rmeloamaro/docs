@@ -1,12 +1,12 @@
-# Kubernetes Plugins
+# Kubernetes Integration Overview
 :::enterprise
 :::
 ![](/assets/img/kubernetes-icon.png)
 
 Runbook Automation integrates with Kubernetes through a variety of plugins. By integrating Runbook Automation with Kubernetes, users can automate and provide self-service interfaces for operations in their Kubernetes Clusters.
 
-:::warning Open Source Plugins
-This document covers the plugins available in the commercial Runbook Automation products.  For a list of Kubernetes plugins available for Rundeck Community (open-source), see documentation for the [**Open Source Kubernetes plugins**](/manual/plugins/kubernetes-open-source.md).
+:::warning Commercial Plugins
+This document covers the plugins available in the **commercial Runbook Automation products**.  For a list of Kubernetes plugins available for **Rundeck Community (open-source)**, see documentation for the [**Open Source Kubernetes plugins**](/manual/plugins/kubernetes-open-source.md).
 :::
 
 ## Adding Clusters & Authenticating with Kubernetes API
@@ -95,7 +95,12 @@ The Runner will now be able to authenticate with the Kubernetes API using the Se
 The Cloud Provider Integration method can be used to dynamically retrieve all clusters from the cloud provider's API and add them as nodes to the inventory. 
 The cloud provider's API can _also_ be used to retrieve the necessary Kubernetes authentication to communicate with the clusters.
 
-#### Cloud Provider for Cluster Discovery
+:::tip Cloud Provider for Discovery and Pod Service Account for Authentication
+It is possible to use the Cloud Provider Integration method for cluster discovery and the Pod-based Service Account method for authentication. This is useful when you want to dynamically discover clusters but have a 1:1 relationship between Runners and clusters or do not have the option to use the cloud provider for retrieving cluster credentials.
+To take this approach, be sure to select the **Use Pod Service Account for Node Steps** when configuring the Node Source plugins.
+:::
+
+### Cloud Provider for Cluster Discovery
 
 Use the Node Source plugins for the cloud provider to add the clusters to the Node Inventory:
 
@@ -105,7 +110,7 @@ Use the Node Source plugins for the cloud provider to add the clusters to the No
 
 Note that a Runner does _not_ need to be installed to configure these Node Source plugins.
 
-#### Cloud Provider for Kubernetes Authentication
+### Cloud Provider for Kubernetes Authentication
 
 Runbook Automation can use its integration with the public cloud providers to retrieve credentials to authenticate with the Kubernetes clusters.
 
@@ -117,7 +122,7 @@ With this approach, a single Runner is installed in either a VM or a container t
 
 ![The Runner can retrieve cluster credentials from the EKS service](/assets/img/k8s-cloud-provider-architecture.png)
 
-##### AWS EKS Authentication
+### AWS EKS Authentication
 
 To authenticate with EKS clusters using the AWS APIs:
 
@@ -125,7 +130,7 @@ To authenticate with EKS clusters using the AWS APIs:
 
 2. Assign permissions to the IAM role of this EC2 or container to allow the Runner to retrieve the necessary EKS cluster credentials:
    - **`eks:DescribeCluster`**
-3. Add the **EKS API** as an authentication mode and the IAM Role of the Runner's host (EC2 or container) to the target clusters:
+3. Add the **EKS API** as an authentication mode and add the IAM Role of the Runner's host (EC2 or container) to the target clusters:
 
    :::info Repeat for each target cluster
    This process must be repeated for each target cluster so that the Runner can authenticate with each cluster.
@@ -154,18 +159,47 @@ To authenticate with EKS clusters using the AWS APIs:
       ```
       aws eks create-access-entry --cluster-name my-cluster --principal-arn arn:aws:iam::111122223333:role/EKS-my-cluster-self-managed-ng-1 --type STANDARD
       ```
+      Replace **`arn:aws:iam::111122223333:role/EKS-my-cluster-self-managed-ng-1`** with the IAM Role of the Runner's host.
    :::tabs
+   
+Now when the Runner targets the EKS clusters using the Kubernetes node-step plugins, it will be able to authenticate with the clusters using credentials fetched from AWS.
 
-##### Azure AKS Authentication
+### Azure AKS Authentication
 
-##### Google Cloud GKE Authentication
+To authenticate with AKS clusters using the Azure APIs:
 
-Follow the instructions in the **Node Source Plugins** linked in the prior sections to use the Cloud Provider Integration method.
+1. Install a Runner in a VM or container that has a network path to the target AKS clusters.<br>
 
-:::tip Cloud Provider for Discovery and Pod Service Account for Authentication
-It is possible to use the Cloud Provider Integration method for cluster discovery and the Pod-based Service Account method for authentication. This is useful when you want to dynamically discover clusters but have a 1:1 relationship between Runners and clusters or do not have the option to use the cloud provider for retrieving cluster credentials.
-To take this approach, be sure to select the **Use Pod Service Account for Node Steps** when configuring the Node Source plugins.
-:::
+2. Follow the instructions in the [Azure Plugins Overview](/manual/plugins/azure-plugins-overview.md) to create a Service Principal and add the credentials for this Service Principal to Runbook Automation.
+   :::info Pre-existing Service Principal
+   If Runbook Automation has already been integrated with Azure, then you may not need to create a new Service Principal.  Instead, add these permissions to the existing Service Principal.
+   :::
+3. A assign permissions that allow this Service Principal to retrieve AKS cluster credentials:
+   - **`Microsoft.ContainerService/managedClusters/listClusterUserCredential`**
+   - Azure provides pre-built roles that have this permission, such as **Azure Kubernetes Service Cluster User Role**.
+   :::tip Role Assignment Scope
+    The role assignment of these permissions can be assigned at the **Subscription**, **Resource Group** or even on an individual cluster basis.
+    Regardless of the chosen scope, navigate to the **Access Control (IAM)** section and add the role assignment.
+   :::
+
+Now when the Runner targets the AKS clusters using the Kubernetes node-step plugins, it will be able to authenticate with the clusters using credentials fetched from Azure.
+
+### Google Cloud GKE Authentication
+
+To authenticate with GKE clusters using the Google Cloud APIs:
+
+1. Install a Runner in a VM or container that has a network path to the target GKE clusters.<br>
+
+2. Follow the instructions in the [Google Cloud Plugins Overview](/manual/plugins/gcp-plugins-overview.md) to create a Service Account and add the credentials for this Service Account to Runbook Automation.
+   :::info Pre-existing Service Account
+   If Runbook Automation has already been integrated with Google Cloud, then you may not need to create a new Service Account.  Instead, add these permissions to the existing Service Account.
+   :::
+3. Add a Role to the Service Account that has the permissions to retrieve the cluster credentials from the GKE service:
+   - **`container.clusters.get`**
+   - A predefined role, such as **Kubernetes Engine Developer**, can be used for this purpose.
+
+Now when the Runner targets the GKE clusters using the Kubernetes node-step plugins, it will be able to authenticate with the clusters using credentials fetched from Google Cloud.
+
 
 ### Manual Authentication Configuration
 
