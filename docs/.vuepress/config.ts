@@ -204,7 +204,8 @@ export default defineUserConfig({
           '/manual/workflow-strategies.html' : '/manual/jobs/workflow-strategies.html',
           '/manual/workflow-strategies/ruleset.html' : '/manual/jobs/workflow-strategies/ruleset.html',
           '/learning/solutions/automated-diagnostics/examples/kubernetes.html' : '/learning/solutions/containers/kubernetes.html',
-          '/learning/solutions/automated-diagnostics/getting-started.html' : '/learning/solutions/getting-started.html'
+          '/learning/solutions/automated-diagnostics/getting-started.html' : '/learning/solutions/getting-started.html',
+          '/administration/security/key-storage.html' : '/manual/key-storage/index.html'
        }
       },
       // pwa: {
