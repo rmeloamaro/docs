@@ -9,12 +9,10 @@ Runbook Automation integrates with Kubernetes through a variety of plugins. By i
 This document covers the plugins available in the commercial Runbook Automation products.  For a list of Kubernetes plugins available for Rundeck Community (open-source), see documentation for the [**Open Source Kubernetes plugins**](/manual/plugins/kubernetes-open-source.md).
 :::
 
-## Kubernetes Plugins in Runbook Automation
+## Adding Clusters & Authenticating with Kubernetes API
+There are multiple methods for adding Kubernetes clusters to Runbook Automation:
 
-### Cluster Discovery & Authentication Options
-There are multiple methods for adding Kubernetes clusters to Runbook Automation and authenticating with the Kubernetes API:
-
-1. [**Pod-based Service Account**](#pod-based-service-account): Install a Runner in each cluster (or namespace), and target the Runner as the cluster or particular namespace. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
+1. [**Runners with Pod-based Service Account**](#runners-with-pod-based-service-account): Install a Runner in each cluster (or namespace), and target the Runner as the cluster or particular namespace. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
 2. [**Cloud Provider Integration**](#cloud-provider-integration): Use the cloud provider's API to dynamically retrieve all clusters and add them as nodes to the inventory. The cloud provider's API can also optionally be used to retrieve the necessary Kubernetes authentication to communicate with the clusters.
 3. [**Manual Authentication Configuration**](#manual-authentication-configuration): Clusters are added to the inventory either manually or through method 1 or 2. The Kubernetes API Token or Kube Config file is manually added to Key Storage and configured as node-attributes.
 
@@ -22,7 +20,7 @@ There are multiple methods for adding Kubernetes clusters to Runbook Automation 
 Note that all of these methods require the use of the **Automatic** mode for the Project's use of Runners. See [this documentation](/administration/runner/runner-management/project-dispatch-configuration.md) to confirm that your project is configured correctly.
 :::
 
-### Pod-based Service Account
+### Runners with Pod-based Service Account
 
 With this method, clusters are added to the inventory by installing a Runner in the cluster and adding the Runner as a node to the inventory. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
 
@@ -109,8 +107,58 @@ Note that a Runner does _not_ need to be installed to configure these Node Sourc
 
 #### Cloud Provider for Kubernetes Authentication
 
-The Cloud Provider Integration method can also be used to retrieve the necessary Kubernetes authentication to communicate with the clusters.
-This is useful when there are multiple clusters and you wish to have a single Runner that can communicate with all of them.
+Runbook Automation can use its integration with the public cloud providers to retrieve credentials to authenticate with the Kubernetes clusters.
+
+This method of authentication is useful when:
+1. Installing a Runner inside the clusters is not an option
+2. There are numerous clusters and it is preferred to have a one-to-many relationship between the Runner and the clusters
+
+With this approach, a single Runner is installed in either a VM or a container that has a path to communicate with the clusters. The Runner uses the cloud provider's API to retrieve the necessary Kubernetes authentication to communicate with the clusters:
+
+![The Runner can retrieve cluster credentials from the EKS service](/assets/img/k8s-cloud-provider-architecture.png)
+
+##### AWS EKS Authentication
+
+To authenticate with EKS clusters using the AWS APIs:
+
+1. Install a Runner in an EC2 instance or a container that has access to the EKS clusters.<br>
+
+2. Assign permissions to the IAM role of this EC2 or container to allow the Runner to retrieve the necessary EKS cluster credentials:
+   - **`eks:DescribeCluster`**
+3. Add the **EKS API** as an authentication mode and the IAM Role of the Runner's host (EC2 or container) to the target clusters:
+
+   :::info Repeat for each target cluster
+   This process must be repeated for each target cluster so that the Runner can authenticate with each cluster.
+   :::
+   :::tabs
+   @tab AWS Console
+   1. Navigate to the **EKS Console**.
+   2. Select the target cluster and click on the **Access** tab and click **Manage Access**.
+      ![EKS API Access Configuration](/assets/img/eks-api-access-configuration.png)
+   3. Select either **EKS API** or **EKS API and ConfigMap**.
+   4. Click **Save Changes**.
+   5. Now in the **IAM access entries** section, click on **Create access entry**:
+      ![Create Access Entry](/assets/img/eks-create-access-entry.png)
+   6. In the **IAM principal** section, select the IAM Role of the Runner's host (EC2 or container).
+   7. Select **Standard** for the **Type**.
+   8. On the next screen, assign the desired **Policy Name** and **Access Scope** for this entry.
+   9. On the next screen, click **Create**.
+   
+   @tab CLI
+   1. Install the AWS CLI as described [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+   2. Run the following command to add the **EKS API** as an access mode:
+      ```
+      aws eks update-cluster-config --name my-cluster --access-config authenticationMode=API_AND_CONFIG_MAP
+      ```
+   3. Create an access entry for the IAM Role of the Runner's host (EC2 or container).  Here is an example command, but additional examples can be found in the [official AWS documentation](https://docs.aws.amazon.com/eks/latest/userguide/creating-access-entries.html):
+      ```
+      aws eks create-access-entry --cluster-name my-cluster --principal-arn arn:aws:iam::111122223333:role/EKS-my-cluster-self-managed-ng-1 --type STANDARD
+      ```
+   :::tabs
+
+##### Azure AKS Authentication
+
+##### Google Cloud GKE Authentication
 
 Follow the instructions in the **Node Source Plugins** linked in the prior sections to use the Cloud Provider Integration method.
 
