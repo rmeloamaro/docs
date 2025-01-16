@@ -259,6 +259,7 @@ export default [{
           collapsible: true,
           children: [
             { link: '/learning/solutions/cost-management/index.md', text: 'Solution Summary' },
+            { link: '/learning/solutions/cost-management/aws-change-ec2-size.md', text:'AWS - Change EC2 Size' },
             { link: '/learning/solutions/cost-management/aws-list-unused-vpcs.md', text: 'AWS - Identify Unused VPCs' },
             { link: '/learning/solutions/cost-management/aws-list-unused-lambda.md', text: 'AWS - Identify Unused Lambda Functions' },
             { link: '/learning/solutions/cost-management/aws-list-unused-securitygroups.md', text: 'AWS - Identify Unused Security Groups' },
