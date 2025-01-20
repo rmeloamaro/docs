@@ -11,33 +11,13 @@ This integration enables users to retrieve **secrets** from Azure Key Vault and 
 
 ### Prerequisites
 
-Before configuring the Azure Vault Key Storage Plugin, you must set up the necessary permissions for Azure Service Principal associated with the Runbook Automation instance depending on the **Permission Model** used in your Vaults: <br>
-![Permission Model](/assets/img/azure-vault-access-config.png)
+Before configuring the Azure Vault Key Storage Plugin, you must set up the necessary permissions for Azure Service Principal associated with the Runbook Automation instance depending on the **Permission Model** used in your Vaults. You can integrate with vaults that use either Azure role-based access control (RBAC) or Vault access policy.
 
-If you use **Azure role-based access control**, the following permissions must be added to the Azure Service Principal associated with the Runbook Automation instance:
+- For RBAC, you can use any of the predefined roles (or create a new one) including permission **`Microsoft.KeyVault/vaults/secrets/*`**. There are some Built In Roles that Azure provides that have this permission, such as **Key Vault Secrets Officer**.
 
-```
-Microsoft.KeyVault/vaults/secrets/*
-```
+- If you vault is configured with **Vault Access Policy**, you need to create a policy that allows operations on Secrets and assign it to your Service Principal. You can use the **Secret Management** template which contains the necessary permitions to manage secrets.
 
-1. Create a service principal and add the credential to Runbook Automation. If you have already created a service principal and added the credentials to Runbook Automation, skip to step 2. Otherwise, refer to the [Azure Plugins Overview](/manual/plugins/azure-plugins-overview).<br>
-
-2. Navigate to either the **Subscription** or **Resource Group** where your Key Vault resides.
-
-3. Click on **Access Control (IAM)** -> **Add** -> **Add Role Assignment**:
-    ![Add Role Assignment](/assets/img/azure-add-role-assignment.png)
-
-4. You can then use any of the Roles that have **`Microsoft.KeyVault/vaults/secrets/*`** as a permission.
-    * There are some Built In Roles that Azure provides that has this permission, such as **Key Vault Secrets Officer**.
-   
-5. Select a role and then on the next screen click **+Select Members** and then select your App Registration (service principle) from the list:
-    ![Select Members](/assets/img/azure-select-members.png)
-
-6. Click **Review + assign** and then **Save**.
-
-
-If you instead use **Vault Access Policy**, you need to create a policy for each specific Azure Key vault that you want to integrate with and assign it to your Service Principal. You can use the `Secret Management` template.
-![Secret Management access policy](/assets/img/azure-access-policy-template.png)
+See [Azure AKS resource model plugin](manual/projects/resource-model-sources/azure-aks.html#prerequisites) for an example on setting up Azure credentials.
 
 
 ### Configuration
