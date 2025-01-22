@@ -4,36 +4,37 @@
 
 ## Overview
 
-This plugin allows you to view the logs of an object within a Kubernetes cluster. It is designed to work in conjunction with the AWS EKS, GCP GKE, and Azure AKS [Resource Model Source plugins](/manual/projects/resource-model-sources/)
+This plugin retrieves logs from a specific object within a Kubernetes cluster. Since this is a node-step plugin, multiple Kubernetes clusters or namespaces can be targeted within a single Job.
+
+The types of objects that can be viewed logs from within a Kubernetes cluster include:
+
+- **Pods**
 
 ## Configuration
 
-### Required Fields
+### Prerequisites
 
-* **Name**: The name of the object to view logs from, such as Pod name or Deployment name.
-* **Namespace**: The namespace where the object resides. Default is `default`.
+Before configuring the Kubernetes Object Logs plugin, the target clusters must be added to the Runbook Automation instance and the authentication method must be configured. This is done by following the steps outlined in the [Kubernetes Plugins Overview](/manual/plugins/kubernetes-plugins-overview.md).
 
-### Optional Fields
+### Add Kubernetes Object Logs Step
 
+When building a Job, add the **Kubernetes / Clusters / Object Logs** node step:
+
+![Kubernetes Object Logs](/assets/img/k8s-cluster-object-logs.png)<br>
+
+Configure the following fields:
+
+* **Name**: The name of the object to view logs from, such as Pod name.
 * **Container**: Specify a particular container to view logs from within the object.
 * **Number of Log Lines**: The number of log lines to retrieve. Default is 50.
 * **Time-span (seconds)**: A relative time in seconds before the current time from which to show logs.
 * **Follow Logs**: If selected, the plugin will follow the log output. Note that the Job may continue to run until manually stopped.
 
-## Usage
+### Invocation Output
 
-1. Provide the name of the object you want to view logs from.
-2. Specify the namespace where the object is located.
-3. Optionally, specify a particular container, number of log lines, time-span, or choose to follow logs.
+The output of the step will be the logs from the object in the Kubernetes cluster:
 
-## Authentication
-
-Kubernetes Clusters plugins operate on a per-cluster basis and authenticate in one of two ways, as configured in the [Resource Model Plugin](/manual/projects/resource-model-sources/) used to fetch the nodes. This configuration is controlled by the `Use Pod Service Account for Node Steps` option:
-
-1. When disabled, the plugin uses the cloud provider credentials set in the resource model to retrieve the
-   kube-config for the targeted cluster.
-
-2. When enabled, the [Enterprise Runner](/administration/runner/) must be placed in the cluster and uses its pod's K8s service account for authentication.
+![Kubernetes Object Logs Output](/assets/img/k8s-cluster-logs-output.png)<br>
 
 ## Notes
 

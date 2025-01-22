@@ -4,33 +4,44 @@
 
 ## Overview
 
-This plugin deletes an object of a selected kind within a Kubernetes cluster. It is designed to work in conjunction with the AWS EKS, GCP GKE, and Azure AKS [Resource Model Source plugins](/manual/projects/resource-model-sources/).
+This plugin deletes an object of a selected kind within a Kubernetes cluster. Since this is a node-step plugin, multiple Kubernetes clusters or namespaces can be targeted within a single Job.
 
+The types of objects that can be deleted within a Kubernetes cluster include:
+
+- **ConfigMaps**
+- **DaemonSets**
+- **Deployments**
+- **Jobs**
+- **Namespaces**
+- **PersistentVolumes**
+- **Pods**
+- **ReplicaSets**
+- **Secrets**
+- **Services**
+- **StatefulSets**
 
 ## Configuration
 
-### Required Fields
+### Prerequisites
 
+Before configuring the Kubernetes Delete Object plugin, the target clusters must be added to the Runbook Automation instance and the authentication method must be configured. This is done by following the steps outlined in the [Kubernetes Plugins Overview](/manual/plugins/kubernetes-plugins-overview.md).
+
+### Add Kubernetes Delete Object Step
+
+When building a Job, add the **Kubernetes / Clusters / Delete Object** node step:
+
+![Kubernetes Delete Object](/assets/img/k8s-clusters-delete-object.png)<br>
+
+Configure the following fields:
+
+* **Object Type**: Select the type of object to delete (e.g., Pods, ConfigMaps, Deployments).
 * **Name**: The name of the object to be deleted, such as Pod name or Deployment name.
-* **Namespace**: The namespace where the object resides. Default is `default`.
+* **Namespace**: The namespace where the object resides.
+* **Output Format**: Choose the format for the output (JSON or YAML).
 
-### Optional Fields
+### Invocation Output
 
-* **Object Type**: Select the type of object to delete (e.g., Pods, ConfigMaps, Deployments). Default is "Pods".
-* **Output Format**: Choose the format for the output (JSON or YAML). Default is JSON.
+The output of the step will be the object that was deleted in the Kubernetes cluster. The output format will be the same as the format selected in the step configuration:
 
-## Usage
+![Kubernetes Delete Object Output](/assets/img/k8s-delete-object-output.png)<br>
 
-1. Select the desired object type from the dropdown menu.
-2. Provide the name of the object you want to delete.
-3. Specify the namespace where the object is located.
-4. Choose the preferred output format.
-
-## Authentication
-
-Kubernetes Clusters plugins operate on a per-cluster basis and authenticate in one of two ways, as configured in the [Resource Model Plugin](/manual/projects/resource-model-sources/) used to fetch the nodes. This configuration is controlled by the `Use Pod Service Account for Node Steps` option:
-
-1. When disabled, the plugin uses the cloud provider credentials set in the resource model to retrieve the
-   kube-config for the targeted cluster.
-
-2. When enabled, the [Enterprise Runner](/administration/runner/) must be placed in the cluster and uses its pod's K8s service account for authentication.
