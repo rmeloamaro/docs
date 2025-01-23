@@ -8,7 +8,6 @@ import { openGraphPlugin } from 'vuepress-plugin-open-graph';
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components';
 import { dateSorter } from "@vuepress/helper";
 import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
-import { markdownTabPlugin } from '@vuepress/plugin-markdown-tab';
 import { removePwaPlugin } from '@vuepress/plugin-remove-pwa';
 
 // sidebars
@@ -92,7 +91,6 @@ export default defineUserConfig({
     contributors: false,
     plugins: {
       docsearch: {
-        debug: true,
         locales: {
           '/': {
             placeholder: 'Search Documentation',
@@ -100,34 +98,7 @@ export default defineUserConfig({
               button: {
                 buttonText: 'Search Documentation',
               },
-              modal: {
-                searchBox: {
-                  resetButtonTitle: 'Clear query',
-                  resetButtonAriaLabel: 'Clear query',
-                  cancelButtonText: 'Cancel',
-                  cancelButtonAriaLabel: 'Cancel'
-                },
-                startScreen: {
-                  recentSearchesTitle: 'Recent',
-                  noRecentSearchesText: 'No recent searches',
-                  saveRecentSearchButtonTitle: 'Save this search'
-                },
-                errorScreen: {
-                  titleText: 'Unable to fetch results',
-                  helpText: 'You might want to check your network connection'
-                },
-                footer: {
-                  selectText: 'to select',
-                  navigateText: 'to navigate'
-                },
-                noResultsScreen: {
-                  noResultsText: 'No results for',
-                  suggestedQueryText: 'Try searching for',
-                  reportMissingResultsText: 'Believe this query should return results?',
-                  reportMissingResultsLinkText: 'Let us know.'
-                }
-              }
-            }
+            },
           }
         },
         appId: 'GRSXNRCDRG',
@@ -135,70 +106,8 @@ export default defineUserConfig({
         indexName: 'prod_rundeck_docs',
         searchParameters: {
           hitsPerPage: 100,
-          facetFilters: [`version:${setup.base}`],
-          attributesToRetrieve: [
-            'hierarchy',
-            'content',
-            'anchor',
-            'url',
-            'description',
-            'title'
-          ],
-          attributesToHighlight: [
-            'content',
-            'title',
-            'description'
-          ],
-          attributesToSnippet: [
-            'content:150',
-            'description:150'
-          ],
-          snippetEllipsisText: '...',
-          highlightPreTag: '<mark>',
-          highlightPostTag: '</mark>'
+          facetFilters: [`version:${setup.base}`]
         },
-        transformItems: (items) => {
-          return items.map((item) => ({
-            ...item,
-            content: item._snippetResult?.content?.value || item.content
-          }));
-        },
-        hitComponent: ({ hit, children }) => {
-          return {
-            type: 'div',
-            ref: undefined,
-            constructor: undefined,
-            props: {
-              className: 'DocSearch-Hit-Container',
-              children: [
-                {
-                  type: 'div',
-                  props: {
-                    className: 'DocSearch-Hit-content-wrapper',
-                    children: [
-                      {
-                        type: 'div',
-                        props: {
-                          className: 'DocSearch-Hit-title',
-                          innerHTML: hit.title
-                        }
-                      },
-                      {
-                        type: 'div',
-                        props: {
-                          className: 'DocSearch-Hit-content',
-                          innerHTML: hit._snippetResult?.content?.value
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          };
-        }
-
-        //end of docsearch
       },
       redirect: {
         config: {
@@ -363,8 +272,11 @@ export default defineUserConfig({
       '/': [
         ''
       ]
+    },
+    markdown: {
+      tabs: true,
+      codeTabs: true
     }
-    // }
   },
     { custom: true },
   ),
@@ -391,12 +303,6 @@ export default defineUserConfig({
     removePwaPlugin({
       cachePrefix: 'workbox',
       swLocation: 'service-worker.js'
-    }),
-    markdownTabPlugin({
-      // Enable code tabs
-      codeTabs: true,
-      // Enable tabs
-      tabs: true,
     }),
     registerComponentsPlugin({
       components: {

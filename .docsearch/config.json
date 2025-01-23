@@ -23,33 +23,26 @@
         "global": true,
         "default_value": "Documentation"
       },
-      "lvl1": ".theme-hope-content h2",
-      "lvl2": ".theme-hope-content h3",
-      "lvl3": ".theme-hope-content h4",
-      "content": {
-        "selector": ".theme-hope-content p, .theme-hope-content li, .theme-hope-content pre",
-        "global": false
+      "lvl1": {
+        "selector": ".theme-hope-content h1"
       },
-      "title": {
-        "selector": ".theme-hope-content h1",
-        "global": true
+      "lvl2": {
+        "selector": ".theme-hope-content h2"
       },
-      "description": {
-        "selector": "//meta[@name='description']/@content | //meta[@property='og:description']/@content | (//div[contains(@class, 'theme-hope-content')]//p)[1]",
-        "type": "xpath",
-        "global": true,
-        "defaultValue": "Rundeck Documentation"
+      "lvl3": {
+        "selector": ".theme-hope-content h3"
       },
-      "lastUpdated": {
-        "selector": "//meta[@property='article:published_time']/@content",
-        "type": "xpath",
-        "global": true
+      "lvl4": {
+        "selector": ".theme-hope-content h4"
+      },
+      "text": {
+        "selector": "//div[contains(@class, \"theme-hope-content\")]//li | //div[contains(@class, \"theme-hope-content\")]//p | //div[contains(@class, \"theme-hope-content\")]//pre[string-length(string()) < 5000]",
+        "type": "xpath"
       },
       "lang": {
         "selector": "/html/@lang",
         "type": "xpath",
-        "global": true,
-        "default_value": "en-US"
+        "global": true
       }
     }
   },
@@ -59,46 +52,9 @@
   "strip_chars": " .,;:#",
   "only_content_level": true,
   "custom_settings": {
-    "hitsPerPage": 20,
-    "paginationLimitedTo": 1000,
-    "distinct": true,
-    "attributeForDistinct": "url",
     "attributesForFaceting": [
       "version",
       "lang"
-    ],
-    "customRanking": [
-      "desc(lastUpdated)",
-      "desc(weight.page_rank)",
-      "desc(weight.level)",
-      "asc(weight.position)"
-    ],
-    "attributesToRetrieve": [
-      "hierarchy",
-      "content",
-      "anchor",
-      "url",
-      "description",
-      "title",
-      "lastUpdated"
-    ],
-    "attributesToSnippet": [
-      "content:150",
-      "description:150"
-    ],
-    "attributesToHighlight": [
-      "content",
-      "title",
-      "description"
-    ],
-    "searchableAttributes": [
-      "title",
-      "description",
-      "lvl0",
-      "lvl1",
-      "lvl2",
-      "lvl3",
-      "content"
     ]
   }
 }
