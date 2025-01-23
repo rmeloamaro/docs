@@ -37,6 +37,11 @@
         "selector": "meta[name='description']",
         "global": true,
         "defaultValue": "Rundeck Documentation"
+      },
+      "lastUpdated": {
+        "selector": "meta[property='article:modified_time']",
+        "type": "datetime",
+        "global": true
       }
     }
   },
@@ -55,6 +60,7 @@
       "lang"
     ],
     "customRanking": [
+      "desc(lastUpdated)",
       "desc(weight.page_rank)",
       "desc(weight.level)",
       "asc(weight.position)"
