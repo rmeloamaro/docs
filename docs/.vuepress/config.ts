@@ -149,14 +149,20 @@ export default defineUserConfig({
             'description'
           ],
           attributesToSnippet: [
-            'content:50',
-            'description:20'
-          ]
+            'content:150',
+            'description:100'
+          ],
+          snippetEllipsisText: '...',
+          highlightPreTag: '<mark>',
+          highlightPostTag: '</mark>'
         },
-        // Container class for custom styling
-        container: '#docsearch',
-        // Debug mode for troubleshooting
-        debug: false
+        transformItems: (items) => {
+          return items.map((item) => ({
+              ...item,
+              content: item.content?.slice(0, 150) + '...',  // Trim long content
+          }));
+      },
+      debug: true  // Set to false in production
       },
       redirect: {
         config: {
