@@ -43,6 +43,12 @@
         "selector": "//meta[@property='article:published_time']/@content",
         "type": "xpath",
         "global": true
+      },
+      "lang": {
+        "selector": "/html/@lang",
+        "type": "xpath",
+        "global": true,
+        "default_value": "en-US"
       }
     }
   },
