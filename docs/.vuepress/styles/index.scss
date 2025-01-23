@@ -361,3 +361,36 @@ html[data-theme=dark] {
   }
 
 }
+
+:root {
+  --docsearch-primary-color: #your-primary-color;
+  --docsearch-text-color: #your-text-color;
+  --docsearch-spacing: 12px;
+  --docsearch-icon-stroke-width: 1.4;
+  --docsearch-highlight-color: var(--docsearch-primary-color);
+  --docsearch-muted-color: #969faf;
+  --docsearch-container-background: rgba(101, 108, 133, 0.8);
+  --docsearch-modal-width: 560px;
+  --docsearch-modal-height: 600px;
+  --docsearch-searchbox-height: 56px;
+  --docsearch-hit-height: 56px;
+  --docsearch-hit-color: #444950;
+  --docsearch-hit-active-color: #fff;
+  --docsearch-hit-background: #fff;
+  --docsearch-footer-height: 44px;
+}
+
+/* Custom styles for search results */
+.DocSearch-Hit-content-wrapper {
+  padding: 0.5rem;
+}
+
+.DocSearch-Hit-title {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.DocSearch-Hit-path {
+  font-size: 0.875rem;
+  color: var(--docsearch-muted-color);
+}

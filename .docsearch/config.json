@@ -65,11 +65,12 @@
       "anchor",
       "url",
       "description",
-      "title"
+      "title",
+      "lastUpdated"
     ],
     "attributesToSnippet": [
-      "content:50",
-      "description:20"
+      "content:150",
+      "description:150"
     ],
     "attributesToHighlight": [
       "content",
