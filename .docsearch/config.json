@@ -39,8 +39,8 @@
         "defaultValue": "Rundeck Documentation"
       },
       "lastUpdated": {
-        "selector": "meta[property='article:modified_time']",
-        "type": "datetime",
+        "selector": "//meta[@property='article:published_time']/@content",
+        "type": "xpath",
         "global": true
       }
     }
