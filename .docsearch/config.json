@@ -27,7 +27,8 @@
       "lvl2": ".theme-hope-content h3",
       "lvl3": ".theme-hope-content h4",
       "content": {
-        "selector": ".theme-hope-content p, .theme-hope-content li, .theme-hope-content pre"
+        "selector": ".theme-hope-content p, .theme-hope-content li, .theme-hope-content pre",
+        "global": false
       },
       "title": {
         "selector": ".theme-hope-content h1",

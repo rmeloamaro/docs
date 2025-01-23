@@ -92,6 +92,7 @@ export default defineUserConfig({
     contributors: false,
     plugins: {
       docsearch: {
+        debug: true,
         locales: {
           '/': {
             placeholder: 'Search Documentation',
@@ -150,7 +151,7 @@ export default defineUserConfig({
           ],
           attributesToSnippet: [
             'content:150',
-            'description:100'
+            'description:150'
           ],
           snippetEllipsisText: '...',
           highlightPreTag: '<mark>',
@@ -158,11 +159,46 @@ export default defineUserConfig({
         },
         transformItems: (items) => {
           return items.map((item) => ({
-              ...item,
-              content: item.content?.slice(0, 150) + '...',  // Trim long content
+            ...item,
+            content: item._snippetResult?.content?.value || item.content
           }));
-      },
-      debug: true  // Set to false in production
+        },
+        hitComponent: ({ hit, children }) => {
+          return {
+            type: 'div',
+            ref: undefined,
+            constructor: undefined,
+            props: {
+              className: 'DocSearch-Hit-Container',
+              children: [
+                {
+                  type: 'div',
+                  props: {
+                    className: 'DocSearch-Hit-content-wrapper',
+                    children: [
+                      {
+                        type: 'div',
+                        props: {
+                          className: 'DocSearch-Hit-title',
+                          innerHTML: hit.title
+                        }
+                      },
+                      {
+                        type: 'div',
+                        props: {
+                          className: 'DocSearch-Hit-content',
+                          innerHTML: hit._snippetResult?.content?.value
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          };
+        }
+
+        //end of docsearch
       },
       redirect: {
         config: {
