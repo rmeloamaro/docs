@@ -23,6 +23,22 @@
         "global": true,
         "default_value": "Documentation"
       },
+      "lvl1": {
+        "selector": ".theme-hope-content h2",
+        "global": false
+      },
+      "lvl2": {
+        "selector": ".theme-hope-content h3",
+        "global": false
+      },
+      "title": {
+        "selector": ".theme-hope-content h1",
+        "global": true
+      },
+      "description": {
+        "selector": ".theme-hope-content p:first-of-type",
+        "global": false
+      },
       "text": {
         "selector": "//div[contains(@class, \"theme-hope-content\")]//li | //div[contains(@class, \"theme-hope-content\")]//p | //div[contains(@class, \"theme-hope-content\")]//pre[string-length(string()) < 5000]",
         "type": "xpath"
@@ -43,6 +59,17 @@
     "attributesForFaceting": [
       "version",
       "lang"
+    ],
+    "searchableAttributes": [
+      "title",
+      "description",
+      "lvl1",
+      "lvl2",
+      "text"
+    ],
+    "attributesToSnippet": [
+      "description:50",
+      "text:50"
     ]
   }
 }
