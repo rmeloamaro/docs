@@ -34,7 +34,8 @@
         "global": true
       },
       "description": {
-        "selector": "meta[name='description']",
+        "selector": "//meta[@name='description']/@content | //meta[@property='og:description']/@content | (//div[contains(@class, 'theme-hope-content')]//p)[1]",
+        "type": "xpath",
         "global": true,
         "defaultValue": "Rundeck Documentation"
       },
