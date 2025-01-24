@@ -7,7 +7,7 @@ Unlike some cloud diagnostics, connecting to Linux servers will involve using [n
 Node executors will be utilized by [Runners](/administration/runner/#installation) with Runbook Automation or directly by servers with Runbook Automation Self-Hosted.  
 Node executors are configured as part of node definitions at the project level or per-node and then used as needed at job run-time by the Runner or server.  
 
-Often, Linux diagnostics are jobs composed of one or more [command](/manual/node-steps/builtin.md#command-step) or [script](/manual/node-steps/builtin.md#script-step) steps that gather data from the node about resources or services on that node.
+Often, Linux diagnostics are jobs composed of one or more [command](/manual/jobs/job-plugins/node-steps/builtin.md#command-step) or [script](/manual/jobs/job-plugins/node-steps/builtin.md#script-step) steps that gather data from the node about resources or services on that node.
 
 ### Examples:
 

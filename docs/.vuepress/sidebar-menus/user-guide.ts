@@ -197,7 +197,8 @@ export default [{
                             '/manual/log-filters/render-formatted-data.md',
                             '/manual/log-filters/mask-passwords.md',
                             '/manual/log-filters/json-jq.md',
-                            '/manual/log-filters/multi-line-regex.md'
+                            '/manual/log-filters/multi-line-regex.md',
+                            '/manual/log-filters/loop-plugins.md'
                           ]
                 },
         '/manual/jobs/result-data.md',

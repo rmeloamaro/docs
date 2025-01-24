@@ -6,7 +6,7 @@ Unlike some cloud diagnostics, connecting to servers will involve using [node ex
 Node executors will be utilized by [Runners](/administration/runner/#runner-on-windows-os) with Runbook Automation or directly by servers with Runbook Automation Self-Hosted.
 Node executors are configured as part of node definitions at the project level or per-node and then used as needed at job run-time by the Runner or server.  
 
-Often, Windows diagnostics are jobs composed of one or more [command](/manual/node-steps/builtin.md#command-step) or [script](/manual/node-steps/builtin.md#script-step) steps that gather data from the node about resources or services on that node.
+Often, Windows diagnostics are jobs composed of one or more [command](/manual/jobs/job-plugins/node-steps/builtin.md#command-step) or [script](/manual/jobs/job-plugins/node-steps/builtin.md#script-step) steps that gather data from the node about resources or services on that node.
 
 ### Examples:
 * Check the health of a Windows service such as a web server or database using PowerShell

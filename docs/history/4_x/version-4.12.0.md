@@ -22,9 +22,7 @@ Release Date: April 17th, 2023
 
 ## Overview
 
-Check out the new features and enhancements for PagerDuty Runbook Automation, and Rundeck Community included in this release. This release includes new plugins for Kubernetes, new Plugin Suites for Google Cloud, Datadog, and Azure, performance improvements to the [Enterprise Runner](/administration/runner/runner-install.md), new authentication methods for Remote URL Job Options, and security fixes.
-
-View our Twitch stream review of this release live on May 9. [Here’s the event link.](https://www.twitch.tv/pagerduty/schedule)
+Check out the new features and enhancements for PagerDuty Runbook Automation, and Rundeck Community included in this release. This release includes new plugins for Kubernetes, new Plugin Suites for Google Cloud, Datadog, and Azure, performance improvements to the [Enterprise Runner](/administration/runner/index.md), new authentication methods for Remote URL Job Options, and security fixes.
 
 ## Runbook Automation Updates
 
@@ -48,7 +46,7 @@ View our Twitch stream review of this release live on May 9. [Here’s the event
 
 **Enterprise Runner enhancements:** Updates to the performance of the Enterprise Runner result in faster Job execution and output. Now, when Jobs or Job steps are executed concurrently on Runners, users can expect up to an 80% reduction in perceived Job duration. This enhancement builds on top of the [new architecture for Runners](/administration/runner/index.md) that was announced in [4.11.0](/history/4_x/version-4.11.0.md). 
 
-**Updated to Remote URL Job Options:** Now users can pre-populate Job Options Values from remote sources that require authentication. Remote URL Job Options supports multiple authentication methods for making HTTP/S calls to retrieve the list of Job Options. Users can select from the following authentication methods for the remote URL: Basic, API Key, and Bearer Token. The keys for each of these methods can be retrieved from Key Storage. Additionally, users can reference nested JSON elements from the returned payload of the remote URL. Click [here](/manual/job-options.md#remote-url-job-options) for the full documentation. 
+**Updated to Remote URL Job Options:** Now users can pre-populate Job Options Values from remote sources that require authentication. Remote URL Job Options supports multiple authentication methods for making HTTP/S calls to retrieve the list of Job Options. Users can select from the following authentication methods for the remote URL: Basic, API Key, and Bearer Token. The keys for each of these methods can be retrieved from Key Storage. Additionally, users can reference nested JSON elements from the returned payload of the remote URL. Click [here](/manual/jobs/job-options.md#remote-url-job-options) for the full documentation. 
 
 ![](/assets/img/relnotes-412-urloption.png)
 

@@ -19,7 +19,7 @@ To utilize Runners, there are a few steps to carry out:<br>
 		* Associate Runners with Projects<br>
         	Each Runner must be associated with at least one Project in order to be used.<br>
 ## Runner Installation
-3. [Install Runner software in remote networks for each Runner that has been created](/administration/runner/runner-install.md).<br>
+3. [Install Runner software in remote networks for each Runner that has been created](/administration/runner/runner-installation/runner-install.md).<br>
     Though Runners have been defined by this point, it is still necessary to install software in each of the remote locations.<br>
 ## Configure Jobs for Runners
 4. [Add Runner tags to Jobs](/administration/runner/runner-using.md)<br>

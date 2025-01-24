@@ -8,7 +8,7 @@ Designing and building databases for today's modern applications is difficult an
 
 **Log Levels**: It is common practice to _not_ log at the "debug level" in production.
 
-Pairing the Datbase Management solutions with [**Automated Diagnostics**](/learning/soltions/automated-diagnostics/index.md) can help with debugging database issues experienced in production by gathering as much information as possible when an incident occurs and providing those details to first responders or subject matter experts proactively.
+Pairing the Datbase Management solutions with [**Automated Diagnostics**](/learning/solutions/automated-diagnostics/index.md) can help with debugging database issues experienced in production by gathering as much information as possible when an incident occurs and providing those details to first responders or subject matter experts proactively.
 
 ## Examples
 
@@ -35,7 +35,7 @@ Diagnostics here would be to check that the logs are sized correctly for the tra
 
 **Runbook Automation** provide the following mechanisms that make it easy to automatically diagnose database-related incidents:
 
-[**SQLRunner Plugin**](/manual/node-steps/sqlrunner.md#sqlrunner-plugin-enterprise):  The SQLRunner plugin is a node step that can execute a **`.sql`** script against a database endpoint. 
+[**SQLRunner Plugin**](/manual/jobs/job-plugins/node-steps/sqlrunner.md#sqlrunner-plugin-enterprise):  The SQLRunner plugin is a node step that can execute a **`.sql`** script against a database endpoint. 
 This provides a way to get vital diagnostic information directly from the live database.
 
 For example, using the **`SHOW FULL PROCESSLIST;`** will show the running queries, their associated state and duration:

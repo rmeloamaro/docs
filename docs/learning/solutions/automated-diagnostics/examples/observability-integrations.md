@@ -17,10 +17,10 @@ Some monitoring tools provide "diagnostic level" statistics - such as top cpu co
 **Runbook Automation** provides a handful of plugins that make it easy to integrate with common monitoring tools:
 
 ### CloudWatch Logs
-The [CloudWatch Logs Ad Hoc Query](/manual/workflow-steps/aws-cloudwatch#execute-ad-hoc-cloudwatch-logs-query) plugin allows users to insert a Logs Insights query into a Job to surface logs from CloudWatch.
+The [CloudWatch Logs Ad Hoc Query](/manual/jobs/job-plugins/workflow-steps/aws-cloudwatch#execute-ad-hoc-cloudwatch-logs-query) plugin allows users to insert a Logs Insights query into a Job to surface logs from CloudWatch.
 ![CloudWatch Logs Ad Hoc Query](/assets/img/aws-cloudwatch-logs-query-string.png)<br>
 
-In addition, there is the [CloudWatch Logs Saved Query](/manual/workflow-steps/aws-cloudwatch#execute-saved-cloudwatch-logs-query) plugin, which can trigger a saved query in CloudWatch against one or multiple CloudWatch log groups.
+In addition, there is the [CloudWatch Logs Saved Query](/manual/jobs/job-plugins/workflow-steps/aws-cloudwatch#execute-saved-cloudwatch-logs-query) plugin, which can trigger a saved query in CloudWatch against one or multiple CloudWatch log groups.
 ![Execute Saved CloudWatch Logs Query](/assets/img/cloudwatch-saved-query-fields.png)
 
 ### Sumo Logic Logs Query
@@ -28,4 +28,4 @@ Insert a Sumo Logic logs query into your Automation instance to surface logs fro
 ![Sumo Logic logs Query](/assets/img/sumo-logic-create-query-example.png)<br>
 
 ### HTTP Request Step Plugin
-The [HTTP Request Plugin](/manual/node-steps/builtin.md#http-node-step) can make an API call to your monitoring tools to retrieve relevant diagnostic data.
+The [HTTP Request Plugin](/manual/jobs/job-plugins/node-steps/builtin.md#http-node-step) can make an API call to your monitoring tools to retrieve relevant diagnostic data.
