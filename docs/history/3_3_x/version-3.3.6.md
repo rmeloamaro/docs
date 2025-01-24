@@ -16,9 +16,9 @@ The Remote Execution Policy feature was originally meant for "run now" job execu
 ### Enterprise Plugins
 #### PagerDuty
 More PagerDuty Plugin Updates!  The Enterprise plugin suite now includes the following:
-- [Get Incident Information](/manual/workflow-steps/pagerduty.md#pagerduty-get-incident) (Job Workflow Step)
-- [Update Escalation](/manual/workflow-steps/pagerduty.md#pagerduty-update-escalation-policy) (Job Workflow Step)
-- [Add Additional Responders](/manual/workflow-steps/pagerduty.md#pagerduty-add-additional-responders) (Job Workflow Step)
+- [Get Incident Information](/manual/jobs/job-plugins/workflow-steps/pagerduty..md#pagerduty-get-incident) (Job Workflow Step)
+- [Update Escalation](/manual/jobs/job-plugins/workflow-steps/pagerduty..md#pagerduty-update-escalation-policy) (Job Workflow Step)
+- [Add Additional Responders](/manual/jobs/job-plugins/workflow-steps/pagerduty..md#pagerduty-add-additional-responders) (Job Workflow Step)
 - [PagerDuty Generic V3 Webhook Processor](/manual/webhooks/pagerduty-run-job.md#getting-started) (Webhook Plugin)
 
 [Click Here to see a full list of the Enterprise version PagerDuty Plugin features.](https://resources.rundeck.com/plugins/pagerduty-enterprise-plugins/)

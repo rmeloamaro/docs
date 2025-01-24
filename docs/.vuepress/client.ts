@@ -21,7 +21,8 @@ export default defineClientConfig({
       $apiVersion: { get: () => API_VERSION },
       $cliVersion: { get: () => CLI_VERSION },
     });
-
+    
+    // The section below is used to properly format the Search results on the docs site.
     if (typeof window !== 'undefined') {
       // Monitor XHR requests
       const originalXHR = window.XMLHttpRequest;

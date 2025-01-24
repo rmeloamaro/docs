@@ -121,7 +121,6 @@ export default defineUserConfig({
             },
           },
         },
-        debug: true,
         container: '#docsearch',
         disableUserPersonalization: true,
         initialQuery: '',
@@ -238,16 +237,15 @@ export default defineUserConfig({
         ): number =>
           dateSorter(pageA.frontmatter.date, pageB.frontmatter.date)
       },
+      icon: {
+        assets: "fontawesome"
+      },
       components: {
         components: [
-          "FontIcon",
           "PDF",
           "VidStack"
         ],
         componentOptions: {
-          fontIcon: {
-            assets: "fontawesome",
-          },
           pdf: {
             pdfjs: "/assets/lib/pdfjs/",
           },
