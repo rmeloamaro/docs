@@ -2,6 +2,7 @@
 home: true
 title: Runbook Automation Solutions
 heroText:  Automation Solutions for Ops
+description: Practical Rundeck automation solutions and implementation guides. Learn how to automate IT operations, incident response, security tasks, and cloud resource management.
 tagline: See how Automation can transform your operations and streamline processes.
 //heroImage: /assets/img/pd-background.png
 bgImage: /assets/img/pd-background.png

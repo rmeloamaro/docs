@@ -181,7 +181,7 @@ highlights:
 
     - title: More
       icon: ellipsis
-      details: 
+      details: More Runner Details
       link: /administration/runner/index.html
 
 

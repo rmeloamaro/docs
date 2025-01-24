@@ -62,6 +62,13 @@ export default defineUserConfig({
   shouldPrefetch: false,
   base: `/${setup.base ? setup.base + '/' : ''}`,
   head: [
+    [
+      "meta",
+      {
+        name: "google-site-verification",
+        content: "utXi1RM2yQqO53MmK-4lfqR8Vcbfng5f6sIs_FUXAOU"
+      }
+    ]
   ],
   extendsMarkdown: md => {
     md.use(markdownItReplaceVars, 'custom_token_replace', function (content: string) {
