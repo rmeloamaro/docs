@@ -12,13 +12,6 @@ feed:
 
 # 5.0.1 Release Notes
 
-Name: <span style="color: coral"><span class="glyphicon glyphicon-bell"></span> "Denali coral bell"</span>
-Release Date: January 15th, 2024
-
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.0.1) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.0.1)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-
 ::: danger Please use version 5.0.2
 We have found some issues with Log Filters and passing data to the Enterprise Runner.  Please use the [5.0.2 Release](version-5.0.2.md) when upgrading.
 :::
@@ -48,6 +41,19 @@ There is a **new signing key** to validate binaries starting with version 5.0.1.
 
 
 [Here is a link to the full list of public PRs](https://github.com/rundeck/rundeck/pulls?q=is%3Apr+milestone%3A5.0.1+is%3Aclosed)
+
+## Links
+
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.0.1) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.0.1)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+
+## Version Info
+
+Name: <span style="color: coral"><span class="glyphicon glyphicon-bell"></span> "Denali coral bell"</span>
+
+Release Date: January 15th, 2024
+
 
 ## Community Contributors
 

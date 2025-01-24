@@ -12,33 +12,19 @@ feed:
 
 # 5.7.0 Release Notes
 
-Name: <span style="color: yellowgreen"><span class="glyphicon glyphicon-gift"></span> "Foraker yellowgreen gift"</span>
-Release Date: October 21, 2024
-
-- Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/5.7.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.7.0)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-- [Watch the Live Stream Release Recap](https://www.youtube.com/watch?v=4Pcr1k0LDTQ)
-
-<VidStack src="youtube/4Pcr1k0LDTQ"/>
-
-
 ## Overview
-
-Check out the new features and enhancements for PagerDuty Runbook Automation commercial offerings and Rundeck Community included in this release.
-
-### Highlights
 
 [Project Runner Management](/administration/runner/runner-management/managing-runners.md#managing-runners-within-a-project), announced in version 5.3.0 is now Generally Available.  We appreciate all the feedback during the Early Access program.  Check out the docs on this feature here and watch a demo on the [5.3.0 release notes page](version-5.3.0.md).
 
 There are also quite a few package updates across the platform to address security findings submitted by the community.
+
+<VidStack src="youtube/4Pcr1k0LDTQ"/>
 
 ## Runbook Automation Updates
 
 > Also includes all Open Source updates from below
 
 ### Additional Updates
-
 
 * Updates EC2 plugin for CVE-2020-13956
 * Promote Project Runner Management to Generally Available
@@ -47,7 +33,6 @@ There are also quite a few package updates across the platform to address securi
 * Resolve CVE-2022-24329
 * Resolve CVE-2021-28168 
 * Include more details in PD GetIncident plugin output
-
 
 ## Rundeck Open Source Product Updates
 
@@ -65,6 +50,19 @@ There are also quite a few package updates across the platform to address securi
 
 ## Ansible Plugin Updates
 * [Support windows authentication](https://github.com/rundeck-plugins/ansible-plugin/pull/394)
+
+## Links
+
+- Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/5.7.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.7.0)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/watch?v=4Pcr1k0LDTQ)
+
+## Version Info
+
+Name: <span style="color: yellowgreen"><span class="glyphicon glyphicon-gift"></span> "Foraker yellowgreen gift"</span>
+
+Release Date: October 21, 2024
 
 
 ## Community Contributors

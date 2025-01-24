@@ -12,19 +12,9 @@ feed:
 
 # 5.3.0 Release Notes
 
-Name: <span style="color: turquoise"><span class="glyphicon glyphicon-lamp"></span> "Etna turquoise lamp"</span>
-Release Date: May 20th, 2024
-
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.3.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.3.0)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-- [Watch the Live Stream Release Recap](https://www.youtube.com/live/HDOnqXi6cS0?si=igWP0LG5S4SRzFnn)
-
-<VidStack src="youtube/HDOnqXi6cS0"/>
-
 ## Overview
 
-Version 5.3.0 is here! Check out the new features and enhancements for PagerDuty Runbook Automation (formerly Rundeck Enterprise) and Rundeck Community included in this release.
+Version 5.3.0 is here! These latest updates introduce Project Runner Management for enhanced team autonomy, new PagerDuty Incident Workflow integration for improved incident response, and SFTP support for more secure file transfers. These features collectively empower teams with better control over their automation workflows, strengthen incident management capabilities, and provide more secure options for script execution and file transfers in enterprise environments.
 
 :::warning Concurrent Executions Performance Degradation
 There is a bug in this release that causes execution failures when there are 10 or more concurrent executions. 
@@ -34,6 +24,8 @@ dataSource.properties.maximumPoolSize=100
 ```
 A permanent fix will be available in the next release.
 :::
+
+<VidStack src="youtube/HDOnqXi6cS0"/>
 
 ## Highlights
 
@@ -138,8 +130,18 @@ Note: SCP was flagged with a Moderate level CVE by Red Hat. You can read the det
 * [Fix: No Syntax Highlight Between Edit Sessions Ansible Plugin](https://github.com/rundeck-plugins/ansible-plugin/pull/354)
 * [Use ansible vault for temporary files](https://github.com/rundeck-plugins/ansible-plugin/pull/352)
 
+## Links
 
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.3.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.3.0)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/live/HDOnqXi6cS0?si=igWP0LG5S4SRzFnn)
 
+## Version Info
+
+Name: <span style="color: turquoise"><span class="glyphicon glyphicon-lamp"></span> "Etna turquoise lamp"</span>
+
+Release Date: May 20th, 2024
 
 ## Community Contributors
 

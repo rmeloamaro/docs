@@ -11,19 +11,11 @@ feed:
 
 # 5.8.0 Release Notes
 
-Name: <span style="color: green"><span class="glyphicon glyphicon-knight"></span> "Fuji green knight"</span>
-Release Date: December 5th, 2024
-
-- Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/5.8.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.8.0)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-- [Watch the Live Stream Release Recap](https://www.youtube.com/watch?v=WsRWF6P2Kyc)
-
-<VidStack src="youtube/WsRWF6P2Kyc"/>
-
 ## Overview
 
-Check out the new features and enhancements for PagerDuty Runbook Automation commercial offerings and Rundeck Community included in this release.
+The updated Kubernetes Plugin Suite for Rundeck introduces powerful features including dynamic cluster discovery for EKS/AKS/GKE, cloud provider authentication, and native in-cluster support from Runner, all without Python dependencies. These enhancements enable automated cluster management, simplified authentication, and efficient bulk operations across multiple clusters, making it easier for teams to manage Kubernetes infrastructure at scale while reducing manual effort and improving security.
+
+<VidStack src="youtube/WsRWF6P2Kyc"/>
 
 ### Updated Kubernetes Plugin Suite
 
@@ -75,6 +67,19 @@ In addition to the new resource-model plugins, this release includes the followi
 * [Fix - Ansible YAML parsing error](https://github.com/rundeck-plugins/ansible-plugin/pull/399)
 * [Allow custom bin path on gather facts false](https://github.com/rundeck-plugins/ansible-plugin/pull/398)
 * [Fix - Ansible plugin - Resource Model Source throws NullPointerException](https://github.com/rundeck-plugins/ansible-plugin/pull/397)
+
+## Links
+
+- Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/5.8.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.8.0)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/watch?v=WsRWF6P2Kyc)
+
+## Version Info
+
+Name: <span style="color: green"><span class="glyphicon glyphicon-knight"></span> "Fuji green knight"</span>
+
+Release Date: December 5th, 2024
 
 ## Community Contributors
 

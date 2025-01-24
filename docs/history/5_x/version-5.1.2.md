@@ -12,13 +12,6 @@ feed:
 
 # 5.1.2 Release Notes
 
-Name: <span style="color: orchid"><span class="glyphicon glyphicon-flag"></span> "Elbrus orchid flag"</span>
-Release Date: March 28th, 2024
-
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.1.2) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.1.2)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-
 ## Overview
 
 This release fixes the following issues:
@@ -42,6 +35,18 @@ Fixes to a scenario when upgrading to versions after 4.17.0 would result in an i
 
 [Here is a link to the full list of public PRs](https://github.com/rundeck/rundeck/pulls?q=is%3Apr+milestone%3A5.1.2+is%3Aclosed)
 
+
+## Links
+
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.1.2) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.1.2)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+
+## Version Info
+
+Name: <span style="color: orchid"><span class="glyphicon glyphicon-flag"></span> "Elbrus orchid flag"</span>
+
+Release Date: March 28th, 2024
 
 ## Community Contributors
 

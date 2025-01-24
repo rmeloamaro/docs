@@ -12,23 +12,15 @@ feed:
 
 # 5.6.0 Release Notes
 
-Name: <span style="color: salmon"><span class="glyphicon glyphicon-bullhorn"></span> "Fansiban salmon bullhorn"</span>
-Release Date: September 12, 2024
+## Overview
 
-- Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/5.6.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.6.0)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-- [Watch the Live Stream Release Recap](https://www.youtube.com/watch?v=AVf0Pwafza0)
-
-<VidStack src="youtube/AVf0Pwafza0"/>
+Our 5.6.0 release is focused on bug fixes, CVE remediation and testing.  We have also continued our efforts into the UI code to modernize, and standardize it to Vue. This will bring performance improvements and simplify building future enhancements.
 
 ::: caution
 This release contains a critical issue where scheduled jobs are no longer executed after making unrelated edits to the job.  This can happen when the jobs is edited via API, job/project imports, SCM, or direct job editing.  It is strongly recommended to use or upgrade to [version 5.6.1](version-5.6.1.md).
 :::
 
-## Overview
-
-Our 5.6.0 release is focused on bug fixes, CVE remediation and testing.  We have also continued our efforts into the UI code to modernize, and standardize it to Vue. This will bring performance improvements and simplify building future enhancements.
+<VidStack src="youtube/AVf0Pwafza0"/>
 
 ### Additional Updates
 
@@ -61,6 +53,19 @@ Our 5.6.0 release is focused on bug fixes, CVE remediation and testing.  We have
 
 [Here is a link to the full list of public PRs](https://github.com/rundeck/rundeck/pulls?q=is%3Apr+milestone%3A5.6.0+is%3Aclosed)
 
+
+## Links
+
+- Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/5.6.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.6.0)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/watch?v=AVf0Pwafza0)
+
+## Version Info
+
+Name: <span style="color: salmon"><span class="glyphicon glyphicon-bullhorn"></span> "Fansiban salmon bullhorn"</span>
+
+Release Date: September 12, 2024
 
 ## Community Contributors
 

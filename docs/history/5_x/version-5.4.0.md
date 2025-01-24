@@ -12,23 +12,15 @@ feed:
 
 # 5.4.0 Release Notes
 
-Name: <span style="color: deeppink"><span class="glyphicon glyphicon-piggy-bank"></span> "Everest deeppink piggy-bank"</span>
-Release Date: June 18, 2024
-
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.4.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.4.0)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-- [Watch the Live Stream Release Recap](https://www.youtube.com/live/VqAAjBK0I5E?si=25hA6mmqyRSXh1yP)
-
-<VidStack src="youtube/VqAAjBK0I5E"/>
-
 ## Overview
+
+Our 5.4.0 release adds support for configuring separate endpoints for Credential Provider and API web-server, making it more flexible to integrate with different CyberArk deployment configurations while following security best practices.
 
 :::warning
 If you have updated from a Rundeck version of 4.16.0 or earlier to version 5.4.0 there is a UI bug that prevents the display of certain execution records.  This issue is fixed with version 5.5.0 and there is no impact to the underlying data.  [Please see Release Notes for 5.5.0 here](version-5.5.0.md).
 :::
 
-Check out the new features and enhancements for PagerDuty Runbook Automation and Rundeck Community edition included in this release.
+<VidStack src="youtube/VqAAjBK0I5E"/>
 
 ### Highlights
 
@@ -74,6 +66,19 @@ In addition, users can now configure separate endpoints for the Credential Provi
 
 
 [Here is a link to the full list of public PRs](https://github.com/rundeck/rundeck/pulls?q=is%3Apr+milestone%3A5.4.0+is%3Aclosed)
+
+## Links
+
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.4.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.4.0)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/live/VqAAjBK0I5E?si=25hA6mmqyRSXh1yP)
+
+## Version Info
+
+Name: <span style="color: deeppink"><span class="glyphicon glyphicon-piggy-bank"></span> "Everest deeppink piggy-bank"</span>
+
+Release Date: June 18, 2024
 
 ## Community Contributors
 
