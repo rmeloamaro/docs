@@ -3,6 +3,7 @@
 title: "5.6.0 Release Notes"
 date: 2024-09-12
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.6.0 with extensive updates and improvements"
 feed:
  enable: true
  description: "Security and Bug Fixes"

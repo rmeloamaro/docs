@@ -3,6 +3,7 @@
 title: "5.1.0 Release Notes"
 date: 2024-02-14
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.1.0 with AWS Secrets Manager integration and Key Storage access through the Enterprise Runner"
 feed:
  enable: true
  description: ""

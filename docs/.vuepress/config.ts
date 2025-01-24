@@ -103,6 +103,11 @@ export default defineUserConfig({
     contributors: false,
     plugins: {
       search: false,
+      seo: {
+        hostname: "https://docs.rundeck.com/",
+        autoDescription: true,
+        twitterID: "pagerduty"
+      },
       docsearch: {
         appId: 'GRSXNRCDRG',
         apiKey: 'c463f74d6f36a5af808650e0f69aadfa',
@@ -329,7 +334,7 @@ export default defineUserConfig({
     }),
     openGraphPlugin({
       host: 'https://docs.rundeck.com',
-      twitterSite: 'rundeck',
+      twitterSite: 'pagerduty',
     }),
     containerPlugin(
       {

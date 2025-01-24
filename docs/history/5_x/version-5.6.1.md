@@ -3,6 +3,7 @@
 title: "5.6.1 Release Notes"
 date: 2024-10-14
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.6.1 to fix critical bug."
 feed:
  enable: true
  description: "Fix to Critical bug related to scheduled jobs."

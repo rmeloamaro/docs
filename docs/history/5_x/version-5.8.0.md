@@ -2,6 +2,7 @@
 title: "5.8.0 Release Notes"
 date: 2024-12-05
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation 5.8.0 Releases New Kubernetes Plugin Suite!"
 feed:
  enable: true
  description: "New Kubernetes Plugin Suite!"

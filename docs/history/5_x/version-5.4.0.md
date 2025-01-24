@@ -3,6 +3,7 @@
 title: "5.4.0 Release Notes"
 date: 2024-06-18
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.4.0 with Early Access Project Runner Management and Cyberark Integration enhancements"
 feed:
  enable: true
  description: "Cyberark Integration can now use REST, Security Fixes"

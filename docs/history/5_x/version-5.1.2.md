@@ -3,6 +3,7 @@
 title: "5.1.2 Release Notes"
 date: 2024-03-28
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.1.2 to fix important issues in 5.1.0 release"
 feed:
  enable: true
  description: "Fixes for Node Display and AWS Project Configuration"

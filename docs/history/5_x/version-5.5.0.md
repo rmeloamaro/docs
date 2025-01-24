@@ -3,6 +3,7 @@
 title: "5.5.0 Release Notes"
 date: 2024-08-08
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.5.0 with Automatic Runner Selection and Runners as Nodes"
 feed:
  enable: true
  description: "Major Enterprise Runner Enhancements and important bug fix."

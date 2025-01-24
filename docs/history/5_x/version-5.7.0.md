@@ -3,6 +3,7 @@
 title: "5.7.0 Release Notes"
 date: 2024-10-21
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.7.0 Project Runner Management is now Generally Available!"
 feed:
  enable: true
  description: "Project Runner Management is GA!"

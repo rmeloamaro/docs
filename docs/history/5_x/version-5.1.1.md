@@ -3,6 +3,7 @@
 title: "5.1.1 Release Notes"
 date: 2024-03-05
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.1.1 with important CVE fixes"
 feed:
  enable: true
  description: ""

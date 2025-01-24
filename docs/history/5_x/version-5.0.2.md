@@ -3,6 +3,7 @@
 title: "5.0.2 Release Notes"
 date: 2024-02-12
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.0.2 with fixes to the base 5.0 release"
 feed:
  enable: true
  description: "Important Compatibility Updates for 5.X"

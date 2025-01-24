@@ -3,6 +3,7 @@
 title: "5.3.0 Release Notes"
 date: 2024-05-20
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.3.0 with New Job Steps and SFTP for file transfers"
 feed:
  enable: true
  description: "Project Runner Management Early Access, New Job Steps, SFTP for file transfers"

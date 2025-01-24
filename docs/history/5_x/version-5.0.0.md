@@ -3,6 +3,7 @@
 title: "5.0.0 Release Notes"
 date: 2023-12-14
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases major 5.0 update including Java 11 support, Runner Key Storage GUI for Node Sources, and lots of updates to the foundation of the product code."
 feed:
  enable: true
  description: "Rundeck/Runbook Automation 5.0 is here!"
