@@ -19,21 +19,9 @@
   "selectors": {
     "default": {
       "lvl0": {
-        "selector": ".theme-hope-content h1:first-child",
+        "selector": ".theme-hope-content h1",
         "global": true,
         "default_value": "Documentation"
-      },
-      "lvl1": {
-        "selector": ".theme-hope-content h1:not(:first-child)"
-      },
-      "lvl2": {
-        "selector": ".theme-hope-content h2"
-      },
-      "lvl3": {
-        "selector": ".theme-hope-content h3"
-      },
-      "lvl4": {
-        "selector": ".theme-hope-content h4"
       },
       "text": {
         "selector": "//div[contains(@class, \"theme-hope-content\")]//li | //div[contains(@class, \"theme-hope-content\")]//p | //div[contains(@class, \"theme-hope-content\")]//pre[string-length(string()) < 5000]",
@@ -46,32 +34,15 @@
       }
     }
   },
+  "selectors_exclude": [
+    ".table-of-contents"
+  ],
+  "strip_chars": " .,;:#",
+  "only_content_level": true,
   "custom_settings": {
     "attributesForFaceting": [
       "version",
-      "lang",
-      "hierarchy.lvl0",
-      "hierarchy.lvl1"
-    ],
-    "distinct": true,
-    "attributeForDistinct": "url",
-    "separatorsToIndex": "_",
-    "ranking": [
-      "words",
-      "filters",
-      "typo",
-      "proximity",
-      "attribute",
-      "exact",
-      "custom"
-    ],
-    "searchableAttributes": [
-      "unordered(hierarchy.lvl0)",
-      "unordered(hierarchy.lvl1)",
-      "unordered(hierarchy.lvl2)",
-      "unordered(hierarchy.lvl3)",
-      "unordered(hierarchy.lvl4)",
-      "unordered(text)"
+      "lang"
     ]
   }
 }
