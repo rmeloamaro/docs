@@ -41,7 +41,19 @@ console.log(setup)
 
 export default defineUserConfig({
   bundler: viteBundler({
-    viteOptions: {},
+    viteOptions: {
+      css: {
+        preprocessorOptions: {
+          scss: {
+            charset: false
+          }
+        }
+      },
+      optimizeDeps: {
+        include: ['@docsearch/js'],
+        exclude: ['@vuepress/theme-hope']
+      }
+    },
     vuePluginOptions: {},
   }),
   debug: false,
@@ -90,17 +102,8 @@ export default defineUserConfig({
     pageInfo: false,
     contributors: false,
     plugins: {
+      search: false,
       docsearch: {
-        locales: {
-          '/': {
-            placeholder: 'Search Documentation',
-            translations: {
-              button: {
-                buttonText: 'Search Documentation',
-              },
-            },
-          }
-        },
         appId: 'GRSXNRCDRG',
         apiKey: 'c463f74d6f36a5af808650e0f69aadfa',
         indexName: 'prod_rundeck_docs',
@@ -108,6 +111,20 @@ export default defineUserConfig({
           hitsPerPage: 100,
           facetFilters: [`version:${setup.base}`]
         },
+        locales: {
+          '/': {
+            placeholder: 'Search Documentation',
+            translations: {
+              button: {
+                buttonText: 'Search',
+              },
+            },
+          },
+        },
+        debug: true,
+        container: '#docsearch',
+        disableUserPersonalization: true,
+        initialQuery: '',
       },
       redirect: {
         config: {
