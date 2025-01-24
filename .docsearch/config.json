@@ -19,12 +19,12 @@
   "selectors": {
     "default": {
       "lvl0": {
-        "selector": ".theme-hope-content h1",
+        "selector": ".theme-hope-content h1:first-child",
         "global": true,
         "default_value": "Documentation"
       },
       "lvl1": {
-        "selector": ".theme-hope-content h1"
+        "selector": ".theme-hope-content h1:not(:first-child)"
       },
       "lvl2": {
         "selector": ".theme-hope-content h2"
@@ -55,6 +55,8 @@
     "attributesForFaceting": [
       "version",
       "lang"
-    ]
+    ],
+    "distinct": true,
+    "attributeForDistinct": "url"
   }
 }
