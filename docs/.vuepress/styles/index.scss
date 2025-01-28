@@ -83,6 +83,20 @@ h6 {
   gap: 1rem;
   text-align: center;
 }
+/* Ensure centering is maintained on mobile */
+@media (max-width: 959px) {
+  .vp-hero-actions {
+    justify-content: center;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 419px) {
+  .vp-hero-actions {
+    justify-content: center;
+    margin: 1.2rem auto;
+  }
+}
 
 .vp-feature-bg + .vp-feature {
   color: var(--text-color)
