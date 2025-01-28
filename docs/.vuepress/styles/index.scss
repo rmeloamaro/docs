@@ -74,6 +74,16 @@ h6 {
   background-color: #f6f6f6;
 }
 
+.vp-hero-actions {
+  margin: 1.8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-align: center;
+}
+
 .vp-feature-bg + .vp-feature {
   color: var(--text-color)
 }
