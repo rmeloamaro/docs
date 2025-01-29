@@ -3,6 +3,7 @@
 title: "5.5.0 Release Notes"
 date: 2024-08-08
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.5.0 with Automatic Runner Selection and Runners as Nodes"
 feed:
  enable: true
  description: "Major Enterprise Runner Enhancements and important bug fix."
@@ -11,21 +12,11 @@ feed:
 
 # 5.5.0 Release Notes
 
-Name: <span style="color: orchid"><span class="glyphicon glyphicon-tower"></span> "Fairweather orchid tower"</span>
-Release Date: August 8th, 2024
-
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.5.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.5.0)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-- [Watch the Live Stream Release Recap](https://www.youtube.com/watch?v=bIIuIKV8jpo)
-
-<VidStack src="youtube/bIIuIKV8jpo"/>
-
-
-
 ## Overview
 
 Check out the new features and enhancements for PagerDuty Runbook Automation commercial offerings and Rundeck Community included in this release.
+
+<VidStack src="youtube/bIIuIKV8jpo"/>
 
 ### Highlights
 
@@ -57,7 +48,6 @@ If you had upgraded to our 5.4.0 release and noticed some executions missing fro
 * Resource Model Runner filter is not displayed as expected
 * PagerDuty webhook plugin should return 400 on mismatched signature instead of 500
 * Fix: Runner - Cyberark Key Storage Plugin Doesn&#39;t Work with CCP Mode
-
 
 ## Rundeck Open Source Product Updates
 
@@ -94,8 +84,18 @@ If you had upgraded to our 5.4.0 release and noticed some executions missing fro
 * [add a functional test for larges inventories](https://github.com/rundeck-plugins/ansible-plugin/pull/376)
 * [fix when master password configured](https://github.com/rundeck-plugins/ansible-plugin/pull/375)
 
+## Links
 
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.5.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.5.0)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/watch?v=bIIuIKV8jpo)
 
+## Version Info
+
+Name: <span style="color: orchid"><span class="glyphicon glyphicon-tower"></span> "Fairweather orchid tower"</span>
+
+Release Date: August 8th, 2024
 
 ## Community Contributors
 

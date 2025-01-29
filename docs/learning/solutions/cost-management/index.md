@@ -16,6 +16,7 @@ PagerDuty provides a solution that helps users start automating diagnostics quic
 
 | Examples |
 | --- |
+| <img src="/assets/img/aws-logo.png" width="30" height="30"> [AWS - Change EC2 Size](/learning/solutions/cost-management/aws-change-ec2-size.md) |
 | <img src="/assets/img/aws-logo.png" width="30" height="30"> [AWS - Identify Unused VPCs](/learning/solutions/cost-management/aws-list-unused-vpcs.md) |
 | <img src="/assets/img/aws-logo.png" width="30" height="30"> [AWS - Identify Unused Lambda Functions](/learning/solutions/cost-management/aws-list-unused-lambda.md) |
 | <img src="/assets/img/aws-logo.png" width="30" height="30"> [AWS - Identify Unused Security Groups](/learning/solutions/cost-management/aws-list-unused-securitygroups.md) |

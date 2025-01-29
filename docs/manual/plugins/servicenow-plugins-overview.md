@@ -11,16 +11,16 @@ These integrations allow operations teams to provide self-service mechanisms to 
 
 |Plugin Name| Plugin Type| ServiceNow Table|
 |:---------------------------------------------------------|---------------------------------------------------------|:---------------------------------------------------------:|
-|[**Update Incident State**](/manual/workflow-steps/servicenow.md#servicenow-incident-update-state)|Job Step|Incident|
-|[**Check Incident Assigned**](/manual/workflow-steps/servicenow.md#servicenow-incident-check-assigned)|Job Step|Incident|
-|[**Check Incident State**](/workflow-steps/servicenow.md#servicenow-incident-check-state)|Job Step|Incident|
-|[**Comment Incident**](/manual/workflow-steps/servicenow.md#servicenow-incident-comment)|Job Step|Incident|
-|[**Create Incident**](/manual/workflow-steps/servicenow.md#servicenow-incident-create)|Job Step|Incident|
-|[**Edit Incident**](/manual/workflow-steps/servicenow.md#servicenow-incident-edit)|Job Step|Incident|
-|[**View Incident**](/manual/workflow-steps/servicenow.md#servicenow-incident-view)|Job Step|Incident|
-|[**Check Change State**](/manual/workflow-steps/servicenow.md#servicenow-change-check-state)|Job Step|Change|
-|[**Update Change State**](/manual/workflow-steps/servicenow.md#servicenow-change-update-state)|Job Step|Change|
-|[**Create Change Request**](/manual/workflow-steps/servicenow.md#servicenow-change-create)|Job Step|Change|
+|[**Update Incident State**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-incident-update-state)|Job Step|Incident|
+|[**Check Incident Assigned**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-incident-check-assigned)|Job Step|Incident|
+|[**Check Incident State**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-incident-check-state)|Job Step|Incident|
+|[**Comment Incident**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-incident-comment)|Job Step|Incident|
+|[**Create Incident**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-incident-create)|Job Step|Incident|
+|[**Edit Incident**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-incident-edit)|Job Step|Incident|
+|[**View Incident**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-incident-view)|Job Step|Incident|
+|[**Check Change State**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-change-check-state)|Job Step|Change|
+|[**Update Change State**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-change-update-state)|Job Step|Change|
+|[**Create Change Request**](/manual/jobs/job-plugins/workflow-steps/servicenow.md#servicenow-change-create)|Job Step|Change|
 |[**Create Incident**](/manual/notifications/servicenow.md#servicenow-incident-create)|Notification|Incident|
 |[**Comment Incident**](/manual/notifications/servicenow.md#servicenow®-notification-plugins)|Notification|Incident|
 |[**Create Change Request**](/manual/notifications/servicenow.md#servicenow-change-create)|Notification|Change|

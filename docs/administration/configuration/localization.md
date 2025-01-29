@@ -34,7 +34,7 @@ Not all of the Rundeck GUI uses localized strings yet. If you find a page in Run
 If you would like to translate Rundeck to another language, please submit your new messages file as a Pull Request
 via Github, so that we can include it in the next Rundeck release.
 
-Check out our [How To article](/learning/howto/contriubte-rundeck-translation.md) that explains how to add translations.
+Check out our [How To article](/learning/howto/contribute-rundeck-translation.md) that explains how to add translations.
 
 ## Date formats
 

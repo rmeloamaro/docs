@@ -36,7 +36,7 @@ To configure the GCP GKE Node Source plugin:
    - **Region or Zone**: The GCP region or zone where your GKE clusters are located. You can use `-` to include all regions or zones.
    - **Access Key Path**: The Key Storage path for the GCP Access Key credentials.
      - :::info GCP Authentication at Project or System Level
-        Authentication for GCP plugins can be configured at the Project or System levels by following the [Google Cloud Plugins Overview](/manual-plugins-gcp-plugins-overview.md). If the GCP authentication is already set in the Project or System Configuration, this field can be left blank.
+        Authentication for GCP plugins can be configured at the Project or System levels by following the [Google Cloud Plugins Overview](/manual/plugins/gcp-plugins-overview.md). If the GCP authentication is already set in the Project or System Configuration, this field can be left blank.
        :::
 5. **Use Pod Service Account for Node Steps**: Choose whether to authenticate with the Pod Service Account for Job steps. Set to `True` if Runbook Automation or a Runner is executing within the targeted cluster.
    :::tip Using Pod Service Account Through Runners

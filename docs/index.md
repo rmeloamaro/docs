@@ -2,7 +2,8 @@
 home: true
 icon: home
 title: Rundeck | Runbook Automation Documentation
-heroText:  Welcome to Docs
+description: Official documentation for Rundeck, the open-source automation platform and Runbook Automation by PagerDuty. Learn how to install, configure, and manage Rundeck for enterprise job scheduling, workflow automation, and incident management. Includes API references, administration guides, and best practices.
+heroText:  Welcome to Runbook Automation
 tagline: Runbook Automation | Rundeck
 //heroImage: /assets/img/pd-background.png
 bgImage: /assets/img/pd-background.png
@@ -180,7 +181,7 @@ highlights:
 
     - title: More
       icon: ellipsis
-      details: 
+      details: More Runner Details
       link: /administration/runner/index.html
 
 

@@ -11,7 +11,7 @@ To learn more about debugging in Kubernetes with ephemeral containers, see the [
 
 ## Setup
 
-Follow the steps outlined in the [**Kubernetes Plugins Overview**](/manual/plugins/kubernetes-plugins-overview) to configure authentication for Kubernetes Job steps.
+Follow the steps outlined in the [**Kubernetes Plugins Overview**](/manual/plugins/kubernetes-open-source.md) to configure authentication for Kubernetes Job steps.
 Credentials can be configured on a per Job Step basis, Project basis, or for the entire Runbook Automation system.
 
 To see property syntax for configuring properties at the Project or System level, navigate to **System Menu** (gear icon in the upper-right) -> **Plugins** -> **Installed Plugins**.

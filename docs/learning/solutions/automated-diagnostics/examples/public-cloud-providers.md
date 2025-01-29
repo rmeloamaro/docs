@@ -15,12 +15,12 @@ For AWS users, some examples of diagnostics would be:
 
 There are multiple plugins that allow users to pull diagnostics from common AWS Services:
 
-* [Query CloudWatch Logs](/manual/workflow-steps/aws-cloudwatch.md#amazon-cloudwatch-logs-workflow-step-plugins)
+* [Query CloudWatch Logs](/manual/jobs/job-plugins/workflow-steps/aws-cloudwatch.md#amazon-cloudwatch-logs-workflow-step-plugins)
 ![Query CloudWatch Logs](/assets/img/aws-cloudwatch-logs-query-string.png)
-* [Query Athena tables](/manual/workflow-steps/amazon-athena.md#amazon-athena-query-workflow-step)
-* [Check ELB Targets Status](/manual/workflow-steps/aws-elb-workflow-plugin.md#target-group-instance-statuses)
-* [Retrieve failed ECS container messages](/manual/workflow-steps/aws-ecs-fargate.md#stopped-ecs-tasks-error-messages)
-* [Invoke script via Lambda](/manual/workflow-steps/aws-lambda.md#aws-lambda-workflow-steps) 
+* [Query Athena tables](/manual/jobs/job-plugins/workflow-steps/amazon-athena.md#amazon-athena-query-workflow-step)
+* [Check ELB Targets Status](/manual/jobs/job-plugins/workflow-steps/aws-elb-workflow-plugin.md#target-group-instance-statuses)
+* [Retrieve failed ECS container messages](/manual/jobs/job-plugins/workflow-steps/aws-ecs-fargate.md#stopped-ecs-tasks-error-messages)
+* [Invoke script via Lambda](/manual/jobs/job-plugins/workflow-steps/aws-lambda.md#aws-lambda-workflow-steps) 
 ![Lambda Function Job Step](/assets/img/aws-custom-lambda-code.png)
 
 In addition to using the AWS Plugins, it is also possible to harness the AWS CLI within your Automation Instance:
