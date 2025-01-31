@@ -36,8 +36,8 @@ See [Azure AKS resource model plugin](manual/projects/resource-model-sources/azu
    - **Tenant ID**: The Azure Tenant ID. If not provided, the value from the Azure plugin group at the System context will be used.
    - **Client ID**: The Azure Client ID. If not provided, the Client ID value from the Azure plugin group at the System context will be used.
    - **Azure Client Secret**: The Azure Client Secret. 
-9. Choose `true` in **Show Allowed Only** if you want to hide keys based on their `Activation date` and `Expiration date` values. Disabled keys are always hidden.
-![Show Allowed Only](/assets/img/azure-vault-show-allowed.png)
+9. Choose `true` in **Enforce Key Dates** if you want to hide keys based on their `Activation date` and `Expiration date` values. Disabled keys are always hidden.
+![Enforce Key Dates](/assets/img/azure-vault-enforce-key-dates.png)
 8. Click **Save** to commit changes for the integration.
 9. Click **Save** to add this integration to the Key Storage configuration.
 ![Save config](/assets/img/azure-vault-save-config.png)
@@ -88,7 +88,7 @@ Updating a secret using Rundeck Key Storage will only modify Rundeck-related tag
 
 ### Expired and Not-Yet-Enabled Secrets
 
-Azure Key Vault allows setting Activation and Expiration dates for keys and secrets. You can choose to respect these dates using the **Show Allowed Only** plugin configuration:
+Azure Key Vault allows setting Activation and Expiration dates for keys and secrets. You can choose to respect these dates using the **Enforce Key Dates** plugin configuration:
 - If set to `true`, only active secrets within their valid date range will be visible and usable in Rundeck.
 - If set to `false`, all secrets will be visible and usable, regardless of their activation or expiration status. This does not include **disabled** or **deleted** secrets. 
 
