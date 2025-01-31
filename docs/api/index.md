@@ -6354,7 +6354,7 @@ Since: v49
 
 **Request**
 
-    GET /api/V/project/[PROJECT]/webhooks
+    GET /api/{{ $apiVersion }}/project/[PROJECT]/webhooks
 
 **Response**
 
@@ -6396,7 +6396,7 @@ Since: v49
 
 **Request**
 
-    GET /api/V/project/[PROJECT]/webhook/[ID]
+    GET /api/{{ $apiVersion }}/project/[PROJECT]/webhook/[ID]
 
 **Response**
 
@@ -6424,7 +6424,7 @@ Since: v49
 
 **Request**
 
-    POST /api/V/project/[PROJECT]/webhook/[ID]
+    POST /api/{{ $apiVersion }}/project/[PROJECT]/webhook/[ID]
 
 Required Fields:    
 `id`  
@@ -6464,7 +6464,7 @@ or error
 
 ``` json
 {
-    "apiversion": 33,
+    "apiversion": {{ $apiVersion }},
     "error": true,
     "errorCode": "api.error.parameter.required",
     "message": "parameter \"project\" is required"
@@ -6475,7 +6475,7 @@ or error
 
 **Request**
 
-    POST /api/V/project/[PROJECT]/webhook
+    POST /api/{{ $apiVersion }}/project/[PROJECT]/webhook
 
 Required Fields:
 ```
@@ -6520,7 +6520,7 @@ Do not specify an `authToken` or `creator` field. They will be ignored.
 
 **Request**
 
-    DELETE /api/V/project/[PROJECT]/webhook/[ID]
+    DELETE /api/{{ $apiVersion }}/project/[PROJECT]/webhook/[ID]
 
 **Response**
 
@@ -6536,7 +6536,7 @@ Do not specify an `authToken` or `creator` field. They will be ignored.
 
 **Request**
 
-    POST /api/V/webhook/[AUTH_TOKEN]
+    POST /api/{{ $apiVersion }}/webhook/[AUTH_TOKEN]
 
 You may post whatever data you wish to the webhook endpoint, however the plugin you are using must
 be able to handle the data you post. If the webhook plugin associated with the webhook can't handle
