@@ -239,7 +239,7 @@ spec:
           - touch this_is_from_rundeck_runner
   restartPolicy: Always
 ```
-6. Creat the deployment: **`kubectl create -f deployment.yml`**.
+6. Create the deployment: **`kubectl apply -f deployment.yml`**.
 7. Confirm that the Runner was deployed successfully: **`kubectl logs -f rundeck-runner --namespace=[NAMESPACE]`**
 8. Verify that the Runner is communicating with Runbook Automation correctly by looking in the **Status** column on the Runner Management page:
     ![Runner installed correctly](/assets/img/runner-installed-k8s.png)

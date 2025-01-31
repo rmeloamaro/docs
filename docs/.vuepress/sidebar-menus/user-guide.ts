@@ -197,7 +197,8 @@ export default [{
                             '/manual/log-filters/render-formatted-data.md',
                             '/manual/log-filters/mask-passwords.md',
                             '/manual/log-filters/json-jq.md',
-                            '/manual/log-filters/multi-line-regex.md'
+                            '/manual/log-filters/multi-line-regex.md',
+                            '/manual/log-filters/loop-plugins.md'
                           ]
                 },
         '/manual/jobs/result-data.md',
@@ -225,7 +226,8 @@ export default [{
         {text: 'Datadog', link:'/manual/plugins/datadog-plugins-overview.md'},
         {text: 'Google Cloud', link: '/manual/plugins/gcp-plugins-overview.md'},
         {text: 'Jira', link: '/manual/plugins/jira-plugins-overview.md'},
-        {text: 'Kubernetes', link: '/manual/plugins/kubernetes-plugins-overview.md'},
+        {text: 'Kubernetes (Commercial)', link: '/manual/plugins/kubernetes-plugins-overview.md'},
+        {text: 'Kubernetes (Open Source)', link: '/manual/plugins/kubernetes-open-source.md'},
         {text: 'PagerDuty', link: '/manual/plugins/pagerduty-plugins-overview.md'},
         {text: 'Sensu', link: '/manual/plugins/sensu-plugins-overview.md'},
         {text: 'ServiceNow', link: '/manual/plugins/servicenow-plugins-overview.md'},

@@ -1363,7 +1363,7 @@ paths:
       - enterprise
       summary: "Get Execution Result Data [Enterprise]"
       description: |
-        Retrieve the Result Data created by a Job using the [Result Data feature](https://docs.rundeck.com/docs/manual/execution-lifecycle/result-data.html) in JSON format.
+        Retrieve the Result Data created by a Job using the [Result Data feature](https://docs.rundeck.com/docs/manual/jobs/result-data.html) in JSON format.
 
         Note: In a Rundeck Cluster, Result Data may not be locally available and must be retrieved by the server asynchronously before it can be returned.
 
@@ -1411,7 +1411,7 @@ paths:
       - enterprise
       summary: "Check Execution Result Data Availability [Enterprise]"
       description: |
-        Check whether the execution has Result Data created by a Job using the [Result Data feature](https://docs.rundeck.com/docs/manual/execution-lifecycle/result-data.html).
+        Check whether the execution has Result Data created by a Job using the [Result Data feature](https://docs.rundeck.com/docs/manual/jobs/result-data.html).
 
         Since: v40
       operationId: apiExecutionDataAvailable

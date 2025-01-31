@@ -3,6 +3,7 @@
 title: "{{version.versionString}} Release Notes"
 date: 2024-01-01
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases <VERSION> <DESCRIPTION>"
 feed:
  enable: true
  description: ""
@@ -10,14 +11,6 @@ feed:
 ---
 
 # {{version.versionString}} Release Notes
-
-Name: <span style="color: {{version.color()}}"><span class="glyphicon glyphicon-{{version.icon()}}"></span> "{{version.name()}} {{version.color()}} {{version.icon()}}"</span>
-Release Date: PUTADATEHERE
-
-- Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/{{version.versionString}}) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/{{version.versionString}})
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-- [Catch us on Twitch for the Live Stream Release Video](https://www.twitch.tv/pagerduty)
 
 ## Overview
 
@@ -36,25 +29,39 @@ Check out the new features and enhancements for PagerDuty Runbook Automation com
 
 
 {% for pull in enterprise.pulls -%}
-* {{ pull.title | replace(r/RUN-[0-9]*:?\s?/g, "") | replace(r/RSE-[0-9]*:?\s?/g, "") | replace(r/RCLOUD-[0-9]*:?\s?/g, "") | replace(r/RDC-[0-9]*:?\s?/g, "") }}
+* {{ pull.title | replace(r/RUN-[0-9]*:?\s?/g, "") | replace(r/RSE-[0-9]*:?\s?/g, "") | replace(r/RCLOUD-[0-9]*:?\s?/g, "") | replace(r/RDC-[0-9]*:?\s?/g, "") | replace(r/RPL-[0-9]*:?\s?/g, "") }}
 {% endfor %}
 
 ## Rundeck Open Source Product Updates
 
 {% for pull in core.pulls -%}
-* [{{ pull.title | replace(r/RUN-[0-9]*:?\s?/g, "") | replace(r/RSE-[0-9]*:?\s?/g, "") | replace(r/RCLOUD-[0-9]*:?\s?/g, "") | replace(r/RDC-[0-9]*:?\s?/g, "") }}]({{pull.html_url}})
+* [{{ pull.title | replace(r/RUN-[0-9]*:?\s?/g, "") | replace(r/RSE-[0-9]*:?\s?/g, "") | replace(r/RCLOUD-[0-9]*:?\s?/g, "") | replace(r/RDC-[0-9]*:?\s?/g, "") | replace(r/RPL-[0-9]*:?\s?/g, "") }}]({{pull.html_url}})
 {% endfor %}
 
 [Here is a link to the full list of public PRs](https://github.com/rundeck/rundeck/pulls?q=is%3Apr+milestone%3A{{version.versionString}}+is%3Aclosed)
 
 ## Ansible Plugin Updates
 {% for pull in ansible.pulls -%}
-* [{{ pull.title | replace(r/RUN-[0-9]*:?\s?/g, "") | replace(r/RSE-[0-9]*:?\s?/g, "") | replace(r/RCLOUD-[0-9]*:?\s?/g, "") | replace(r/RDC-[0-9]*:?\s?/g, "") }}]({{pull.html_url}})
+* [{{ pull.title | replace(r/RUN-[0-9]*:?\s?/g, "") | replace(r/RSE-[0-9]*:?\s?/g, "") | replace(r/RCLOUD-[0-9]*:?\s?/g, "") | replace(r/RDC-[0-9]*:?\s?/g, "") | replace(r/RPL-[0-9]*:?\s?/g, "") }}]({{pull.html_url}})
 {% endfor %}
 
 {% for pull in runner.pulls -%}
-* {{ pull.title | replace(r/RUN-[0-9]*:?\s?/g, "") | replace(r/RSE-[0-9]*:?\s?/g, "") | replace(r/RCLOUD-[0-9]*:?\s?/g, "") | replace(r/RDC-[0-9]*:?\s?/g, "") }}
+* {{ pull.title | replace(r/RUN-[0-9]*:?\s?/g, "") | replace(r/RSE-[0-9]*:?\s?/g, "") | replace(r/RCLOUD-[0-9]*:?\s?/g, "") | replace(r/RDC-[0-9]*:?\s?/g, "") | replace(r/RPL-[0-9]*:?\s?/g, "") }}
 {% endfor %}
+
+## Links
+
+- Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/{{version.versionString}}) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/{{version.versionString}})
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+- [Catch us on Twitch for the Live Stream Release Video](https://www.twitch.tv/pagerduty)
+
+## Version Info
+
+Name: <span style="color: {{version.color()}}"><span class="glyphicon glyphicon-{{version.icon()}}"></span> "{{version.name()}} {{version.color()}} {{version.icon()}}"</span>
+
+Release Date: PUTADATEHERE
+
 
 ## Community Contributors
 

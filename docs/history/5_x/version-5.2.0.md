@@ -3,6 +3,7 @@
 title: "5.2.0 Release Notes"
 date: 2024-04-10
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.2.0 with multiple security patches and bug fixes"
 feed:
  enable: true
  description: "Security Patches, Bugs Fixed, and more testing"
@@ -11,24 +12,11 @@ feed:
 
 # 5.2.0 Release Notes
 
-Name: <span style="color: rebeccapurple"><span class="glyphicon glyphicon-glass"></span> "Erebus rebeccapurple glass"</span>
-Release Date: April 10th, 2024
-
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.2.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.2.0)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-- [Watch the Live Stream Release Recap](https://www.youtube.com/live/uWhAQuWckQ0?si=_YLNK-oohOcYKVi8)
-
-<VidStack src="youtube/uWhAQuWckQ0"/>
-
-
 ## Overview
 
-Check out the new features and enhancements for PagerDuty Runbook Automation (formerly Rundeck Enterprise) and PagerDuty Runbook Automation and Rundeck Community included in this release.
-
-### Highlights
-
 Our 5.2.0 release is focused on bug fixes, CVE remediation and testing.  The team spent time revamping our testing framework and migrating tests into that new model.  There is also effort being put into the UI code to modernize, and standardize it to Vue to bring performance improvements and simplify building future enhancements.
+
+<VidStack src="youtube/uWhAQuWckQ0"/>
 
 ## Runbook Automation Updates
 
@@ -88,6 +76,19 @@ Our 5.2.0 release is focused on bug fixes, CVE remediation and testing.  The tea
 * [Using ssh-agent with passphrase is not working in Ansible Plugin](https://github.com/rundeck-plugins/ansible-plugin/pull/350)
 * [Share the vault storage password with the runner](https://github.com/rundeck-plugins/ansible-plugin/pull/349)
 
+
+## Links
+
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.2.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.2.0)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/live/uWhAQuWckQ0?si=_YLNK-oohOcYKVi8)
+
+## Version Info
+
+Name: <span style="color: rebeccapurple"><span class="glyphicon glyphicon-glass"></span> "Erebus rebeccapurple glass"</span>
+
+Release Date: April 10th, 2024
 
 ## Community Contributors
 

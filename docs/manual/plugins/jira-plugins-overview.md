@@ -11,12 +11,12 @@ These integrations allow operations teams to provide self-service mechanisms to 
 
 |Plugin Name| Plugin Type| Description|
 |:---------------------------------------------------------|:---------------------------------------------------------:|:---------------------------------------------------------|
-|[**Search Assigned Issues**](/manual/workflow-steps/jira.md#jira-issue-assigned)|Job Step|Search assigned issues by user.|
-|[**Check Issue Exists**](/manual/workflow-steps/jira.md#jira-issue-check-exist)|Job Step|Check if the Jira issue exists by key.|
-|[**Comment on Issue**](/manual/workflow-steps/jira.md#jira-issue-comment)|Job Step|Append comments to a Jira issue.|
-|[**Create Issue**](/manual/workflow-steps/jira.md#jira-issue-create)|Job Step|Creates a new Jira issue.|
-|[**Update Issue**](/manual/workflow-steps/jira.md#jira-issue-update)|Job Step|Updates an existing Jira issue.|
-|[**Retrieve Issue**](/manual/workflow-steps/jira.md#jira-issue-get-data)|Job Step|View the data of an existing Jira issue.|
+|[**Search Assigned Issues**](/manual/jobs/job-plugins/workflow-steps/jira.md#jira-issue-assigned)|Job Step|Search assigned issues by user.|
+|[**Check Issue Exists**](/manual/jobs/job-plugins/workflow-steps/jira.md#jira-issue-check-exist)|Job Step|Check if the Jira issue exists by key.|
+|[**Comment on Issue**](/manual/jobs/job-plugins/workflow-steps/jira.md#jira-issue-comment)|Job Step|Append comments to a Jira issue.|
+|[**Create Issue**](/manual/jobs/job-plugins/workflow-steps/jira.md#jira-issue-create)|Job Step|Creates a new Jira issue.|
+|[**Update Issue**](/manual/jobs/job-plugins/workflow-steps/jira.md#jira-issue-update)|Job Step|Updates an existing Jira issue.|
+|[**Retrieve Issue**](/manual/jobs/job-plugins/workflow-steps/jira.md#jira-issue-get-data)|Job Step|View the data of an existing Jira issue.|
 |[**Comment on Issue**](/manual/notifications/jira.md#jira-issue-notification-comment)|Notification|Append comments to a Jira issue.|
 |[**Create Issue**](/manual/notifications/jira.md#jira-issue-notification-create)|Notification|Creates a new Jira issue.|
 </details>

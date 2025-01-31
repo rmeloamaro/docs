@@ -4,16 +4,16 @@
 :::
 
 ::: warning
-Recently our Application was migrated and reimplemented in a new PagerDuty Runbook Automation verison of the application.  The functionality from the previous 1.x version of the Rundeck Automation application is the same.  All future enhancements will happen on the new application located [here](https://store.servicenow.com/sn_appstore_store.do#!/store/application/1f1cf27adb252110e8744a6c139619f8/).
+Recently our Application was migrated and reimplemented in a new PagerDuty Runbook Automation version of the application.  The functionality from the previous 1.x version of the Rundeck Automation application is the same.  All future enhancements will happen on the new application located [here](https://store.servicenow.com/sn_appstore_store.do#!/store/application/1f1cf27adb252110e8744a6c139619f8/).
 :::
 
 Our ServiceNow&reg; application can be found on the ServiceNow&reg; Store.  The application is free to Enterprise customers.  To request the application please contact your Account Executive or Customer Success contact.
 
 ## Requirements
 
-The application is currently supported on Tokyo, Utah and Vancouver.
+The application is currently supported on Vancouver, Washington DC, Xanadu.
 
-An active commerical license for a currently supported version is also required. ([See Release Calendar for current supported versions](/history/release-calendar.md))
+An active commercial license for a currently supported version is also required. ([See Release Calendar for current supported versions](/history/release-calendar.md))
 
 If you are integrating ServiceNow&reg; to Runbook Automation Self-Hosted, network ingress traffic must be allowed from the ServiceNow&reg; instance(s) to the PagerDuty Automation load balancer or server.
 

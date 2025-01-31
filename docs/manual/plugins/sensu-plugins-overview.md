@@ -13,14 +13,14 @@ as well as invoke automated workflows in response to Sensu alerts.
 
 |Plugin Name| Plugin Type| Description|
 |:---------------------------------------------------------|:---------------------------------------------------------:|:---------------------------------------------------------|
-|[**Get Check Info**](/manual/node-steps/sensu.md#sensu-get-check-info)|Node Step|Get Check info from an Entity.|
-|[**Create Silence Entry**](/manual/node-steps/sensu.md#sensu-create-silence-entry)|Node Step|Create a Silence for a check of a selected entity.|
-|[**Delete Silence Entry**](/manual/node-steps/sensu.md#sensu-delete-silence-entry)|Node Step|Delete a Silence for a check of a selected entity.|
-|[**Create Event**](/manual/node-steps/sensu.md#sensu-event-create)|Node Step|Create a new Sensu event.|
-|[**Run Ad Hoc Check**](/manual/node-steps/sensu.md#sensu-run-ad-hoc-check)|Node Step|Create an Ad Hoc Check Execution Request.|
-|[**Create Check**](/manual/workflow-steps/sensu.md#sensu-check-create)|Workflow Step|Create a new Check.|
-|[**Delete a Silence Check**](/manual/workflow-steps/sensu.md#sensu-delete-silence)|Workflow Step|Delete a Silence for a check of a selected entity.|
-|[**Create a Silence Entry**](/manual/workflow-steps/sensu.md#sensu-create-silence-entry)|Workflow Step|Create a Silence for a check of a selected entity.|
+|[**Get Check Info**](/manual/jobs/job-plugins/node-steps/sensu.md#sensu-get-check-info)|Node Step|Get Check info from an Entity.|
+|[**Create Silence Entry**](/manual/jobs/job-plugins/node-steps/sensu.md#sensu-create-silence-entry)|Node Step|Create a Silence for a check of a selected entity.|
+|[**Delete Silence Entry**](/manual/jobs/job-plugins/node-steps/sensu.md#sensu-delete-silence-entry)|Node Step|Delete a Silence for a check of a selected entity.|
+|[**Create Event**](/manual/jobs/job-plugins/node-steps/sensu.md#sensu-event-create)|Node Step|Create a new Sensu event.|
+|[**Run Ad Hoc Check**](/manual/jobs/job-plugins/node-steps/sensu.md#sensu-run-ad-hoc-check)|Node Step|Create an Ad Hoc Check Execution Request.|
+|[**Create Check**](/manual/jobs/job-plugins/workflow-steps/sensu.md#sensu-check-create)|Workflow Step|Create a new Check.|
+|[**Delete a Silence Check**](/manual/jobs/job-plugins/workflow-steps/sensu.md#sensu-delete-silence)|Workflow Step|Delete a Silence for a check of a selected entity.|
+|[**Create a Silence Entry**](/manual/jobs/job-plugins/workflow-steps/sensu.md#sensu-create-silence-entry)|Workflow Step|Create a Silence for a check of a selected entity.|
 |[**Sensu Node Source**](/manual/projects/resource-model-sources/sensu.md#sensu-node-source)|Node Source|Populate node inventory with hosts from Sensu.|
 |[**Node Health Check**](/manual/healthcheckplugins/sensu.md#sensu-health-check-enterprise)|Health Check|Display node health based on host health in Sensu.|
 

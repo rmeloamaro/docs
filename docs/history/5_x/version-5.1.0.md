@@ -3,30 +3,20 @@
 title: "5.1.0 Release Notes"
 date: 2024-02-14
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.1.0 with AWS Secrets Manager integration and Key Storage access through the Enterprise Runner"
 feed:
  enable: true
- description: ""
+ description: "AWS Secrets Manager integration and Key Storage access through the Enterprise Runner"
 
 ---
 
 # 5.1.0 Release Notes
 
-Name: <span style="color: olivedrab"><span class="glyphicon glyphicon-camera"></span> "Elbrus olivedrab camera"</span>
-Release Date: February 14th, 2024
-
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.1.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.1.0)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
-- [Watch the Live Stream Release Recap](https://www.youtube.com/live/dEA2h4Iuh1k?si=xiNDxeSJ5EyMHzxO)
-
-<VidStack 
-  src="youtube/dEA2h4Iuh1k"
-/>
-
-
 ## Overview
 
-Check out the new features and enhancements for PagerDuty Runbook Automation and Rundeck Community included in this release.
+The latest release introduces AWS Secrets Manager integration for seamless secret retrieval across multiple AWS accounts and regions, alongside new Enterprise Runner integrations with CyberArk Secrets Manager and Thycotic Secret Server. These key storage enhancements enable organizations to securely manage secrets within their existing infrastructure while using Runbook Automation, eliminating the need to store sensitive credentials directly within the platform.
+
+<VidStack src="youtube/dEA2h4Iuh1k"/>
 
 All fixes from the [5.0.2 release](version-5.0.2.md) are also included in this version.
 
@@ -102,8 +92,18 @@ Full documentation for Thycotic can be found [here](/manual/key-storage/storage-
 * [Share passphrase with the runner](https://github.com/rundeck-plugins/ansible-plugin/pull/346)
 * [Fix error message when attempting to read SSH private key from storage](https://github.com/rundeck-plugins/ansible-plugin/pull/345)
 
+## Links
 
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.1.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.1.0)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/live/dEA2h4Iuh1k?si=xiNDxeSJ5EyMHzxO)
 
+## Version Info
+
+Name: <span style="color: olivedrab"><span class="glyphicon glyphicon-camera"></span> "Elbrus olivedrab camera"</span>
+
+Release Date: February 14th, 2024
 
 ## Community Contributors
 

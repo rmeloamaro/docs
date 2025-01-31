@@ -19,14 +19,14 @@ To utilize Runners, there are a few steps to carry out:<br>
 		* Associate Runners with Projects<br>
         	Each Runner must be associated with at least one Project in order to be used.<br>
 ## Runner Installation
-3. [Install Runner software in remote networks for each Runner that has been created](/administration/runner/runner-install.md).<br>
+3. [Install Runner software in remote networks for each Runner that has been created](/administration/runner/runner-installation/runner-install.md).<br>
     Though Runners have been defined by this point, it is still necessary to install software in each of the remote locations.<br>
 ## Configure Jobs for Runners
-4. [Add Runner tags to Jobs](/administration/runner/runner-using.md)<br>
+1. [Add Runner tags to Jobs](/administration/runner/index.md)<br>
     New jobs will prompt authors to choose tags which represent Runners or Runner sets by tags.  It is important to review existing Jobs to ensure that they have appropriate tags selected as well.
 <img src="/assets/img/runnerarch2.png" width="100%" height="100%" /><br>
 _Jobs are assigned to remote Runners based on tags.  Jobs on nodes in the cluster’s local network can be handled through the Local Runner._<br>
 # Resources
-[Advanced Runner Setup Options](/administration/runner/runner-advancedsetup.md)<br>
-[Runner Custom Logging](/administration/runner/runner-logging.md)<br>
+[Advanced Runner Setup Options](/administration/runner/)<br>
+[Runner Custom Logging](/administration/runner/runner-management/runner-logging.md)<br>
 [Runner FAQ](/administration/runner/runner-faq.md)<br>

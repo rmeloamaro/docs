@@ -3,65 +3,91 @@
 ::: enterprise
 :::
 
-The GCP GKE (Google Kubernetes Engine) Resource Model Source allows you to import your GKE clusters as nodes within Runbook Automation. This plugin provides node source functionality for managing and executing jobs on your Google Cloud Platform Kubernetes clusters directly from Runbook Automation.
+The GCP GKE (Google Kubernetes Engine) Node Source can be used to dynamically retrieve GKE clusters and add them as nodes to the node inventory. As new clusters are created or removed, the inventory will be automatically updated with clusters represented as nodes.
 
-### Configuration
+## Configuration
 
-To configure the GCP GKE Resource Model Source:
+### Prerequisites
 
-1. In your project, go to "Project Settings" > "Edit Nodes".
+Before configuring the GCP GKE Node Source, permissions must be allowed for the service account associated with Runbook Automation to list the GKE clusters.
+
+See the [Google Cloud Plugins Overview](/manual/plugins/gcp-plugins-overview.md) for steps on how to associate a service account with Runbook Automation.
+
+A predefined role such as **Kubernetes Engine Cluster Viewer** can be used to grant the necessary permissions.  This role has the following permissions:
+
+- `container.clusters.get`
+- `container.clusters.list`
+- `resourcemanager.projects.get`
+- `resourcemanager.projects.list`
+
+![GCP GKE Node Source](/assets/img/gke-cluster-viewer-role.png)<br>
+
+### Add GKE Node Source in Runbook Automation
+
+To configure the GCP GKE Node Source plugin:
+
+1. In your project, go to "Project Settings" > "Edit Nodes".<br>
+
 2. Click "Add a new Node Source".
 3. Select "GCP Kubernetes Engine Clusters" from the list of available node sources.
 4. Configure the following settings:
 
-- **Project ID**: The GCP Project ID to use for accessing the GKE clusters.
-- **Region or Zone**: The GCP region or zone where your GKE clusters are located. You can use `*` to include all regions or zones.
-- **Access Key Path**: The Key Storage path for the GCP Access Key credentials.
-- **Use Pod Service Account for Node Steps**: Choose whether to authenticate with the Pod Service Account for Job steps. Set to `True` if Runbook Automation or a Runner is executing within the targeted cluster.
+   - **Project ID**: The GCP Project ID to use for accessing the GKE clusters.
+   - **Region or Zone**: The GCP region or zone where your GKE clusters are located. You can use `-` to include all regions or zones.
+   - **Access Key Path**: The Key Storage path for the GCP Access Key credentials.
+     - :::info GCP Authentication at Project or System Level
+        Authentication for GCP plugins can be configured at the Project or System levels by following the [Google Cloud Plugins Overview](/manual/plugins/gcp-plugins-overview.md). If the GCP authentication is already set in the Project or System Configuration, this field can be left blank.
+       :::
+5. **Use Pod Service Account for Node Steps**: Choose whether to authenticate with the Pod Service Account for Job steps. Set to `True` if Runbook Automation or a Runner is executing within the targeted cluster.
+   :::tip Using Pod Service Account Through Runners
+   This option is useful when you want to dynamically discover clusters using the GKE integration, but have a 1:1 relationship between Runners and clusters or do not have the option to use the cloud provider for retrieving cluster credentials.
 
-### Authentication
-
-You can configure GCP credentials at three levels:
-
-1. Resource Model Configuration
-2. Plugin Group Properties
-
-To set up credentials:
-
-1. Create a new Key Storage entry of type 'private key' and upload the gcp-key-file for your GCP credentials file.
-2. In the plugin configuration, provide:
-- GCP Project ID
-- Path to the GCP credentials in Key Storage
-- Region/Zone specification
+   For instructions on how to use the pod service account as well as more detail on the various cluster authentication methods, see the [Kubernetes Plugins Overview](/manual/plugins/kubernetes-plugins-overview.md).
+   :::
 
 ### Node Attributes
 
 Each GKE cluster will be represented as a node with the following attributes:
 
-- `gcp-project-id`: The GCP project ID containing the cluster
 - `gcp-location`: The GCP region/zone of the cluster
 - `kubernetes-cluster-endpoint`: The API server endpoint of the cluster
-- `kubernetes-use-pod-service-account`: Whether to use pod service account for authentication
-- `kubernetes-cloud-provider`: Set to "gcp-gke"
+- `kubernetes-cloud-provider`: Set to **"gcp-gke"**
 
-### Authentication Modes
-
-The plugin supports two authentication modes:
-
-1. **GCP API Authentication**: Default mode when `Use Pod Service Account` is set to `false`. Uses GCP credentials for authentication.
-2. **Pod Service Account**: When set to `true`, uses the Kubernetes service account of the pod for authentication. Ideal when Runbook Automation is running within the same cluster.
+![GKE Node Attributes](/assets/img/gke-cluster-as-node.png)<br>
 
 ### Troubleshooting
 
-If you encounter issues:
+#### Node Source Unauthorized Error
 
-1. Check the Runbook Automation logs for any error messages.
-2. Verify your GCP credentials and permissions:
-- Ensure the service account has the necessary GKE permissions
-- Verify the credentials file is properly stored in Key Storage
-3. Ensure your GKE cluster is running and accessible.
-4. Check network connectivity between Runbook Automation and your GCP resources.
-5. Verify the correct Project ID and Region/Zone settings.
+**Some Node Source returned an "Unauthorized" message**: This error indicates that the proper ACL permissions are not configured for the node sources within this project to access the necessary secrets within key storage:
+
+![Unauthorized Error](/assets/img/gke-node-source-unauthorized-error.png)<br>
+
+To resolve this issue, add an ACL Policy that grants the necessary permissions to the node sources within this project to access the required secrets:
+Here is an example ACL Policy that grants the `platform-engineering` project access to the `keys/project/platform-engineering` directory within Key Storage:
+```yaml
+by:
+  urn: project:platform-engineering
+context: 
+   application: rundeck
+for:
+  storage:
+    - match: 
+        path: 'keys/project/platform-engineering/.*'
+      allow: [read] 
+description: Allow access to key storage
+```
+
+#### GKE Clusters Not Found
+
+If the GKE clusters have not been added to the node inventory, verify the following:
+
+1. Verify your GCP credentials and permissions:
+   - Ensure the service account has the necessary GKE permissions
+   - Verify the credentials file is properly stored in Key Storage
+2. Ensure your GKE cluster is running and accessible.
+3. Verify the correct Project ID and Region/Zone settings.
+4. If running the Self-Hosted solution, check the Runbook Automation logs for any error messages.
 
 ### Additional Resources
 

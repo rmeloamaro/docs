@@ -4,32 +4,38 @@
 
 ## Overview
 
-This plugin creates an object of a selected kind within a Kubernetes cluster. It is designed to work in conjunction with the AWS EKS, GCP GKE, and Azure AKS [Resource Model Source plugins](/manual/projects/resource-model-sources/).
+This plugin creates an object of a selected kind within a Kubernetes cluster. Since this is a node-step plugin, multiple Kubernetes clusters or namespaces can be targeted within a single Job.
+
+The types of objects that can be created within a Kubernetes cluster include:
+- **ConfigMaps**
+- **DaemonSets**
+- **Deployments**
+- **Jobs**
+- **Namespaces**
+- **Pods**
+- **ReplicaSets**
+- **Secrets**
+- **Services**
+- **StatefulSets**
 
 ## Configuration
 
-### Required Fields
+### Prerequisites
 
-* **YAML Definition**: The YAML definition of the object to be created.
+Before configuring the Kubernetes Create Object plugin, the target clusters must be added to the Runbook Automation instance and the authentication method must be configured. This is done by following the steps outlined in the [Kubernetes Plugins Overview](/manual/plugins/kubernetes-plugins-overview.md).
+
+### Add Kubernetes Create Object Step
+When building a Job, add the **Kubernetes / Clusters / Create Object** node step:
+
+![Kubernetes Create Object](/assets/img/k8s-clusters-create-object.png)<br>
+
+* **Object Type**: Select the type of object to create (Pods, ConfigMaps, Deployments, etc.)
+* **YAML Definition**: The YAML definition of the object to be created.  This can be a data-variable that is passed from a prior step - such as a YAML definition that is retrieved from a git repository.
 * **Namespace**: The namespace where the object will be created. Default is `default`.
-
-### Optional Fields
-
-* **Object Type**: Select the type of object to create (e.g., Pods, ConfigMaps, Deployments). Default is "Pods".
 * **Output Format**: Choose the format for the output (JSON or YAML). Default is JSON.
 
-## Usage
+### Invocation Output
 
-1. Select the desired object type from the dropdown menu.
-2. Provide the YAML definition for the object you want to create.
-3. Specify the namespace where the object should be created.
-4. Choose the preferred output format.
+The output of the step will be the object that was created in the Kubernetes cluster. The output format will be the same as the format selected in the step configuration:
 
-## Authentication
-
-Kubernetes Clusters plugins operate on a per-cluster basis and authenticate in one of two ways, as configured in the [Resource Model Plugin](/manual/projects/resource-model-sources/) used to fetch the nodes. This configuration is controlled by the `Use Pod Service Account for Node Steps` option:
-
-1. When disabled, the plugin uses the cloud provider credentials set in the resource model to retrieve the
-   kube-config for the targeted cluster.
-
-2. When enabled, the [Enterprise Runner](/administration/runner/) must be placed in the cluster and uses its pod's K8s service account for authentication.
+![Kubernetes Create Object Output](/assets/img/k8s-create-object-output.png)<br>

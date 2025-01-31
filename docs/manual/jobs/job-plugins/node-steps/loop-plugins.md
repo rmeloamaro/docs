@@ -1,7 +1,10 @@
-# Loop Script Plugins (Commercial)
+# Loop Script Plugins (Self Hosted)
 
-These plugins add the functionality of running inline scripts, using the node executor and file copier, inside a loop. 
-So far the plugin has two different iteration types: iterating a JSON array and iterating the script until it finishes successful (exit code zero)
+These plugins add the functionality of running inline scripts, using the node executor and file copier, inside a loop.  So far the plugin has two different iteration types: iterating a JSON array and iterating the script until it finishes successful (exit code zero)
+
+:::tip Note
+This plugin is only available in the Self Hosted version of the product.
+:::
 
 ## Included Plugins
 
@@ -10,8 +13,7 @@ So far the plugin has two different iteration types: iterating a JSON array and 
 
 ## Run Script from a Json Array
 
-This node step plugin runs an inline script based on a provided JSON Array  (per each node).  
-In order to capture the JSON array in previous steps (data context), you can use the [Loop / Log Filter / Store and Validate JSON](/manual/log-filters/loop-plugins.md) log filter plugging.
+This node step plugin runs an inline script based on a provided JSON Array  (per each node). In order to capture the JSON array in previous steps (data context), you can use the [Loop / Log Filter / Store and Validate JSON](/manual/log-filters/loop-plugins.md) log filter plugging.
 
 ### Plugin Configuration
 
@@ -23,20 +25,21 @@ In order to capture the JSON array in previous steps (data context), you can use
 * **_Stop Iteration on failure_**: Stop execution if the iteration failed
 
 The input JSON array must be a simple key/value JSON array:
+
 :::tip
 The JSON provided cannot have spaces in the attribute name, this is allowed just for the values
 :::
-````
+
+```
 [ 
   {"id":"1","name":"test 1"},
   {"id":"2","name":"test 2"}
 ]
-````
+```
 
-Then, the script will run for each of JSON object included in the input array. 
-Inside the inline scripts you can capture the variables from each JSON object using the following convention ($vars.key):
+Then, the script will run for each of JSON object included in the input array. Inside the inline scripts you can capture the variables from each JSON object using the following convention ($vars.key):
 
-````
+```
 set -e
 token="@option.token"
 id="$vars.id"
@@ -45,7 +48,7 @@ name="$vars.name"
 echo "token: $token"
 echo "id: $id"
 echo "name: $name"
-`````
+```
 
 ![plugin-step-config](/assets/img/loop-nodestep-run-script-json-atrributes.png)
 

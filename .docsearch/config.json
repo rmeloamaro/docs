@@ -8,7 +8,7 @@
         "version": [
           "docs",
           "4.0.x",
-          "5.7.0"
+          "5.8.0"
         ]
       }
     }
@@ -19,6 +19,11 @@
   "selectors": {
     "default": {
       "lvl0": {
+        "selector": ".vp-sidebar-links > li:first-child > .vp-sidebar-group > .vp-sidebar-header > .vp-sidebar-title",
+        "global": true,
+        "default_value": "Documentation"
+      },
+      "lvl1": {
         "selector": ".theme-hope-content h1",
         "global": true,
         "default_value": "Documentation"
