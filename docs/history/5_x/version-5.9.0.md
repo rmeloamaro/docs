@@ -1,7 +1,7 @@
 ---
 
 title: "5.9.0 Release Notes"
-date: 2025-02-04
+date: 2025-02-05
 image: /images/chevron-logo-red-on-white.png
 description: "Rundeck | Runbook Automation Releases 5.9.0 with GA release of Dynamic Runner Management"
 feed:
@@ -74,7 +74,7 @@ feed:
 
 Name: <span style="color: peru"><span class="glyphicon glyphicon-phone"></span> "Hood peru phone"</span>
 
-Release Date: February 4th, 2025
+Release Date: February 5th, 2025
 
 
 ## Community Contributors
