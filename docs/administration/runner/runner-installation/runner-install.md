@@ -11,7 +11,7 @@ Once you have [created and downloaded a Runner](/administration/runner/runner-in
 - Runners can be installed on Windows, Linux or in containers.
     - The operating systems that we officially support for the Runner are listed [here](/administration/install/system-requirements.md).
     - Note that the Runner can be installed on a *different* operating system than the self-hosted cluster.
-- Java 11 is required to run the Runner JAR file.
+- Java 11 or Java 17 JRE installed on the Runner's host.
 - The Runner binary size is 164MB.
 
 #### Resource Allocation
