@@ -32,11 +32,13 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.7+8-LTS, mixed mode)
 ```
 
 ::: warning Java Versions
-At this time the 5.x series ONLY supports Java 11.  Java 17+ is not currently validated or tested so we recommend using version 11.
+At this time the 5.x series for Runbook Automation and Rundeck ONLY supports Java 11.  Java 17+ is not currently validated or tested so we recommend using version 11.
 
 [Azul Zulu Open JDK](https://www.azul.com/downloads/?package=jdk#zulu) is what the software is built and tested with and is the recommended distribution.
 
 Sun/Oracle and other flavors of Java may work, but our team has limited capabilities to troubleshoot problems specific to those distributions. The [Azul Zulu Open JDK](https://www.azul.com/downloads/?package=jdk#zulu) is strongly recommended.
+
+**Note**: As of version 5.8.0 the [Enterprise Runner](/administration/runner/index.md) supports either Java 11 or Java 17.
 :::
 
 ## Network access
