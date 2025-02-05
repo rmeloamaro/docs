@@ -1,27 +1,26 @@
 #  Amazon Web Services (AWS) Node Steps
 
-## Getting Started
+[Amazon's EC2](https://aws.amazon.com/ec2/) (Elastic Cloud Compute) provides scalable, on-demand cloud computing capacity that forms the backbone of many modern infrastructure deployments. These Rundeck Node Steps enable automated management of your EC2 resources, allowing you to programmatically control instance life-cycles while maintaining operational consistency and reducing manual intervention.
 
 :::tip
-It is helpful to configure the AWS EC2 resource model plugin before using these steps: [AWS EC2 Resource Model](/manual/projects/resource-model-sources/aws.md)
+For optimal workflow efficiency, implement the AWS EC2 resource model plugin, which enhances these Node Step plugins. Follow the setup guide here: [AWS EC2 Resource Model](/manual/projects/resource-model-sources/aws.md)
 :::
 
-[Amazon's EC2](https://aws.amazon.com/ec2/) (Elastic Cloud Compute) is a cloud service in wide use for dynamic infrastructure; it is easy to start up and shut down Node "Instances" in the cloud.  Use these Rundeck steps to automate common EC2 actions.
+## Authentication
 
-**Access Key ID**
-: Specify your AWS Access key.
+Follow the instructions outlined in the [AWS Plugins Overview](/manual/plugins/aws-plugins-overview.md) for Runbook Automation to authenticate with AWS.
 
-- **Project setting**: project.aws.access_key
-- **Configuration Management**/**Framework Setting**: aws.access_key
+When defining the IAM Role for Runbook Automation, be sure to include the following permissions in the Policy associated with the role:
 
-**Secret Key**
-: Specify the path to your AWS Secret Key in the Rundeck Key Storage
-
-- **Project setting**: project.aws.secret_key_path
-- **Configuration Management**/**Framework Setting**: aws.secret_key_path
+`ec2:StartInstances`
+`ec2:StopInstances`
+`ec2:terminateInstances`
+`ec2:runInstances`
+`ec2:createSnapshot`
+`Networking and Monitoring:`
 
 **Region**
-: Specify the region for the node.  If using the EC2 Node Source it's possible to use `${node.region}` and the region will be dynamically populated with the region for that node.
+: Specify the region for the node.  If using the EC2 Node Source it's possible to use `${node.region}` and the region will be dynamically populated with the region for that node. (recommended) The value can also be set a a higher scope using the settings below.
 
 - **Project setting**: project.aws.region
 - **Configuration Management**/**Framework Setting**: aws.region
@@ -30,19 +29,19 @@ It is helpful to configure the AWS EC2 resource model plugin before using these 
 
 ### AWS / VM / Start
 
-Start the EC2 instance.
+This step initiates and boots up a specified EC2 instance, bringing it online and ready for use. This is crucial for businesses that need to dynamically scale their computing resources during peak hours or need to start pre-configured instances for specific workloads
 
 ### AWS / VM / Stop
 
-Start the EC2 instance.
+This step safely shuts down a specified EC2 instance, ensuring all processes are properly terminated. This capability is essential for cost optimization by stopping unused instances during off-hours and managing resource utilization effectively.
 
 ### AWS / VM / Restart
 
-Start the EC2 instance.
+This step performs a graceful reboot of a specified EC2 instance, which is equivalent to an operating system reboot command rather than a power cycle. This operation is crucial for applying system updates or resolving performance issues while maintaining instance data and configuration, making it a safer option than a stop/start cycle since it preserves the instance's attributes and network settings.
 
 ### AWS / VM / Delete
 
-Terminate the EC2 instance.
+This step permanently terminates and removes an EC2 instance from your AWS environment, freeing up associated resources. This is important for cleaning up unused resources to reduce costs and maintain a clean infrastructure, though it should be used with extreme caution as the action is irreversible.
 
 :::danger
  Be very careful when using this step.  It would be possible to remove a lot of instances by mistake if the node filter is too broad.
