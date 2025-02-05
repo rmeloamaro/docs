@@ -269,9 +269,11 @@ export default [{
           text: 'Key Storage Plugins',
           collapsible: true,
           children: [
-            '/manual/key-storage/storage-plugins/thycotic-storage.md',
-            '/manual/key-storage/storage-plugins/vault.md',
-            '/manual/key-storage/storage-plugins/cyberark-storage.md'
+            {link:'/manual/key-storage/storage-plugins/aws-secrets-manager.md', text: 'AWS Secrets Manager (Commercial)'},
+            {link:'/manual/key-storage/storage-plugins/azure-vault.md', text: 'Azure Key Vault (Commercial)'},
+            {link:'/manual/key-storage/storage-plugins/cyberark-storage.md', text: 'CyberArk (Commercial)'},
+            {link:'/manual/key-storage/storage-plugins/thycotic-storage.md', text: 'Delinea (Commercial)'},
+            {link:'/manual/key-storage/storage-plugins/vault.md', text: 'HashiCorp Vault'}
           ]
         },
       ]
