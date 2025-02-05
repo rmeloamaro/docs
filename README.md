@@ -104,3 +104,50 @@ Run the following with the milestone for the release. This will create the file 
 ```bash
 npm run notes -- --milestone=${1?milestone name} --draft
 ```
+
+
+## Troubleshooting
+
+If you encounter errors running the site locally, follow these steps to ensure a clean environment and proper setup:
+
+Prerequisites
+- Make sure (NVM (Node Version Manager))[https://github.com/nvm-sh/nvm#installing-and-updating] is installed on your machine
+- Ensure you have proper repository access
+
+
+```
+# 1. Navigate to repository root
+cd <repository directory>
+
+# 2. Set correct Node.js version
+nvm install    # Installs version specified in .nvmrc
+nvm use        # Switches to the correct version
+
+# 3. Clean existing dependencies
+rm -rf node_modules package-lock.json
+
+# 4. Ensure you're on the correct branch
+git checkout 4.0.x
+git pull origin 4.0.x
+
+# 5. Verify branch (should show '* 4.0.x')
+git branch
+
+# 6. Reinstall dependencies
+npm install
+
+# 7. Start development server
+npm run docs:dev
+
+```
+
+### Common Issues and Solutions
+
+- If nvm command is not found, restart your terminal after installation
+- If npm install fails, try clearing npm cache: npm cache clean --force
+- If the dev server shows outdated content, clear your browser cache
+- For permission errors, ensure you're not using sudo with npm commands
+
+### Still Having Issues?
+- Check the console for specific error messages
+- Verify your Node.js version matches the project requirements: node --version
