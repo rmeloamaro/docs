@@ -271,7 +271,8 @@ export default [{
           children: [
             '/manual/key-storage/storage-plugins/thycotic-storage.md',
             '/manual/key-storage/storage-plugins/vault.md',
-            '/manual/key-storage/storage-plugins/cyberark-storage.md'
+            '/manual/key-storage/storage-plugins/cyberark-storage.md',
+            '/manual/key-storage/storage-plugins/azure-vault.md'
           ]
         },
       ]
