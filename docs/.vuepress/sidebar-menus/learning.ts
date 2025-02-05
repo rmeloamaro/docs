@@ -241,6 +241,7 @@ export default [{
             { link: '/learning/solutions/database-management/db-and-autodiag.md', text: 'Databases + Auto Diagnostics' },
             { link: '/learning/solutions/database-management/postgres-reindex.md', text: 'Reindex PostgreSQL Database' },
             { link: '/learning/solutions/database-management/postgres-backup-restore.md', text: 'Backup and Restore PostgreSQL' },
+            { link: '/learning/solutions/database-management/postgres-storedprocedure.md', text: 'Executing PostgreSQL Stored Procedures' },
           ]
         },
         {
