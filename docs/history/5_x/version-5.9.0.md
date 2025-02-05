@@ -14,7 +14,11 @@ feed:
 
 ## Overview
 
+[Azure Key Storage](/manual/key-storage/storage-plugins/azure-vault.md) is released for Runbook Automation SAAS customers.  [Azure Key Vault](https://azure.microsoft.com/en-us/products/key-vault) is a cloud-based service for secure storage and management of sensitive data. It allows controlled access to confidential information such as API keys, passwords, certificates, and cryptographic keys.  This integration enables users to retrieve **secrets** from Azure Key Vault and utilize them for secure connections to various resources including virtual machines, databases, other tools, and more.  
 
+> [Azure Key Storage](/manual/key-storage/storage-plugins/azure-vault.md) will be available for Runbook Automation Self Hosted with the version 5.10.0 release.
+
+This release includes numerous security updates to address identified CVE vulnerabilities, along with various improvements to enhance product functionality.
 
 ## Runbook Automation Updates
 
@@ -22,14 +26,12 @@ feed:
 
 ### Additional Updates
 
-
 * Resolve CVE-2024-52046 - Critical
 * Performance issues using ServiceNow plugin
 * Update Spring to 5.3.39
 * Update Ansible plugin to 4.0.7
 * Jira Create Issue - Failure with required custom field that is not a string value
 * Secrets cache configurable on AWS Secret Manager Plugin
-
 
 ## Rundeck Open Source Product Updates
 

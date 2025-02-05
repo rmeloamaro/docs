@@ -111,7 +111,7 @@ npm run notes -- --milestone=${1?milestone name} --draft
 If you encounter errors running the site locally, follow these steps to ensure a clean environment and proper setup:
 
 Prerequisites
-- Make sure (NVM (Node Version Manager))[https://github.com/nvm-sh/nvm#installing-and-updating] is installed on your machine
+- Make sure [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm#installing-and-updating) is installed on your machine
 - Ensure you have proper repository access
 
 
