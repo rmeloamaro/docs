@@ -1,8 +1,7 @@
 # Node Dispatch
 
-:::warning Early Access Feature
-This feature is in early access as of version 5.5.0<br>
-To gain access, please [submit this form](https://www.pagerduty.com/early-access/) or contact your Account Manager.
+:::warning System Configuration Required
+To use this feature, **`rundeck.feature.distributedAutomation.enabled`** must be set to **`true`** in **System Configuration**.
 :::
 
 The Node Dispatch settings of a Runner defines which nodes are assigned to a Runner for the dispatch of automation tasks.

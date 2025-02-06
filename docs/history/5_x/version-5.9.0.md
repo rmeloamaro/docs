@@ -14,9 +14,26 @@ feed:
 
 ## Overview
 
+### Azure Key Storage
+
 [Azure Key Storage](/manual/key-storage/storage-plugins/azure-vault.md) is released for Runbook Automation SAAS customers.  [Azure Key Vault](https://azure.microsoft.com/en-us/products/key-vault) is a cloud-based service for secure storage and management of sensitive data. It allows controlled access to confidential information such as API keys, passwords, certificates, and cryptographic keys.  This integration enables users to retrieve **secrets** from Azure Key Vault and utilize them for secure connections to various resources including virtual machines, databases, other tools, and more.  
 
 > [Azure Key Storage](/manual/key-storage/storage-plugins/azure-vault.md) will be available for Runbook Automation Self Hosted with the version 5.10.0 release.
+
+### Dynamic Node-Runner Association
+
+[Automatic Runner Selection for node-dispatch](/administration/runner/runner-management/project-dispatch-configuration.md) allows users to assign a Runner to a set of nodes using a Node Filter such that any tasks dispatched to those nodes will automatically use the assigned Runner.  This dynamic association of Runners to nodes simplifies the authoring of Jobs, since users no longer need to define Runner selection as part of their Job definitions. The association between Runners and nodes also allows for a single Job execution to use multiple Runners based on the nodes being targeted.
+
+### Runner Hosts as Nodes
+Runners can now natively be added as nodes to the node inventory, providing a simpler method for executing steps on the Runner while also executing against other nodes.  This also provides for an easier setup experience for teams that are new to using Runbook Automation.  More details about the Runner as a Node can be found [here](/administration/runner/runner-management/node-dispatch.md).
+
+:::tip Enabling Latest Runner Features
+To use the latest Enterprise Runner features - such as the two highlighted above - be sure to the following config properties are set in [**System Configuration**](/manual/configuration-mgmt/configmgmt.md):
+
+* **`rundeck.feature.runner.enabled`** = **`true`**
+* **`rundeck.feature.distributedAutomation.enabled`** = **`true`**
+:::
+
 
 This release includes numerous security updates to address identified CVE vulnerabilities, along with various improvements to enhance product functionality.
 
