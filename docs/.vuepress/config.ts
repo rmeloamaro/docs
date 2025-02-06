@@ -236,10 +236,10 @@ export default defineUserConfig({
           '/administration/runner/runner-overview.html': '/administration/runner/index.html'
         }
       },
-      // pwa: {
-      //   update: 'force',
-      //   cacheHTML: true
-      // },
+      sitemap: {
+        hostname: "https://docs.rundeck.com",
+        changefreq: "weekly",
+      },
       feed: {
         hostname: 'https://docs.rundeck.com',
         rss: true,
