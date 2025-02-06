@@ -44,3 +44,4 @@ These are the Security Advisories Rundeck has issued in the past.  It is always 
 * [CVE-2024-38807 Spring Boot false positive](cve-2024-38807.md).
 * [CVE-2024-38816 Path traversal vulnerability in functional web frameworks](cve-2024-38816.md).
 * [CVE-2024-38819 Path traversal vulnerability in functional web frameworks #2](cve-2024-38819.md).
+* [CVE-2024-45338 golang/x/net 0.20.0](cve-2024-38819.md).
