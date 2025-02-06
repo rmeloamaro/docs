@@ -39,6 +39,7 @@ These are the Security Advisories Rundeck has issued in the past.  It is always 
 * [CVE-2022-45868 H2 DB false positive](cve-2022-45868.md).
 * [CVE-2022-1471 SnakeYAML false positive](cve-2022-1471.md).
 * [CVE-2024-1597 Postgres JDBC Driver Vulnerability](cve-2024-1597.md).
+* [CVE-2024-6104 go-retryablehttp can leak basic auth credentials to log files](cve-2024-6104.md).
 * [CVE-2023-39017 Quartz Scheduler false positive](cve-2023-39017.md).
 * [CVE-2024-24786 Protobuf finding in Remco](cve-2024-38807.md).
 * [CVE-2024-38807 Spring Boot false positive](cve-2024-38807.md).
