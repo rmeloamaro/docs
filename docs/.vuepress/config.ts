@@ -112,8 +112,13 @@ export default defineUserConfig({
       search: false,
       seo: {
         hostname: "https://docs.rundeck.com/",
+        author: {
+          name: "PagerDuty | Rundeck",
+          url: "https://www.pagerduty.com/automation"
+        },
         autoDescription: true,
-        twitterID: "pagerduty"
+        twitterID: "pagerduty",
+        canonical: "https://docs.rundeck.com/docs/"
       },
       docsearch: {
         appId: 'GRSXNRCDRG',
