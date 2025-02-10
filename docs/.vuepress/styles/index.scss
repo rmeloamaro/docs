@@ -263,6 +263,8 @@ h6 {
   margin-top: 0px !important;
 }
 
+
+
 html[data-theme=dark] {
   img[src*="/images/RundeckbyPagerDuty.svg"] {
     content: url("/images/RundeckbyPagerDutyDark.svg")
@@ -274,8 +276,16 @@ html[data-theme=dark] {
     color: #fff;
   }
 
+  #main-description {
+    color: #fff
+  }
+
   .vp-feature {
     color: var(--text-color);
+  }
+
+  .vp-hero-action {
+    color: var(--vp-c-grey-hover)
   }
 
   img.icon{
