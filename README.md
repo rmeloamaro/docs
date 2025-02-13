@@ -105,7 +105,6 @@ Run the following with the milestone for the release. This will create the file 
 npm run notes -- --milestone=${1?milestone name} --draft
 ```
 
-
 ## Troubleshooting
 
 If you encounter errors running the site locally, follow these steps to ensure a clean environment and proper setup:
