@@ -3,7 +3,7 @@
       <template #top>
         <div class="homepage-announce">
           <p>
-            <b>Process Automation On Prem</b> is now <b>Runbook Automation Self-Hosted</b>
+            <b>The <i>resources.rundeck.com</i> site has been consolidated here!  Check our our <a href='/learning/solutions/'>Solutions</a> page for Automation use cases. </b>
           </p>
     </div>
       </template>
