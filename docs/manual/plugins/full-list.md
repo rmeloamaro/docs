@@ -4,13 +4,6 @@ This document lists the plugins **distributed with Rundeck and Runbook Automatio
 
 Also see: [Plugin Development Guide](/developer/index.md).
 
-More plugins can be found via:
-
-* [Rundeck.org plugins listing](https://rundeck.org/plugins/)
-* [The official rundeck-plugins](https://github.com/rundeck-plugins/) org on github
-* [Github Search: rundeck](https://github.com/search?p=3&q=rundeck&type=Repositories)
-* [Github topic: `rundeck`](https://github.com/topics/rundeck)
-
 ***Note: We are releasing new plugins all the time. This list may not fully list all included plugins.  If you find one missing let us know!***
 
 Type| Plugin                                                                                                          |Description|Availability
@@ -85,3 +78,8 @@ SSO | [Okta](/administration/security/sso/index.md)                             
 Storage Converter | [Encyption](/administration/configuration/plugins/bundled-plugins.md#jasypt-encryption-plugin)                  | Encrypts Key Storage and Project configuration data | Built-in
 Webhook | [Run Job](/manual/webhooks/run-job.md)                                                                          | Runs a job when a webhook event is received | Built In
 Webhook | [Routing Run Job](/manual/webhooks/advanced-run-job.md)                                                         | Advanced rule processing of webhook event data to run jobs. | Enterprise
+
+
+Additional Open Source plugins can be found at:
+
+* [Collection of Open Source Rundeck Plugins](https://github.com/rundeck-plugins/)
