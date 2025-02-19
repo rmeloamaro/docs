@@ -3,7 +3,7 @@
 This is a simple guide for setting up PostgreSQL for use with Rundeck.
 
 :::warning
-Enterprise DB (EDB), based on Postgres, is not supported for the  or Rundeck Postgres setup.
+Enterprise DB (EDB) though it is based on Postgres is not supported by Rundeck.
 :::
 
 ## Install PostgreSQL
