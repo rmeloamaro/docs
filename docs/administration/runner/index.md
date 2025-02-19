@@ -13,7 +13,7 @@ The Enterprise Runner allows for dispatching automation to remote environments t
 
 This architecture allows for orchestrating various tasks and automation playbooks across multiple environments, including secure and remote environments.
 
-The Runner is equipped with most of the same plugins Runbook Automation, making it easy to use the Runner with existing automation.
+The Runner is equipped with most of the same plugins found in Runbook Automation, making it easy to use the Runner with existing automation.
 
 Tasks can be carried out over multiple environments simultaneously, thereby reducing the time and complexity of orchestrating automation across disparate environments.
 
