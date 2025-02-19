@@ -8,7 +8,7 @@ http://support.rundeck.com/customer/en/portal/articles/2338371-rundeck-pro-ha-fo
 Make a Enterprise version of this CloudFormation template: https://osgav.run/page/projects/rundeck-cloudformation.html
 --->
 
-This document provides instructions to instal Runbook Automation Self-Hosted in an HA (cluster) configuration on AWS, taking advantage of ELB, RDS, and S3 for scale and availability.
+This document provides instructions to install Runbook Automation Self-Hosted in a highly available (HA) clustered configuration on AWS, taking advantage of ELB, RDS, and S3 for scale and availability.
 
 ![ HA architecture on AWS](/assets/img/aws-architecture.png)
 
