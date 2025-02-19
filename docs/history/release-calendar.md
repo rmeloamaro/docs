@@ -9,6 +9,8 @@ Upgrade instructions [can be found here](/upgrading/index.md).
 
 | Release Version                          | Release Date         | Enterprise Support Status |
 |------------------------------------------|----------------------|---------------------------|
+| [5.9.0](/history/5_x/version-5.9.0.md)   | February 5th, 2025   | Supported |
+| [5.8.0](/history/5_x/version-5.8.0.md)   | December 5th, 2024   | Supported |
 | [5.7.0](/history/5_x/version-5.7.0.md)   | October 21, 2024   | Supported |
 | [5.6.1](/history/5_x/version-5.6.1.md)   | October 14, 2024   | Supported |
 | [5.6.0](/history/5_x/version-5.6.0.md)   | September 12, 2024   | Supported |
@@ -22,11 +24,6 @@ Upgrade instructions [can be found here](/upgrading/index.md).
 | [5.0.2](/history/5_x/version-5.0.2.md)   | February 12th, 2024    | Supported |
 | [5.0.1](/history/5_x/version-5.0.1.md)   | January 15th, 2024    | Supported |
 | [5.0.0](/history/5_x/version-5.0.0.md)   | December 14th, 2023    | Supported |
-| [4.17.6](/history/4_x/version-4.17.6.md) | April 2nd, 2024    | Maintenance Support |
-| [4.17.5](/history/4_x/version-4.17.5.md) | March 4th, 2024    | Maintenance Support |
-| [4.17.4](/history/4_x/version-4.17.4.md) | December 13th, 2023    | Maintenance Support |
-| [4.17.3](/history/4_x/version-4.17.3.md) | November 13th, 2023    | Maintenance Support |
-| [4.17.2](/history/4_x/version-4.17.2.md) | November 7th, 2023   | Maintenance Support |
 
 ::: warning
 With the release of [version 5.0.0](5_x/version-5.0.0.html) the 4.x series was placed into Maintenance Support status. All fixes to the product will be made in the 5.x series.  Critical bugs may be back ported to the 4.x series as determined by the PagerDuty Automation Product Team.

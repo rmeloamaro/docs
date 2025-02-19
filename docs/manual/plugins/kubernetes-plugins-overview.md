@@ -1,132 +1,240 @@
-# Kubernetes Plugins
-
-## Overview
-
+# Kubernetes Integration Overview
+:::enterprise
+:::
 ![](/assets/img/kubernetes-icon.png)
 
-Runbook Automation integrates with Kubernetes through a variety of plugins. By integrating Runbook Automation with Kubernetes, users can automate and provide self-service interfaces for operations in their Kubernetes Clusters. These integrations allow operations teams to provide self-service mechanisms to users throughout the business, as well as setup event-driven automation for workflows with Kubernetes.
+Runbook Automation integrates with Kubernetes through a variety of plugins. By integrating Runbook Automation with Kubernetes, users can automate and provide self-service interfaces for operations in their Kubernetes Clusters.
 
-<details><summary> <font size="5">List of Kubernetes Plugins</font>
+<details><summary> <font size="5"><u>Kubernetes Plugins Available in Runbook Automation</u></font>
 </summary>
 
-**Available in Rundeck Open Source**
-
-|Plugin Name| Plugin Type| Description|
-|:---------------------------------------------------------|:---------------------------------------------------------:|:---------------------------------------------------------|
-|[**Create Deployment**](/manual/jobs/job-plugins/node-steps/kubernetes-deployment-plugins.md#kubernetes-deployment-create)|Node Step|Create a new deployment.|
-|[**Delete Deployment**](/manual/jobs/job-plugins/node-steps/kubernetes-deployment-plugins.md#kubernetes-deployment-delete)|Node Step|Delete an existing deployment.|
-|[**Deployment Status**](/manual/jobs/job-plugins/node-steps/kubernetes-deployment-plugins.md#kubernetes-deployment-status)|Node Step|Get the status of an existing deployment.|
-|[**Update Deployment**](/manual/jobs/job-plugins/node-steps/kubernetes-deployment-plugins.md#kubernetes-deployment-update)|Node Step|Update an existing deployment.|
-|[**Waitfor Deployment**](/manual/jobs/job-plugins/node-steps/kubernetes-deployment-plugins.md#kubernetes-deployment-waitfor)|Node Step|Pause workflow until deployment is complete.|
-|[**Create Job**](/manual/jobs/job-plugins/node-steps/kubernetes-job-plugins.md#kubernetes-job-create)|Node Step|Create a new Kubernetes job.|
-|[**Delete Job**](/manual/jobs/job-plugins/node-steps/kubernetes-job-plugins.md#kubernetes-job-delete)|Node Step|Delete an existing Kubernetes job.|
-|[**Re-run Job**](/manual/jobs/job-plugins/node-steps/kubernetes-job-plugins.md#kubernetes-job-re-run)|Node Step|Re-runs an existing Kubernetes job.|
-|[**Waitfor Job**](/manual/jobs/job-plugins/node-steps/kubernetes-job-plugins.md#kubernetes-job-waitfor)|Node Step|Pause workflow until Kubernetes job is complete.|
-|[**Create Service**](/manual/jobs/job-plugins/node-steps/kubernetes-service-plugins.md#kubernetes-service-create)|Node Step|Create a new Kubernetes service.|
-|[**Update Service**](/manual/jobs/job-plugins/node-steps/kubernetes-service-plugins.md#kubernetes-service-update)|Node Step|Update an existing Kubernetes service.|
-|[**Delete Service**](/manual/jobs/job-plugins/node-steps/kubernetes-service-plugins.md#kubernetes-service-delete)|Node Step|Delete an existing Kubernetes service.|
-|[**Pods Node Source**](/manual/projects/resource-model-sources/kubernetes.md)|Resource Model|Populates node inventory with Kubernetes pods.|
-|[**Create Pod**](/manual/jobs/job-plugins/node-steps/kubernetes-pod-plugins.md#kubernetes-pod-create)|Node Step|Create a new Kubernetes pod.|
-|[**Delete Pod**](/manual/jobs/job-plugins/node-steps/kubernetes-pod-plugins.md#kubernetes-pod-delete)|Node Step|Delete an existing Kubernetes pod.|
-|[**Describe Pod**](/manual/jobs/job-plugins/node-steps/kubernetes-pod-plugins.md#kubernetes-pod-describe)|Node Step|Describe a running Kubernetes pod.|
-|[**Execute Command**](/manual/jobs/job-plugins/node-steps/kubernetes-pod-plugins.md#kubernetes-pod-execute-command)|Node Step|Execute a command inside a container in a running pod.|
-|[**Execute Script**](/manual/jobs/job-plugins/node-steps/kubernetes-pod-plugins.md#kubernetes-pod-execute-script)|Node Step|Execute a script inside a container in a running pod.|
-|[**Pod Logs**](/manual/jobs/job-plugins/node-steps/kubernetes-pod-plugins.md#kubernetes-pod-logs)|Node Step|View the logs of a running pod.|
-|[**Waitfor Pod**](/manual/jobs/job-plugins/node-steps/kubernetes-pod-plugins.md#kubernetes-pod-waitfor)|Node Step|Pause workflow until pod is in "ready" state.|
-|[**Debug Pod**](/manual/jobs/job-plugins/node-steps/kubernetes-debug-plugins.md#kubernetes-debug-ephemeral-container)|Node Step|Debug a running container inside an existing pod using an ephemeral container.|
-|[**Waitfor StatefulSet**](/manual/jobs/job-plugins/node-steps/kubernetes-statefulset-plugins.md#kubernetes-statefulset-waitfor)|Node Step|Pause workflow until StatefulSet has been successfully deployed.|
-
-**Plugins available only in Commercial products**
-> Note: All Open Source plugins also included.
-
-|Plugin Name| Plugin Type| Description|
-|:---------------------------------------------------------|:---------------------------------------------------------:|:---------------------------------------------------------|
-|[**Amazon EKS Node Source**](/manual/projects/resource-model-sources/aws-eks.md)|Node Source|Imports Amazon Web Services EKS Clusters as Nodes.|
-|[**Azure AKS Node Source**](/manual/projects/resource-model-sources/azure-aks.md)|Node Source|Imports Azure AKS Clusters as Nodes.|
-|[**Google Cloud GKE Node Source**](/manual/projects/resource-model-sources/gcp-gke.md)|Node Source|Imports Google Cloud GKE Clusters as Nodes.|
-|[**Kubernetes Cluster Create Object**](/manual/jobs/job-plugins/node-steps/kubernetes-create-object)|Node Step|This plugin creates an object of a selected kind within a Kubernetes cluster.|
-|[**Kubernetes Cluster Delete Object**](/manual/jobs/job-plugins/node-steps/kubernetes-delete-object)|Node Step|This plugin deletes an object of a selected kind within a Kubernetes cluster.|
-|[**Kubernetes Cluster Describe Object**](/manual/jobs/job-plugins/node-steps/kubernetes-describe-object)|Node Step|This plugin describes an object of a selected kind within a Kubernetes cluster.|
-|[**Kubernetes Cluster List Objects**](/manual/jobs/job-plugins/node-steps/kubernetes-list-objects)|Node Step|This plugin lists objects of a selected kind within a Kubernetes cluster.|
-|[**Kubernetes Cluster Object Logs**](/manual/jobs/job-plugins/node-steps/kubernetes-object-logs)|This plugin allows you to view the logs of an object within a Kubernetes cluster.|
-|[**Kubernetes Cluster Run Command**](/manual/jobs/job-plugins/node-steps/kubernetes-run-command)|Node Step|This plugin allows you to execute a command in a pod within a Kubernetes cluster.|
-|[**Kubernetes Cluster Run Script**](/manual/jobs/job-plugins/node-steps/kubernetes-run-script)|Node Step|This plugin executes a script using a predefined container image within a Kubernetes cluster.|
-|[**Kubernetes Cluster Update Object**](/manual/jobs/job-plugins/node-steps/kubernetes-update-object)|Node Step|This plugin updates a specified object of a selected kind within a Kubernetes cluster.|
-
+| Plugin Name                                                                                              |                                        Plugin Type                                         | Description                                                                                   |
+|:---------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------|
+| [**Amazon EKS Node Source**](/manual/projects/resource-model-sources/aws-eks.md)                         |                                        Node Source                                         | Imports Amazon Web Services EKS Clusters as Nodes.                                            |
+| [**Azure AKS Node Source**](/manual/projects/resource-model-sources/azure-aks.md)                        |                                        Node Source                                         | Imports Azure AKS Clusters as Nodes.                                                          |
+| [**Google Cloud GKE Node Source**](/manual/projects/resource-model-sources/gcp-gke.md)                   |                                        Node Source                                         | Imports Google Cloud GKE Clusters as Nodes.                                                   |
+| [**Kubernetes Cluster Create Object**](/manual/jobs/job-plugins/node-steps/kubernetes-create-object)     |                                         Node Step                                          | This plugin creates an object of a selected kind within a Kubernetes cluster.                 |
+| [**Kubernetes Cluster Delete Object**](/manual/jobs/job-plugins/node-steps/kubernetes-delete-object)     |                                         Node Step                                          | This plugin deletes an object of a selected kind within a Kubernetes cluster.                 |
+| [**Kubernetes Cluster Describe Object**](/manual/jobs/job-plugins/node-steps/kubernetes-describe-object) |                                         Node Step                                          | This plugin describes an object of a selected kind within a Kubernetes cluster.               |
+| [**Kubernetes Cluster List Objects**](/manual/jobs/job-plugins/node-steps/kubernetes-list-objects)       |                                         Node Step                                          | This plugin lists objects of a selected kind within a Kubernetes cluster.                     |
+| [**Kubernetes Cluster Object Logs**](/manual/jobs/job-plugins/node-steps/kubernetes-object-logs)         | Node Step| This plugin allows you to view the logs of an object within a Kubernetes cluster.             |
+| [**Kubernetes Cluster Run Command**](/manual/jobs/job-plugins/node-steps/kubernetes-run-command)         |                                         Node Step                                          | This plugin allows you to execute a command in a pod within a Kubernetes cluster.             |
+| [**Kubernetes Cluster Run Script**](/manual/jobs/job-plugins/node-steps/kubernetes-run-script)           |                                         Node Step                                          | This plugin executes a script using a predefined container image within a Kubernetes cluster. |
+| [**Kubernetes Cluster Update Object**](/manual/jobs/job-plugins/node-steps/kubernetes-update-object)     |                                         Node Step                                          | This plugin updates a specified object of a selected kind within a Kubernetes cluster.        |
 
 </details>
 <br>
 
-:::tip
-Click above see the full list of plugins for Kubernetes.
+:::warning Commercial Plugins
+This document covers the plugins available in the **commercial Runbook Automation products**.  For a list of Kubernetes plugins available for **Rundeck Community (open-source)**, see documentation for the [**Open Source Kubernetes plugins**](/manual/plugins/kubernetes-open-source.md).
 :::
 
-## Setup the Open Source Kubernetes Plugins
+## Adding Clusters & Authenticating with Kubernetes API
+There are multiple methods for adding Kubernetes clusters to Runbook Automation:
 
-### Python Dependencies
+1. [**Runners with Pod-based Service Account**](#runners-with-pod-based-service-account): Install a Runner in each cluster (or namespace), and target the Runner as the cluster or particular namespace. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
+2. [**Cloud Provider Integration**](#cloud-provider-integration): Use the cloud provider's API to dynamically retrieve all clusters and add them as nodes to the inventory. The cloud provider's API can also optionally be used to retrieve the necessary Kubernetes authentication to communicate with the clusters.
+3. [**Manual Authentication Configuration**](#manual-authentication-configuration): Clusters are added to the inventory either manually or through method 1 or 2. The Kubernetes API Token or Kube Config file is manually added to Key Storage and configured as node-attributes.
 
-In order to use the Open Source Kubernetes plugins listed in the Summary above, Python must be installed on the Runbook Automation cluster-members or on the [Enterprise Runner](/administration/runner/index.md) - depending on where the connection to Kubernetes will originate.  _(These steps are also needed for Commercial versions using the listed Open Source plugins.)_
+:::tip Prerequisite Configuration
+Note that all of these methods require the use of the **Automatic** mode for the Project's use of Runners. See [this documentation](/administration/runner/runner-management/project-dispatch-configuration.md) to confirm that your project is configured correctly.
+:::
 
-The plugins will work with both **Python 2.7.x** and **Python 3.x.x**.
+### Runners with Pod-based Service Account
 
-Once python is installed, download and install the **`kubernetes`** python client.  For **Python 2.7.x** this can be done with **`pip install kubernetes`** and for **Python 3.x.x** this can be done with **`pip3 install kubernetes`**.
+With this method, clusters are added to the inventory by installing a Runner in the cluster and adding the Runner as a node to the inventory. The Runner uses the Service Account of the pod that it is hosted in to authenticate with the Kubernetes API.
 
-Optionally test that the Kubernetes client has been installed successfully by executing the following at the command-line: **`python`** followed by **`from kubernetes import client, config`**:
+This method is recommended if you want to have a 1:1 relationship between Runners and Kubernetes clusters or between Runners and namespaces within clusters, or if you are unable to use the Cloud Provider Integration method outlined in the next section.
 
-```
-ubuntu@ip-172-31-13-91:~$ python
-Python 2.7.17 (default, Mar  8 2023, 18:40:28) 
-[GCC 7.5.0] on linux2
-Type "help", "copyright", "credits" or "license" for more information.
->>> from kubernetes import client, config
->>>
-```
+Follow these steps to set up a Runner in a Kubernetes cluster:
 
-### Kubernetes Authentication
+1. Create a new Runner within your Project using the API. Replace **`URL`** with your Runbook Automation instance URL, **`PROJECT`** with the project name, and **`API_TOKEN`** with your API Token:
+   ```bash
+   curl --location --request POST 'https://[URL]/api/42/project/[PROJECT]/runnerManagement/runners' \
+   --header 'Accept: application/json' \
+   --header 'X-Rundeck-Auth-Token: [API_TOKEN]' \
+   --header 'Content-Type: application/json' \
+   --data-raw '{
+      "name": "K8s Runner US-WEST-1 Cluster 1",
+      "description": "Runner installed in US-WEST-1 Cluster 1",
+      "tagNames": ["K8S-RUNNER", "us-west-1", "cluster-1"]
+     }'
+      ```
+   :::tip Tip
+      It is recommended to add at least one **Tag** through the `tagNames` field to the Runner, as this simplifies adding the Node Enhancer in step 4.
+   :::
+   The response will provide the following. Be sure to capture the **`runnerId`** and the **`token`**:
+   ```
+   {"description":"Runner installed in US-WEST-1 Cluster 1",
+   "downloadTk":"fbc12393-3454-426d-9dd0-6e72ce53b9d5",
+   "name":"K8s Runner","projectAssociations":{"network-infra":".*"},
+   "runnerId":"acc00df8-fbb8-497a-8f7f-07eaaa0c5b78","token":"6Y4bHjk4TCU1MUGBaso9Ak7sHOokwRkw"}
+   ```
+2. Create a deployment YAML for the Runner. Be sure to replace **`[namespace]`**, **`[runnerId]`** with the value from the previous step, **`[token]`**, and **`[Runbook Automation Instance URL]`**:
+   ```
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     namespace: [namespace]
+     name: rundeck-runner
+     labels:
+       app: rundeck-runner
+   spec:
+     containers:
+     - image: rundeckpro/runner
+       imagePullPolicy: IfNotPresent
+       name: rundeck-runner
+       env:
+       - name: RUNNER_RUNDECK_CLIENT_ID
+         value: "[runnerId]"
+       - name: RUNNER_RUNDECK_SERVER_TOKEN
+         value: "[token]"
+       - name: RUNNER_RUNDECK_SERVER_URL
+         value: "https://[Runbook Automation Instance URL]"
+       lifecycle:
+         postStart:
+           exec:
+             command:
+             - /bin/sh
+             - -c
+             - touch this_is_from_rundeck_runner
+     restartPolicy: Always
+   ```
+3. Create the deployment: **`kubectl apply -f deployment.yml`**.
+4. Add a Node Attribute to the Runner's node in the inventory through an  [**Attribute Match Node Enhancer**](/manual/node-enhancers.md#attribute-match).
+   - Set the **Attribute Match** to use one of the tags set in **Step 1**: **`tags=~.*K8S-RUNNER.*`**
+   - Set the **Attributes to Add** as: **`kubernetes-use-pod-service-account=true`**
+   :::tip Tip
+   This step is only required one time if you use the same tag for all Runners that are deployed into Kubernetes clusters and use the Pod-based Service Account method.
+   :::
 
-By default, the Kubernetes plugins look for a Kube Config file at **`$RDECK_BASE/.kube/config`**.  For **Deb** and **RPM** this would translate to **`/var/lib/rundeck/.kube/config`**.
-The Kube Config file can be saved to a different location, just be sure to take note of where it is saved for later steps.
+The Runner will now be able to authenticate with the Kubernetes API using the Service Account of the pod that it is hosted in. 
 
-If it is preferred to use a Kubernetes API Token, then follow the instructions outlined [here](https://www.cncf.io/blog/2020/07/31/kubernetes-rbac-101-authentication/) to generate the Service Account Token.
-Once created, save the Token to [Key Storage](/manual/system-configs.md#key-storage) as a **Password** secret type.
+### Cloud Provider Integration
 
-### Upload Kubernetes Plugins (Rundeck OSS Only)
+The Cloud Provider Integration method can be used to dynamically retrieve all clusters from the cloud provider's API and add them as nodes to the inventory. 
+The cloud provider's API can _also_ be used to retrieve the necessary Kubernetes authentication to communicate with the clusters.
 
-Rundeck OSS does not come preloaded with the Kubernetes plugins. To install the Kubernetes plugins, use the following steps:
+:::tip Cloud Provider for Discovery and Pod Service Account for Authentication
+It is possible to use the Cloud Provider Integration method for cluster discovery and the Pod-based Service Account method for authentication. This is useful when you want to dynamically discover clusters but have a 1:1 relationship between Runners and clusters or do not have the option to use the cloud provider for retrieving cluster credentials.
+To take this approach, be sure to select the **Use Pod Service Account for Node Steps** when configuring the Node Source plugins.
+:::
 
-1. Navigate to the [latest plugin release](https://github.com/rundeck-plugins/kubernetes/releases/latest) on Github and download the **`kubernetes-X.X.XX.zip`** file.<br><br>
-2. In Rundeck, click the **Gear Icon** and then click the **Plugins > Upload Plugin**:
-   ![Upload Plugins Menu](/assets/img/upload-plugins-menu.png)
-3. Click **Browse** and select the downloaded **`.zip`** file from Step 2.
-4. Click **Install**:
-   ![Upload Kubernetes Plugins](/assets/img/upload-k8s-plugins.png)
+### Cloud Provider for Cluster Discovery
 
-## Test Kubernetes Plugins
+Use the Node Source plugins for the cloud provider to add the clusters to the Node Inventory:
 
-To test that the dependencies and authentication have been configured correctly, use a Kubernetes Node Step plugin - as this will provide the option to easily
-execute the plugin in _debug_ mode.
+- [**Amazon EKS Node Source**](/manual/projects/resource-model-sources/aws-eks.md)
+- [**Azure AKS Node Source**](/manual/projects/resource-model-sources/azure-aks.md)
+- [**Google Cloud GKE Node Source**](/manual/projects/resource-model-sources/gcp-gke.md)
 
-1. Create a new Job.
-2. Navigate to the **Workflow** tab.
-3. Click **+ Add a step**.
-4. In the **Search step** field type **`Kubernetes`**.
-5. Select the **Kubernetes / Pod / Describe** plugin from the list.
-6. Type in a pod name into the **Name** field.
-![K8s Describe Pod](/assets/img/k8s-describe-pod.png)
-7. Type in the namespace of the pod in the **Namespace** field.
-8. If the Kube Config file is saved in the directory **`$RDECK_BASE/.kube/config`** (`/var/lib/rundeck/.kube/config`for RPM and Deb), then the authentication fields can be left blank.
-   * Otherwise, specify the custom Kube Config location.
-9. Optionally chance the **Python Interpreter** if python scripts are not invoked using `python my_script.py` but rather `python2 my_script.py` or `python3 my_script.py`.
-10. Click **Save** on the Job Step and then **Save** to save the Job.
-11. Click **Run Job Now** to test that the configuration is correct.
+Note that a Runner does _not_ need to be installed to configure these Node Source plugins.
 
-Now that configuration is complete, take a look at use-cases for Runbook Automation with Kubernetes such as 
-[Capturing Debug Data from Apps in Kubernetes](/learning/solutions/automated-diagnostics/examples/k8s-app-debug-capture) 
-or [Managing Kubernetes with Rundeck](/learning/howto/how2kube.md#managing-kubernetes-with-rundeck).
+### Cloud Provider for Kubernetes Authentication
+
+Runbook Automation can use its integration with the public cloud providers to retrieve credentials to authenticate with the Kubernetes clusters.
+
+This method of authentication is useful when:
+1. Installing a Runner inside the clusters is not an option
+2. There are numerous clusters and it is preferred to have a one-to-many relationship between the Runner and the clusters
+
+With this approach, a single Runner is installed in either a VM or a container that has a path to communicate with the clusters. The Runner uses the cloud provider's API to retrieve the necessary Kubernetes authentication to communicate with the clusters:
+
+![The Runner can retrieve cluster credentials from the EKS service](/assets/img/k8s-cloud-provider-architecture.png)
+
+### AWS EKS Authentication
+
+To authenticate with EKS clusters using the AWS APIs:
+
+1. Install a Runner in an EC2 instance or a container that has access to the EKS clusters.<br>
+
+2. Assign permissions to the IAM role of this EC2 or container to allow the Runner to retrieve the necessary EKS cluster credentials:
+   - **`eks:DescribeCluster`**
+3. Add the **EKS API** as an authentication mode and add the IAM Role of the Runner's host (EC2 or container) to the target clusters:
+
+   :::info Repeat for each target cluster
+   This process must be repeated for each target cluster so that the Runner can authenticate with each cluster.
+   :::
+   :::tabs
+   @tab AWS Console
+   1. Navigate to the **EKS Console**.
+   2. Select the target cluster and click on the **Access** tab and click **Manage Access**.
+      ![EKS API Access Configuration](/assets/img/eks-api-access-configuration.png)
+   3. Select either **EKS API** or **EKS API and ConfigMap**.
+   4. Click **Save Changes**.
+   5. Now in the **IAM access entries** section, click on **Create access entry**:
+      ![Create Access Entry](/assets/img/eks-create-access-entry.png)
+   6. In the **IAM principal** section, select the IAM Role of the Runner's host (EC2 or container).
+   7. Select **Standard** for the **Type**.
+   8. On the next screen, assign the desired **Policy Name** and **Access Scope** for this entry.
+   9. On the next screen, click **Create**.
+   
+   @tab CLI
+   1. Install the AWS CLI as described [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
+   2. Run the following command to add the **EKS API** as an access mode:
+      ```
+      aws eks update-cluster-config --name my-cluster --access-config authenticationMode=API_AND_CONFIG_MAP
+      ```
+   3. Create an access entry for the IAM Role of the Runner's host (EC2 or container).  Here is an example command, but additional examples can be found in the [official AWS documentation](https://docs.aws.amazon.com/eks/latest/userguide/creating-access-entries.html):
+      ```
+      aws eks create-access-entry --cluster-name my-cluster --principal-arn arn:aws:iam::111122223333:role/EKS-my-cluster-self-managed-ng-1 --type STANDARD
+      ```
+      Replace **`arn:aws:iam::111122223333:role/EKS-my-cluster-self-managed-ng-1`** with the IAM Role of the Runner's host.
+   :::tabs
+   
+Now when the Runner targets the EKS clusters using the Kubernetes node-step plugins, it will be able to authenticate with the clusters using credentials fetched from AWS.
+
+### Azure AKS Authentication
+
+To authenticate with AKS clusters using the Azure APIs:
+
+1. Install a Runner in a VM or container that has a network path to the target AKS clusters.<br>
+
+2. Follow the instructions in the [Azure Plugins Overview](/manual/plugins/azure-plugins-overview.md) to create a Service Principal and add the credentials for this Service Principal to Runbook Automation.
+   :::info Pre-existing Service Principal
+   If Runbook Automation has already been integrated with Azure, then you may not need to create a new Service Principal.  Instead, add these permissions to the existing Service Principal.
+   :::
+3. A assign permissions that allow this Service Principal to retrieve AKS cluster credentials:
+   - **`Microsoft.ContainerService/managedClusters/listClusterUserCredential`**
+   - Azure provides pre-built roles that have this permission, such as **Azure Kubernetes Service Cluster User Role**.
+   :::tip Role Assignment Scope
+    The role assignment of these permissions can be assigned at the **Subscription**, **Resource Group** or even on an individual cluster basis.
+    Regardless of the chosen scope, navigate to the **Access Control (IAM)** section and add the role assignment.
+   :::
+
+Now when the Runner targets the AKS clusters using the Kubernetes node-step plugins, it will be able to authenticate with the clusters using credentials fetched from Azure.
+
+### Google Cloud GKE Authentication
+
+To authenticate with GKE clusters using the Google Cloud APIs:
+
+1. Install a Runner in a VM or container that has a network path to the target GKE clusters.<br>
+
+2. Follow the instructions in the [Google Cloud Plugins Overview](/manual/plugins/gcp-plugins-overview.md) to create a Service Account and add the credentials for this Service Account to Runbook Automation.
+   :::info Pre-existing Service Account
+   If Runbook Automation has already been integrated with Google Cloud, then you may not need to create a new Service Account.  Instead, add these permissions to the existing Service Account.
+   :::
+3. Add a Role to the Service Account that has the permissions to retrieve the cluster credentials from the GKE service:
+   - **`container.clusters.get`**
+   - A predefined role, such as **Kubernetes Engine Developer**, can be used for this purpose.
+
+Now when the Runner targets the GKE clusters using the Kubernetes node-step plugins, it will be able to authenticate with the clusters using credentials fetched from Google Cloud.
 
 
+### Manual Authentication Configuration
 
+If you do not have the option to place the Runner inside the target cluster or use the Cloud Provider Integration method, you can manually configure the Kubernetes authentication.
 
+1. Create an API token for a service account following the steps outlined [here](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#manually-create-a-long-lived-api-token-for-a-serviceaccount).
+2. Retrieve the `token` and the `ca.crt` from the secret created in the previous step: **`kubectl get secret/[secret-name] -o yaml`**.
+3. Add both the `token` and the `ca.crt` to Key Storage.
+4. Next, retrieve the cluster's API endpoint.  This can be found by running **`kubectl cluster-info`**.
+5. Add a node to the inventory and add the following as node attributes:
+   ```
+   kubernetes-cloud-provider=self-hosted
+   kubernetes-cluster-endpoint=<<cluster endpoint>>
+   kubernetes-token-path=<<path to token in key storage>>
+   kubernetes-ca-cert-path=<<path to CA cert in key storage>>
+   ```
 
-
-
+This node can now be targeted by the Kubernetes node-step plugins.

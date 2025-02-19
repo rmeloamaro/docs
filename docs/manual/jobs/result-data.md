@@ -38,7 +38,7 @@ Typically, data is captured within *Node Contexts*, and in order to export the d
 
 You can use the [Key-Value Data Logfilter Plugin](/manual/log-filters/key-value-data.md) to capture data into Node Contexts.
 
-You can use the [Global Variable Workflow Step Plugin](/manual/workflow-steps/builtin.md#global-variable) to copy Node Context data to the Global Context.
+You can use the [Global Variable Workflow Step Plugin](/manual/jobs/job-plugins/workflow-steps/builtin.md#global-variable) to copy Node Context data to the Global Context.
 :::
 
 ### Inputs

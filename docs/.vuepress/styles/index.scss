@@ -42,7 +42,26 @@ h6 {
     text-align: center; /* Center the text */
     }
 
-.vp-description{
+
+.version-selector {
+  appearance: none; /* Removes default browser styling */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  border: 0px solid #ccc; /* Thin grey border */
+  border-radius: 0; /* Removes rounded corners */
+  padding: 8px 12px; /* Adds some padding for better usability */
+  font-size: 14px; /* Adjusts font size */
+  background-color: #fff; /* Flat white background */
+  color: #333; /* Text color */
+  outline: none; /* Removes focus outline */
+  cursor: pointer; /* Changes cursor to pointer */
+}
+
+.version-selector:focus {
+  border-color: #888; /* Slightly darker border on focus */
+}
+
+    .vp-description{
   text-align: center;
   max-width: unset;
 }
@@ -53,6 +72,30 @@ h6 {
 
 .vp-hero-action {
   background-color: #f6f6f6;
+}
+
+.vp-hero-actions {
+  margin: 1.8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-align: center;
+}
+/* Ensure centering is maintained on mobile */
+@media (max-width: 959px) {
+  .vp-hero-actions {
+    justify-content: center;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 419px) {
+  .vp-hero-actions {
+    justify-content: center;
+    margin: 1.2rem auto;
+  }
 }
 
 .vp-feature-bg + .vp-feature {
@@ -220,6 +263,8 @@ h6 {
   margin-top: 0px !important;
 }
 
+
+
 html[data-theme=dark] {
   img[src*="/images/RundeckbyPagerDuty.svg"] {
     content: url("/images/RundeckbyPagerDutyDark.svg")
@@ -231,8 +276,16 @@ html[data-theme=dark] {
     color: #fff;
   }
 
+  #main-description {
+    color: #fff
+  }
+
   .vp-feature {
     color: var(--text-color);
+  }
+
+  .vp-hero-action {
+    color: var(--vp-c-grey-hover)
   }
 
   img.icon{
@@ -341,4 +394,131 @@ html[data-theme=dark] {
     }
   }
 
+}
+// DocSearch specific styles
+.DocSearch-Hit {
+  padding: 0 !important;
+  margin: 0 !important;
+  
+  a {
+    display: flex !important;
+    width: 100%;
+    padding: 8px !important;
+    text-decoration: none !important;
+    color: var(--vp-c-text);
+    
+    &:hover {
+      background: var(--docsearch-primary-color);
+      color: white;
+      
+      .DocSearch-Hit-title,
+      .DocSearch-Hit-path,
+      .DocSearch-Hit-icon svg path {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.DocSearch-Hit-Container {
+  display: flex !important;
+  align-items: center !important;
+  width: 100%;
+  gap: 8px !important;
+  
+  .DocSearch-Hit-icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .DocSearch-Hit-content-wrapper {
+    flex: 1;
+    min-width: 0;
+    display: flex !important;
+    flex-direction: column;
+    
+    .DocSearch-Hit-title {
+      display: block !important;
+      color: var(--vp-c-text);
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      
+      mark {
+        background: none;
+        color: var(--docsearch-primary-color);
+        font-weight: 600;
+      }
+    }
+    
+    .DocSearch-Hit-path {
+      display: block !important;
+      color: var(--vp-c-text-2);
+      font-size: 0.75rem;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  
+  .DocSearch-Hit-action {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.DocSearch-Hit-source {
+  padding: 8px var(--docsearch-spacing);
+  font-weight: 600;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text);
+  margin: 0;
+}
+
+// Force visibility of elements
+.DocSearch-Hit[aria-selected=true] a {
+  background: var(--docsearch-primary-color);
+  
+  .DocSearch-Hit-title,
+  .DocSearch-Hit-path,
+  .DocSearch-Hit-icon svg path {
+    color: white !important;
+  }
+  
+  mark {
+    color: white !important;
+    text-decoration: underline;
+  }
+}
+
+// Ensure modal is above other elements
+.DocSearch-Modal {
+  z-index: 100;
+}
+
+// Force display of hit items
+.DocSearch-Hits {
+  .DocSearch-Hit {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+// Add important flags to ensure styles are applied
+.DocSearch-Hit-content-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.DocSearch-Hit-title,
+.DocSearch-Hit-path {
+  display: block !important;
+  visibility: visible !important;
 }

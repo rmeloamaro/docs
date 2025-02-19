@@ -1,4 +1,4 @@
-# Database Managment Solutions
+# Database Management Solutions
 
 ### Overview
 
@@ -6,10 +6,10 @@ Database administrators (DBAs) face numerous challenges related to data security
 
 ### Use Cases
 
-There are multiple use-cases and benefits to the Daabase Management solution. Here are a few of the most common examples:
+There are multiple use-cases and benefits to the Database Management solution. Here are a few of the most common examples:
 
 - **Ad-Hoc Backup and Restore:** Specific databases that end-users could run prior to making changes. Particularly helpful for Dev environments to quickly test then reset an environment again.
-- **Database Health Check:** Automate the execution of SQL scripts to perform routine health checks on databases, checking for issues like fragmentation, tablespace usage, and index performance, or run critical SQL commands to validate they are running efficiently.
+- **Database Health Check:** Automate the execution of SQL scripts to perform routine health checks on databases, checking for issues like fragmentation, table-space usage, and index performance, or run critical SQL commands to validate they are running efficiently.
 - **Schema Change Management:** Automate the execution of schema changes across development, testing, and production environments, ensuring consistency and reducing the risk of errors during deployment.
 - **Capacity Planning and Scaling:** Monitor database usage trends and automate the provisioning or scaling of database resources (e.g., adding storage, increasing memory) based on predefined triggers or schedules, or make ad-hoc requests that can be approved through WFA.
 
@@ -19,5 +19,7 @@ To see example content listed below check out the [Getting Started with Solution
 | Examples |
 | --- |
 | <img src="/assets/img/rds-logo.png" width="30" height="30"> [Check Database Storage Status](/learning/solutions/database-management/db-and-autodiag.md) |
-| <img src="/assets/img/postgres-logo.png" width="30" height="30"> [Postgres Backup and Restore](/learning/solutions/database-management/postgres-backup-restore.md) |
-| <img src="/assets/img/postgres-logo.png" width="30" height="30"> [Postgres Reindex Database](/learning/solutions/database-management/postgres-reindex.md) |
+| <img src="/assets/img/postgres-logo.png" width="30" height="30"> [Postgres - Backup and Restore](/learning/solutions/database-management/postgres-backup-restore.md) |
+| <img src="/assets/img/postgres-logo.png" width="30" height="30"> [Postgres - Reindex a database](/learning/solutions/database-management/postgres-reindex.md) |
+| <img src="/assets/img/postgres-logo.png" width="30" height="30"> [Postgres - Execute a Stored Procedure](/learning/solutions/database-management/postgres-storedprocedure.md) |
+

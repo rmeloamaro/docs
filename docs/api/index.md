@@ -2,7 +2,6 @@
 title: API Reference
 alias: api/index.html
 headerDepth: 3
-sidebarDepth: 3
 ---
 
 # API Reference | Version {{ $apiVersion }}
@@ -187,7 +186,7 @@ To call the API authenticating with a JWT token, you must include it in the `Aut
     GET /api/{{ $apiMinVersion }}/projects HTTP/1.1
     Authorization: Bearer <jwt_token>
 
-In order to leverage dynamic tokens for API Authentication follow the [setup instructions for Enabling the OAuth Resource Server](/administration/security/sso.md#enabling-oauth-resource-server-and-jwt-token-authentication-support). 
+In order to leverage dynamic tokens for API Authentication follow the [setup instructions for Enabling the OAuth Resource Server](/administration/security/sso/index.md#enabling-oauth-resource-server-and-jwt-token-authentication-support). 
 
 
 ## Error Responses
@@ -4405,7 +4404,7 @@ If the `[abort-state]` is "failed", then `[reason]` will be a textual descriptio
 ::: enterprise  
 :::
 
-Check whether the execution has Result Data created by a Job using the [Result Data feature](/manual/execution-lifecycle/result-data.md).
+Check whether the execution has Result Data created by a Job using the [Result Data feature](/manual/jobs/result-data.md).
 
 **Request:**
 
@@ -4430,7 +4429,7 @@ Successful response:
 :::
 
 
-Retrieve the Result Data created by a Job using the [Result Data feature](/manual/execution-lifecycle/result-data.md) in JSON format.
+Retrieve the Result Data created by a Job using the [Result Data feature](/manual/jobs/result-data.md) in JSON format.
 
 :::tip
 In a Rundeck Cluster, Result Data may not be locally available and must be retrieved by the server asynchronously before it can be returned.
@@ -6355,7 +6354,7 @@ Since: v49
 
 **Request**
 
-    GET /api/V/project/[PROJECT]/webhooks
+    GET /api/{{ $apiVersion }}/project/[PROJECT]/webhooks
 
 **Response**
 
@@ -6397,7 +6396,7 @@ Since: v49
 
 **Request**
 
-    GET /api/V/project/[PROJECT]/webhook/[ID]
+    GET /api/{{ $apiVersion }}/project/[PROJECT]/webhook/[ID]
 
 **Response**
 
@@ -6425,7 +6424,7 @@ Since: v49
 
 **Request**
 
-    POST /api/V/project/[PROJECT]/webhook/[ID]
+    POST /api/{{ $apiVersion }}/project/[PROJECT]/webhook/[ID]
 
 Required Fields:    
 `id`  
@@ -6465,7 +6464,7 @@ or error
 
 ``` json
 {
-    "apiversion": 33,
+    "apiversion": {{ $apiVersion }},
     "error": true,
     "errorCode": "api.error.parameter.required",
     "message": "parameter \"project\" is required"
@@ -6476,7 +6475,7 @@ or error
 
 **Request**
 
-    POST /api/V/project/[PROJECT]/webhook
+    POST /api/{{ $apiVersion }}/project/[PROJECT]/webhook
 
 Required Fields:
 ```
@@ -6521,7 +6520,7 @@ Do not specify an `authToken` or `creator` field. They will be ignored.
 
 **Request**
 
-    DELETE /api/V/project/[PROJECT]/webhook/[ID]
+    DELETE /api/{{ $apiVersion }}/project/[PROJECT]/webhook/[ID]
 
 **Response**
 
@@ -6537,7 +6536,7 @@ Do not specify an `authToken` or `creator` field. They will be ignored.
 
 **Request**
 
-    POST /api/V/webhook/[AUTH_TOKEN]
+    POST /api/{{ $apiVersion }}/webhook/[AUTH_TOKEN]
 
 You may post whatever data you wish to the webhook endpoint, however the plugin you are using must
 be able to handle the data you post. If the webhook plugin associated with the webhook can't handle

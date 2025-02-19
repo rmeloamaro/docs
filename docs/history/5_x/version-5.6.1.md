@@ -3,6 +3,7 @@
 title: "5.6.1 Release Notes"
 date: 2024-10-14
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.6.1 to fix critical bug."
 feed:
  enable: true
  description: "Fix to Critical bug related to scheduled jobs."
@@ -11,17 +12,21 @@ feed:
 
 # 5.6.1 Release Notes
 
-Name: <span style="color: sandybrown"><span class="glyphicon glyphicon-camera"></span> "Fansiban sandybrown camera"</span>
-Release Date: October 14th, 2024
+## Overview
+
+This release fixes a critical issue where scheduled jobs are no longer executed after making unrelated edits to the job.  This can happen in version 5.6.0 when the jobs is edited via API, job/project imports, SCM, or direct job editing.
+
+## Links
 
 - Download the Releases: [Open Source](https://www.rundeck.com/community-downloads/5.6.1) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.6.1)
 - [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
 - [Upgrade instructions](/upgrading/index.md)
 
-## Overview
+## Version Info
 
-This release fixes a critical issue where scheduled jobs are no longer executed after making unrelated edits to the job.  This can happen in version 5.6.0 when the jobs is edited via API, job/project imports, SCM, or direct job editing.
+Name: <span style="color: sandybrown"><span class="glyphicon glyphicon-camera"></span> "Fansiban sandybrown camera"</span>
 
+Release Date: October 14th, 2024
 
 ## Staff Contributors
 

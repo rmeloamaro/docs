@@ -197,7 +197,8 @@ export default [{
                             '/manual/log-filters/render-formatted-data.md',
                             '/manual/log-filters/mask-passwords.md',
                             '/manual/log-filters/json-jq.md',
-                            '/manual/log-filters/multi-line-regex.md'
+                            '/manual/log-filters/multi-line-regex.md',
+                            '/manual/log-filters/loop-plugins.md'
                           ]
                 },
         '/manual/jobs/result-data.md',
@@ -225,7 +226,8 @@ export default [{
         {text: 'Datadog', link:'/manual/plugins/datadog-plugins-overview.md'},
         {text: 'Google Cloud', link: '/manual/plugins/gcp-plugins-overview.md'},
         {text: 'Jira', link: '/manual/plugins/jira-plugins-overview.md'},
-        {text: 'Kubernetes', link: '/manual/plugins/kubernetes-plugins-overview.md'},
+        {text: 'Kubernetes (Commercial)', link: '/manual/plugins/kubernetes-plugins-overview.md'},
+        {text: 'Kubernetes (Open Source)', link: '/manual/plugins/kubernetes-open-source.md'},
         {text: 'PagerDuty', link: '/manual/plugins/pagerduty-plugins-overview.md'},
         {text: 'Sensu', link: '/manual/plugins/sensu-plugins-overview.md'},
         {text: 'ServiceNow', link: '/manual/plugins/servicenow-plugins-overview.md'},
@@ -267,9 +269,11 @@ export default [{
           text: 'Key Storage Plugins',
           collapsible: true,
           children: [
-            '/manual/key-storage/storage-plugins/thycotic-storage.md',
-            '/manual/key-storage/storage-plugins/vault.md',
-            '/manual/key-storage/storage-plugins/cyberark-storage.md'
+            {link:'/manual/key-storage/storage-plugins/aws-secrets-manager.md', text: 'AWS Secrets Manager (Commercial)'},
+            {link:'/manual/key-storage/storage-plugins/azure-vault.md', text: 'Azure Key Vault (Commercial)'},
+            {link:'/manual/key-storage/storage-plugins/cyberark-storage.md', text: 'CyberArk (Commercial)'},
+            {link:'/manual/key-storage/storage-plugins/thycotic-storage.md', text: 'Delinea (Commercial)'},
+            {link:'/manual/key-storage/storage-plugins/vault.md', text: 'HashiCorp Vault'}
           ]
         },
       ]

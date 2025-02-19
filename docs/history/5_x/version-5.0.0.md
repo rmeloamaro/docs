@@ -3,6 +3,7 @@
 title: "5.0.0 Release Notes"
 date: 2023-12-14
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases major 5.0 update including Java 11 support, Runner Key Storage GUI for Node Sources, and lots of updates to the foundation of the product code."
 feed:
  enable: true
  description: "Rundeck/Runbook Automation 5.0 is here!"
@@ -11,14 +12,11 @@ feed:
 
 # 5.0.0 Release Notes
 
-Name: <span style="color: brown"><span class="glyphicon glyphicon-apple"></span> "Denali brown apple"</span>
-Release Date: December 14th, 2023
+## Overview
 
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.0.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.0.0)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Watch the Live Stream Release Recap](https://www.youtube.com/live/lcQJQRfI92c?si=QP_RIUNrwlrvXpsh)
-
-<VidStack src="youtube/lcQJQRfI92c"/>
+Rundeck/Runbook Automation 5.0 is here! This release updates the underlying foundations of the Rundeck and Runbook Automation platform to open up more opportunities for enhancements and improvements in the 5.x series.
+ 
+Our major version releases typically center around updates to the foundational libraries we use to build Rundeck. The result is a more stable, extensible, and secure product from the extensive library updates.  There are also commonly breaking changes or key upgrade steps to be aware of.  For this 5.0 release, we still included some enhancements and have more planned throughout the 5.x release cycle.
 
 ::: danger Please use version 5.0.2
 We have found some issues with Log Filters and passing data to the Enterprise Runner.  Please use the [5.0.2 Release](version-5.0.2.md) when upgrading.
@@ -28,11 +26,7 @@ We have found some issues with Log Filters and passing data to the Enterprise Ru
 Be sure to follow the [Upgrade instructions](/upgrading/index.md) when moving to version 5.0 or higher.  There are new minimum Java versions and other important information.
 :::
 
-## Overview
-
-Rundeck/Runbook Automation 5.0 is here! This release updates the underlying foundations of the Rundeck and Runbook Automation platform to open up more opportunities for enhancements and improvements in the 5.x series.
- 
-Our major version releases typically center around updates to the foundational libraries we use to build Rundeck. The result is a more stable, extensible, and secure product from the extensive library updates.  There are also commonly breaking changes or key upgrade steps to be aware of.  For this 5.0 release, we still included some enhancements and have more planned throughout the 5.x release cycle.
+<VidStack src="youtube/lcQJQRfI92c"/>
 
 ### Runner Key Storage GUI for Resource Model Sources.
 
@@ -107,13 +101,23 @@ With this release the versioning for the Enterprise Runner is now aligned with t
 * [Fixing ANSIBLE_BINARIES_DIR_PATH resolution](https://github.com/rundeck-plugins/ansible-plugin/pull/342)
 * [Dedicated log filter plugin to capture the output of ansible set_stats module](https://github.com/rundeck-plugins/ansible-plugin/pull/341)
 
+## Links
+
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.0.0) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.0.0)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Watch the Live Stream Release Recap](https://www.youtube.com/live/lcQJQRfI92c?si=QP_RIUNrwlrvXpsh)
+
+## Version Info
+
+Name: <span style="color: brown"><span class="glyphicon glyphicon-apple"></span> "Denali brown apple"</span>
+Release Date: December 14th, 2023
+
 ## Community Contributors
 
 Submit your own Pull Requests to get recognition here!
 
 * SimonC ([Simon-cto](https://github.com/Simon-cto))
 *  ([rmeloamaro](https://github.com/rmeloamaro))
-
 
 ## Staff Contributors
 

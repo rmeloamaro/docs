@@ -54,7 +54,7 @@ rd-{{$cliVersion}}/bin/rd
 Add Yum Repo:
 
 ~~~{.sh}
-curl https://raw.githubusercontent.com/rundeck/packaging/main/scripts/rpm-setup.sh 2> /dev/null | bash -s rundeck
+curl -s https://packagecloud.io/install/repositories/pagerduty/rundeck/script.rpm.sh?any=true | sudo bash
 ~~~
 
 Optional: enable all gpg checks:

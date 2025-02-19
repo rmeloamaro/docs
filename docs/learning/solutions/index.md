@@ -2,6 +2,7 @@
 home: true
 title: Runbook Automation Solutions
 heroText:  Automation Solutions for Ops
+description: Practical Rundeck automation solutions and implementation guides. Learn how to automate IT operations, incident response, security tasks, and cloud resource management.
 tagline: See how Automation can transform your operations and streamline processes.
 //heroImage: /assets/img/pd-background.png
 bgImage: /assets/img/pd-background.png
@@ -52,7 +53,16 @@ highlights:
     - title: Storage Management
       icon: hard-drive
       details: Technology users and leaders face challenges with time-consuming and error-prone manual processes when managing storage across various systems.  Without automation managing storage across complex systems requires significant effort and risks operational inefficiencies, and service disruptions.
-      link: /learning/solutions/storage-management/index.md  
+      link: /learning/solutions/storage-management/index.md
 
+    - title: FinOps (Cost Management)
+      icon: money-check-dollar
+      details: Runbook Automation for FinOps in cloud environments streamlines complex workflows, reduces operational costs, minimizes errors, and enhances efficiency by automating resource optimization, cleanup processes, and policy enforcement across multiple platforms.
+      link: /learning/solutions/cost-management/index.md
+
+    - title: Getting Started
+      icon: circle-play
+      details: Click here to learn how to get started with Runbook Automation prebuilt solutions.
+      link: /learning/solutions/getting-started.md
 
 ---

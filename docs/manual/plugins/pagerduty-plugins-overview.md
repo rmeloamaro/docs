@@ -9,7 +9,7 @@ By integrating Runbook Automation with Incident Response, users can automaticall
 
 There are a number of PagerDuty plugins for Process and Runbook Automation:
 
-- For job step plugins, click [here](/manual/workflow-steps/pagerduty.md).
+- For job step plugins, click [here](/manual/jobs/job-plugins/workflow-steps/pagerduty.md).
 - For notification plugins, click [here](/manual/notifications/pagerduty.md).
 - For the log-filter plugin, click [here](https://support.pagerduty.com/docs/automation-actions#configure-automation-actions-log-for-runbook-and-process-automation).
 

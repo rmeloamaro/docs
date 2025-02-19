@@ -38,4 +38,4 @@ The [condition](/manual/webhooks/advanced-run-job.md#conditions) type `matches` 
 
    **OR**
 
-- Updating the webhooks configuration through the [API](/api/rundeck-api.md#webhooks-incubating)
+- Updating the webhooks configuration through the [API](/api/#webhooks)

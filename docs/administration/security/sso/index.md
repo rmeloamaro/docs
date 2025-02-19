@@ -140,6 +140,14 @@ rundeck.ssoSyncAttribNames.lastname=custom-lastname-attrib
 rundeck.ssoSyncAttribNames.email=custom-email-attrib
 ```
 
+### Set the email address as username
+
+In case it is required to change the username taken by Runbook Automation to a different SSO user profile attirbute (for example, the email address instead of the Display Name), the configuration property below can be used.
+
+```properties
+rundeck.security.oauth.PROVIDER_NAME.principleKeys=email
+```
+
 ## Enabling OAuth Resource Server and JWT Token Authentication Support
 
 **Starting from Runbook Automation 5.1.0**, the platform can act as an OAuth2 Resource Server and validate JWT tokens issued

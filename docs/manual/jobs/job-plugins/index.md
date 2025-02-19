@@ -73,7 +73,6 @@ If there is a mix of node and workflow steps (which is common) the steps will be
 Notification plugins allow Rundeck to communicate changes in job execution state and notify other users of successful or failed runs. For a general explanation on how job notifications work, see [Job Notifications](/manual/jobs/creating-jobs.md#job-notifications).
 
 - [Jira Notification Plugins (Commercial)](/manual/notifications/jira.md)
-- [Jenkins Notification Plugin (Commercial)](/manual/notifications/jenkins.md)
 - [Datadog Notification Plugin (Commercial)](/manual/notifications/datadog.md)
 - [PagerDuty Notification Plugin (Commercial)](/manual/notifications/pagerduty.md)
 - [ServiceNow Notification Plugin (Commercial)](/manual/notifications/servicenow.md)

@@ -18,6 +18,7 @@ Rundeck currently supports storage plugins for the following providers:
 - [Cyberark Storage](/manual/key-storage/storage-plugins/cyberark-storage.md)
 - [Thycotic Secret Server](/manual/key-storage/storage-plugins/thycotic-storage.md)
 - [Hashicorp Vault](/manual/key-storage/storage-plugins/vault.md)
+- [Azure Key Vault](/manual/key-storage/storage-plugins/azure-vault.md)
 
 ### Configuring Storage Plugins
 

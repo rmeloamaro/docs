@@ -241,6 +241,7 @@ export default [{
             { link: '/learning/solutions/database-management/db-and-autodiag.md', text: 'Databases + Auto Diagnostics' },
             { link: '/learning/solutions/database-management/postgres-reindex.md', text: 'Reindex PostgreSQL Database' },
             { link: '/learning/solutions/database-management/postgres-backup-restore.md', text: 'Backup and Restore PostgreSQL' },
+            { link: '/learning/solutions/database-management/postgres-storedprocedure.md', text: 'Executing PostgreSQL Stored Procedures' },
           ]
         },
         {
@@ -249,6 +250,20 @@ export default [{
           collapsible: true,
           children: [
             { link: '/learning/solutions/storage-management/index.md', text: 'Solution Summary' },
+            { link: '/learning/solutions/storage-management/storage-list-largest-files.md', text: 'List Largest Files' },
+            { link: '/learning/solutions/storage-management/storage-log-rotation.md', text: 'Log Rotation & Cleanup' },
+          ]
+        },
+        {
+          text: 'FinOps (Cost Management)',
+          link: '/learning/solutions/cost-management/index.md',
+          collapsible: true,
+          children: [
+            { link: '/learning/solutions/cost-management/index.md', text: 'Solution Summary' },
+            { link: '/learning/solutions/cost-management/aws-change-ec2-size.md', text:'AWS - Change EC2 Size' },
+            { link: '/learning/solutions/cost-management/aws-list-unused-vpcs.md', text: 'AWS - Identify Unused VPCs' },
+            { link: '/learning/solutions/cost-management/aws-list-unused-lambda.md', text: 'AWS - Identify Unused Lambda Functions' },
+            { link: '/learning/solutions/cost-management/aws-list-unused-securitygroups.md', text: 'AWS - Identify Unused Security Groups' },
           ]
         }
       ]

@@ -5,7 +5,7 @@
           <p>
             <b>Process Automation On Prem</b> is now <b>Runbook Automation Self-Hosted</b>
           </p>
-    </div>
+        </div>
       </template>
     </AnnounceBox>
 </template>

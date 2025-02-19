@@ -101,20 +101,33 @@ Time for a quick test.
 
 To see the output you may need to switch to the _Log Output_ view.
 
-## Gather Facts
-When Gather Facts is enabled, Ansible collects information from the nodes and verifies if it is possible to connect to them. On the other hand, when Gather Facts is disabled, Ansible skips the connection validation, significantly saving time and reducing CPU and RAM usage.
-In addition, it is necessary to modify this property in ansible.cfg file to _"duplicate_dict_key=ignore"_, this is to avoid a warning message when are duplicate node names.
+## Inventory Yaml
+When Gather Facts is false, the inventory file is read as Yaml data.
+This avoids connection validation, significantly saving time and reducing CPU and RAM usage.
 
-## Inventory File
-When Gather Facts is false, the inventory file is read as Yaml data. It supports up to 10MB of data by default, which supports around 19,000 nodes. However, it depends on the operating system.
+- <b>Data Size</b>
+It supports up to 10MB of data by default, which supports around 19,000 nodes. However, it depends on the operating system.
 
 This parameter can be increased if necessary in this field:
-<br><br>![ Yaml Data Size ](/assets/img/howto-ansible-yaml-data-size.png)<br><br>
+![ Yaml Data Size ](/assets/img/howto-ansible-yaml-data-size.png)<br>
 
 When the limit is exceeded it throws this error in rundeck.log file:
 ```
 ResourceModelSourceException: Cannot load yaml data coming from Ansible: The incoming YAML document exceeds the limit: 10485760 code points.
 ```
+<br>
+
+- <b>Max Aliases</b>
+It supports up to 1000 of aliases by default. This is to avoid the application vulnerable to certain types of attacks.
+
+This parameter can be increased if necessary in this field:
+![ Yaml Max_Aliases ](/assets/img/howto-ansible-yaml-max-aliases.png)<br>
+
+When the limit is exceeded it throws this error in rundeck.log file:
+```
+ResourceModelSourceException: Cannot load yaml data coming from Ansible: Number of aliases for non-scalar nodes exceeds the specified max=1000.
+```
+<br>
 
 ## Additional Information
 

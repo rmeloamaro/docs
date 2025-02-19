@@ -13,7 +13,7 @@ The Enterprise Runner allows for dispatching automation to remote environments t
 
 This architecture allows for orchestrating various tasks and automation playbooks across multiple environments, including secure and remote environments.
 
-The Runner is equipped with most of the same plugins Runbook Automation, making it easy to use the Runner with existing automation.
+The Runner is equipped with most of the same plugins found in Runbook Automation, making it easy to use the Runner with existing automation.
 
 Tasks can be carried out over multiple environments simultaneously, thereby reducing the time and complexity of orchestrating automation across disparate environments.
 
@@ -84,13 +84,26 @@ Tasks can be carried out over multiple environments simultaneously, thereby redu
 
 ## Enabling the Latest Runner Features
 
+To use the latest Enterprise Runner features, the following feature-flag must be enabled in **System Configuration** or optionally in the `rundeck-config.properties` file if using the self-hosted software.
+
+1. **`rundeck.feature.runner.enabled`** = **`true`**.  This enables the platform feature of the Runner.
+2. **`rundeck.feature.distributedAutomation.enabled`** = **`true`**.  This enables the latest features of the Runner - such as executing plugins on the Runner and managing Runners within Projects. It is **highly recommended** to add this feature-flag as well.
+
 :::tip Enabled by Default for Docker and Runbook Automation SaaS
-This feature has been enabled on Docker installations since v4.5.0 and is also enabled by default for Runbook Automation. 
-If using either Docker or Runbook Automation, the feature is enabled by default and no further action is required.
+These features have been enabled on Docker installations since v4.5.0 and is also enabled by default for Runbook Automation SAAS.
+If using either Docker or Runbook Automation SAAS, the feature is enabled by default and no further action is required.
 :::
 
-To use the latest Enterprise Runner features, the following feature-flags must be enabled in **System Configuration** or optionally in the `rundeck-config.properties` file if using the self-hosted software.
+:::warning Upgrading from versions prior to 4.11
 
-`rundeck.feature.runner.enabled=true`
+If using the Enterprise Runner prior to version 4.11 and want to upgrade and enable the latest Runner features, follow these steps:
 
-`rundeck.feature.distributedAutomation.enabled = true`
+1. Set **`rundeck.feature.distributedAutomation.enabled`** = **`true`** in **System Configuration**.
+2. [Upgrade the Runners](/administration/runner/runner-management/upgrading-runners.md) to the latest version.
+
+It may also be helpful to review the latest Runner features.
+* [Project Runner Management](/administration/runner/runner-management/managing-runners.md#managing-runners-within-a-project) allows users to create and manage Runners within Projects.
+* [Runner as a Node](/administration/runner/runner-management/node-dispatch.md#runner-as-a-node) provides a native method for representing the Runner as a node in the node inventory.
+* [Automatic Runner Selection](/administration/runner/runner-management/project-dispatch-configuration.md#automatic-runner-selection) provides a method for automatically selecting Runners based on node filters.
+* [Manual Runner Selection](/administration/runner/runner-management/project-dispatch-configuration.md#manual-runner-selection) provides a method for manually selecting Runners within the Job definition.
+:::

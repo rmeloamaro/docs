@@ -3,20 +3,14 @@
 title: "5.1.1 Release Notes"
 date: 2024-03-05
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.1.1 with important CVE fixes"
 feed:
  enable: true
- description: ""
+ description: "5.1.1 Patches the included Postgres JDBC Driver against the Critical "
 
 ---
 
 # 5.1.1 Release Notes
-
-Name: <span style="color: orange"><span class="glyphicon glyphicon-cutlery"></span> "Elbrus orange cutlery"</span>
-Release Date: March 5th, 2024
-
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.1.1) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.1.1)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
 
 ## Overview
 
@@ -33,6 +27,17 @@ After upgrading the server software the Enterprise Runners will also need to be 
 
 [Here is a link to the full list of public PRs](https://github.com/rundeck/rundeck/pulls?q=is%3Apr+milestone%3A5.1.1+is%3Aclosed)
 
+## Links
+
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.1.1) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.1.1)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+
+## Version Info
+
+Name: <span style="color: orange"><span class="glyphicon glyphicon-cutlery"></span> "Elbrus orange cutlery"</span>
+
+Release Date: March 5th, 2024
 
 ## Community Contributors
 

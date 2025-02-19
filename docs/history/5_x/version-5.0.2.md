@@ -3,6 +3,7 @@
 title: "5.0.2 Release Notes"
 date: 2024-02-12
 image: /images/chevron-logo-red-on-white.png
+description: "Rundeck | Runbook Automation Releases 5.0.2 with fixes to the base 5.0 release"
 feed:
  enable: true
  description: "Important Compatibility Updates for 5.X"
@@ -10,13 +11,6 @@ feed:
 ---
 
 # 5.0.2 Release Notes
-
-Name: <span style="color: deeppink"><span class="glyphicon glyphicon-book"></span> "Denali deeppink book"</span>
-Release Date: February 12th, 2024
-
-- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.0.2) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.0.2)
-- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
-- [Upgrade instructions](/upgrading/index.md)
 
 ## Overview
 
@@ -43,6 +37,17 @@ XML Support for the API is deprecated and future endpoints/enhancements will not
 
 In 5.0 we updated the JSON/JQ libraries and from that update the behavior of the filter improved in the form of performing much closer to a command line version of `jq`.  This version adds an option flag to allow it to continue to add quotes as seen in previous product versions.  New instances of the JSON/JQ Log filter will default to the new/improved behavior.  Existing jobs will maintain the original behavior until a change is made to that log filter.
 
+## Links
+
+- Download the Release: [Open Source](https://www.rundeck.com/community-downloads/5.0.2) | [Self-Hosted](https://www.rundeck.com/enterprise-downloads/5.0.2)
+- [Sign up for Release Notes](https://www.rundeck.com/release-notes-signup)
+- [Upgrade instructions](/upgrading/index.md)
+
+## Version Info
+
+Name: <span style="color: deeppink"><span class="glyphicon glyphicon-book"></span> "Denali deeppink book"</span>
+
+Release Date: February 12th, 2024
 
 ## Community Contributors
 
