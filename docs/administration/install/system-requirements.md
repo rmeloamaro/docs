@@ -20,7 +20,7 @@ As of version 5.10.0, Java 11 or Java 17 runtime versions are supported (JRE). J
 Verify your Java version to check it meets the requirement:
 
 ```
-$ java -version
+$ java -version 
 ```
 
 Example output (actual version numbers can vary)
